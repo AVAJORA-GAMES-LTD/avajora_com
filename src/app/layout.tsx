@@ -13,9 +13,9 @@ export const metadata: Metadata = {
   title: "AVAJORA GAMES LTD",
   description: "AVAJORA GAMES LTD - Official Website",
   icons: {
-    icon: "https://res.cloudinary.com/destej60y/image/upload/v1770936289/avajora-logo-n1_llpci8.png",
-    shortcut: "https://res.cloudinary.com/destej60y/image/upload/v1770936289/avajora-logo-n1_llpci8.png",
-    apple: "https://res.cloudinary.com/destej60y/image/upload/v1770936289/avajora-logo-n1_llpci8.png",
+    icon: "/avajora-logo-n1.png",
+    shortcut: "/avajora-logo-n1.png",
+    apple: "/avajora-logo-n1.png",
   },
 };
 
