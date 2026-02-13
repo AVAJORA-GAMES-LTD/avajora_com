@@ -4,12 +4,12 @@ export default function PrivacyPolicyPage() {
     return (
         <>
             <Navbar />
-            <main className="min-h-screen bg-white pt-28 pb-16 px-4">
+            <main className="min-h-screen bg-white pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 px-4">
                 <div className="mx-auto max-w-4xl">
-                    <h1 className="text-4xl md:text-5xl font-bold text-[#00071e] mb-4">Privacy Policy</h1>
-                    <p className="text-slate-600 mb-8">Effective Date: February 13, 2026</p>
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#00071e] mb-3 sm:mb-4">Privacy Policy</h1>
+                    <p className="text-sm sm:text-base text-slate-600 mb-6 sm:mb-8">Effective Date: February 13, 2026</p>
 
-                    <div className="space-y-8 text-slate-700 leading-relaxed">
+                    <div className="space-y-6 sm:space-y-8 text-sm sm:text-base text-slate-700 leading-relaxed">
                         {/* Introduction */}
                         <section>
                             <p>
@@ -26,11 +26,11 @@ export default function PrivacyPolicyPage() {
 
                         {/* 1. Controller Information */}
                         <section>
-                            <h2 className="text-2xl font-semibold text-[#00071e] mb-4">1. Controller Information</h2>
+                            <h2 className="text-xl sm:text-2xl font-semibold text-[#00071e] mb-3 sm:mb-4">1. Controller Information</h2>
                             <p className="mb-2">
                                 AVAJORA GAMES LTD is the data controller responsible for your personal information.
                             </p>
-                            <div className="bg-slate-50 p-4 rounded-lg">
+                            <div className="bg-slate-50 p-3 sm:p-4 rounded-lg text-sm sm:text-base">
                                 <p className="font-medium">Company Name: AVAJORA GAMES LTD</p>
                                 <p>Registration Number: 17030540</p>
                                 <p>Registered Address: 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ</p>
@@ -41,9 +41,9 @@ export default function PrivacyPolicyPage() {
 
                         {/* 2. Information We Collect */}
                         <section>
-                            <h2 className="text-2xl font-semibold text-[#00071e] mb-4">2. Information We Collect</h2>
+                            <h2 className="text-xl sm:text-2xl font-semibold text-[#00071e] mb-3 sm:mb-4">2. Information We Collect</h2>
 
-                            <h3 className="text-xl font-medium text-[#00071e] mt-4 mb-2">2.1 Information You Provide to Us</h3>
+                            <h3 className="text-lg sm:text-xl font-medium text-[#00071e] mt-4 mb-2">2.1 Information You Provide to Us</h3>
                             <p>We may collect information that you voluntarily provide when you:</p>
                             <ul className="list-disc list-inside space-y-2 mt-2 ml-4">
                                 <li>Create an account or register for our Services</li>

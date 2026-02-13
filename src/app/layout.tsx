@@ -12,6 +12,11 @@ const lilitaOne = Lilita_One({
 export const metadata: Metadata = {
   title: "AVAJORA GAMES LTD",
   description: "AVAJORA GAMES LTD - Official Website",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+  },
 };
 
 export default function RootLayout({

@@ -4,12 +4,12 @@ export default function TermsOfServicePage() {
     return (
         <>
             <Navbar />
-            <main className="min-h-screen bg-white pt-28 pb-16 px-4">
+            <main className="min-h-screen bg-white pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 px-4">
                 <div className="mx-auto max-w-4xl">
-                    <h1 className="text-4xl md:text-5xl font-bold text-[#00071e] mb-4">Terms of Service</h1>
-                    <p className="text-slate-600 mb-8">Last Updated: February 13, 2026</p>
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#00071e] mb-3 sm:mb-4">Terms of Service</h1>
+                    <p className="text-sm sm:text-base text-slate-600 mb-6 sm:mb-8">Last Updated: February 13, 2026</p>
 
-                    <div className="space-y-8 text-slate-700 leading-relaxed">
+                    <div className="space-y-6 sm:space-y-8 text-sm sm:text-base text-slate-700 leading-relaxed">
                         {/* Introduction */}
                         <section>
                             <p>
@@ -27,8 +27,8 @@ export default function TermsOfServicePage() {
 
                         {/* 1. Company Information */}
                         <section>
-                            <h2 className="text-2xl font-semibold text-[#00071e] mb-4">1. Company Information</h2>
-                            <div className="bg-slate-50 p-4 rounded-lg">
+                            <h2 className="text-xl sm:text-2xl font-semibold text-[#00071e] mb-3 sm:mb-4">1. Company Information</h2>
+                            <div className="bg-slate-50 p-3 sm:p-4 rounded-lg text-sm sm:text-base">
                                 <p className="font-medium">AVAJORA GAMES LTD</p>
                                 <p>Company Registration Number: 17030540</p>
                                 <p>Registered Address: 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ</p>
@@ -386,7 +386,7 @@ export default function TermsOfServicePage() {
                         <section className="border-t pt-6 mt-8">
                             <p className="text-sm text-slate-600">
                                 <strong>Last Updated:</strong> February 13, 2026<br />
-                                
+
                                 By using our Services, you acknowledge that you have read, understood, and agree to be bound by
                                 these Terms of Service. Thank you for choosing AVAJORA GAMES LTD!
                             </p>

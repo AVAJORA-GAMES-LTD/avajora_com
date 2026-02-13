@@ -32,31 +32,31 @@ const socialLinks = [
 export default function Footer() {
     return (
         <footer className="bg-[#00071e] text-white">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
-                    <div className="space-y-4">
-                        <div className="flex items-center gap-3">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-12 md:py-14">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 md:gap-8">
+                    <div className="space-y-3 sm:space-y-4 sm:col-span-2 lg:col-span-1">
+                        <div className="flex items-center gap-2 sm:gap-3">
                             <Link href="/" className="inline-flex items-center">
                                 <Image
                                     src="https://res.cloudinary.com/destej60y/image/upload/v1770936289/avajora-logo-n1_llpci8.png"
                                     alt="Avajora Games Logo"
-                                    width={48}
-                                    height={48}
-                                    className="object-contain"
+                                    width={40}
+                                    height={40}
+                                    className="object-contain sm:w-12 sm:h-12"
                                 />
                             </Link>
-                            <h3 className="text-xl font-semibold tracking-wide">AVAJORA GAMES LTD</h3>
+                            <h3 className="text-lg sm:text-xl font-semibold tracking-wide">AVAJORA GAMES LTD</h3>
                         </div>
 
-                        <p className="text-white/85 leading-relaxed text-sm md:text-base max-w-md">
+                        <p className="text-white/85 leading-relaxed text-sm sm:text-base max-w-md">
                             AVAJORA GAMES LTD. 71-75 Shelton Street, Covent Garden, London,
                             WC2H 9JQ.
                         </p>
                     </div>
 
-                    <div className="space-y-4">
-                        <h4 className="text-lg font-semibold">Company</h4>
-                        <ul className="space-y-2 text-white/90">
+                    <div className="space-y-3 sm:space-y-4">
+                        <h4 className="text-base sm:text-lg font-semibold">Company</h4>
+                        <ul className="space-y-2 text-white/90 text-sm sm:text-base">
                             {companyLinks.map((link) => (
                                 <li key={link.label}>
                                     <Link
@@ -70,9 +70,9 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    <div className="space-y-4">
-                        <h4 className="text-lg font-semibold">Legal</h4>
-                        <ul className="space-y-2 text-white/90">
+                    <div className="space-y-3 sm:space-y-4">
+                        <h4 className="text-base sm:text-lg font-semibold">Legal</h4>
+                        <ul className="space-y-2 text-white/90 text-sm sm:text-base">
                             {legalLinks.map((link) => (
                                 <li key={link.label}>
                                     <Link
@@ -87,12 +87,12 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="mt-10 pt-6 border-t border-white/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-                    <p className="text-sm text-white/75">
+                <div className="mt-8 sm:mt-10 pt-6 border-t border-white/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6">
+                    <p className="text-xs sm:text-sm text-white/75">
                         © {new Date().getFullYear()} AVAJORA GAMES LTD. All rights reserved.
                     </p>
 
-                    <div className="flex items-center gap-3 flex-wrap">
+                    <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
                         {socialLinks.map((social) => {
                             const Icon = social.icon;
                             return (
@@ -103,9 +103,9 @@ export default function Footer() {
                                     rel="noopener noreferrer"
                                     aria-label={social.label}
                                     title={social.label}
-                                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/30 text-white hover:bg-white hover:text-[#00071e] transition"
+                                    className="inline-flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-white/30 text-white hover:bg-white hover:text-[#00071e] transition touch-manipulation"
                                 >
-                                    <Icon className="h-5 w-5" />
+                                    <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
                                 </a>
                             );
                         })}

@@ -126,6 +126,38 @@
     @apply bg-background text-foreground;
     @apply bg-background text-foreground;
   }
+
+  /* Mobile-first touch optimizations */
+  html {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    font-size: 16px;
+  }
+
+  /* Smooth scrolling */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  /* Touch-friendly minimum sizes */
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Better mobile font rendering */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
 }
 
 .about-page-bg {
@@ -133,4 +165,9 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+/* Utility class for touch manipulation */
+.touch-manipulation {
+  touch-action: manipulation;
 }
