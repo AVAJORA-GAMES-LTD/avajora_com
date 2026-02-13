@@ -1,20 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Lilita_One } from "next/font/google";
 import "./globals.css";
+import { Footer } from "@/components";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const lilitaOne = Lilita_One({
+  weight: "400",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-lilita-one",
 });
 
 export const metadata: Metadata = {
   title: "AVAJORA GAMES LTD",
   description: "AVAJORA GAMES LTD - Official Website",
+  icons: {
+    icon: "https://res.cloudinary.com/destej60y/image/upload/v1770936289/avajora-logo-n1_llpci8.png",
+    shortcut: "https://res.cloudinary.com/destej60y/image/upload/v1770936289/avajora-logo-n1_llpci8.png",
+    apple: "https://res.cloudinary.com/destej60y/image/upload/v1770936289/avajora-logo-n1_llpci8.png",
+  },
 };
 
 export default function RootLayout({
@@ -24,10 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${lilitaOne.variable} font-sans antialiased`}>
         {children}
+        <Footer />
       </body>
     </html>
   );
