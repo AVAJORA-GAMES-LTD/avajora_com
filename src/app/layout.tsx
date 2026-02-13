@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Lilita_One } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components";
@@ -12,11 +12,12 @@ const lilitaOne = Lilita_One({
 export const metadata: Metadata = {
   title: "AVAJORA GAMES LTD",
   description: "AVAJORA GAMES LTD - Official Website",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({
