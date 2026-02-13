@@ -21,12 +21,12 @@ const legalLinks = [
 ];
 
 const socialLinks = [
-    { label: "LinkedIn", href: "https://www.linkedin.com/", icon: FaLinkedinIn },
-    { label: "Instagram", href: "https://www.instagram.com/", icon: FaInstagram },
-    { label: "X", href: "https://x.com/", icon: FaXTwitter },
-    { label: "Facebook", href: "https://www.facebook.com/", icon: FaFacebookF },
-    { label: "YouTube", href: "https://www.youtube.com/", icon: FaYoutube },
-    { label: "TikTok", href: "https://www.tiktok.com/", icon: FaTiktok },
+    { label: "LinkedIn", href: "https://www.linkedin.com/company/avajora-games-ltd/", icon: FaLinkedinIn },
+    { label: "Instagram", href: "https://www.instagram.com/avajora.games.ltd", icon: FaInstagram },
+    { label: "X", href: "https://x.com/AvajoraGamesLTD", icon: FaXTwitter },
+    { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61588085401058", icon: FaFacebookF },
+    { label: "YouTube", href: "https://www.youtube.com/@AvajoraGamesLTD", icon: FaYoutube },
+    { label: "TikTok", href: "https://www.tiktok.com/@avajora.games.ltd", icon: FaTiktok },
 ];
 
 export default function Footer() {
