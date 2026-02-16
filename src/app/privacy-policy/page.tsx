@@ -1130,39 +1130,7 @@ export default function PrivacyPolicyPage() {
                     {/* Section 19 merged into Section 15 (Contact & Data Protection) */}
 
 
-                    {/* ══════════════ CHANGELOG ══════════════ */}
 
-                    <section className="mt-14">
-                        <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4">Revision History</h2>
-                        <div className="overflow-x-auto">
-                            <table className="w-full text-sm border-collapse">
-                                <thead>
-                                    <tr className="border-b-2 border-neutral-200 text-left">
-                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Version</th>
-                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Date</th>
-                                        <th className="py-2 text-neutral-500 font-semibold">Summary of Changes</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="align-top">
-                                    <tr className="border-b border-neutral-100">
-                                        <td className="py-2 pr-4 font-medium">2.1</td>
-                                        <td className="py-2 pr-4 whitespace-nowrap">17 Feb 2026</td>
-                                        <td className="py-2">Added UK AADC mention; ROPA statement; CAS.ai CMP ID; GPC vs DNT clarification; merged sections 15 &amp; 19; added links to /do-not-sell, /privacy/request, /privacy-summary pages; changelog added.</td>
-                                    </tr>
-                                    <tr className="border-b border-neutral-100">
-                                        <td className="py-2 pr-4 font-medium">2.0</td>
-                                        <td className="py-2 pr-4 whitespace-nowrap">17 Jun 2025</td>
-                                        <td className="py-2">Full rewrite for CAS.ai SDK stack (replaced AppLovin MAX mediation); added 11-network advertising partner disclosures; InMobi joint controller language; Liftoff/Vungle opt-out; COPPA dashboard flags; IAB TCF 2.2 via CAS.ai CMP; Unity Analytics replacing Firebase.</td>
-                                    </tr>
-                                    <tr className="border-b border-neutral-100">
-                                        <td className="py-2 pr-4 font-medium">1.0</td>
-                                        <td className="py-2 pr-4 whitespace-nowrap">Jun 2025</td>
-                                        <td className="py-2">Initial comprehensive privacy policy (19 sections + glossary).</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </section>
 
 
                     {/* ══════════════ DEFINITIONS GLOSSARY ══════════════ */}
