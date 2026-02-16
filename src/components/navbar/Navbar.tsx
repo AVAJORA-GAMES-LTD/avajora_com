@@ -38,7 +38,7 @@ export default function Navbar() {
         return () => clearTimeout(timer);
     }, [pathname]);
 
-    const forceWhite = pathname === "/contact" || pathname === "/privacy-policy" || pathname === "/terms-of-service";
+    const forceWhite = pathname === "/contact" || pathname === "/privacy-policy" || pathname === "/terms-of-service" || pathname === "/cookie-policy";
 
     return (
         <nav className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${(isScrolled || forceWhite) ? 'bg-white border-b border-gray-200 shadow-sm' : 'bg-transparent border-b border-transparent'}`}>

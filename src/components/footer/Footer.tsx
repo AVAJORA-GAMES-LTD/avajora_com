@@ -8,6 +8,7 @@ import {
     FaYoutube,
     FaXTwitter,
 } from "react-icons/fa6";
+import { CookieSettingsButton } from "@/components/cookie-consent";
 
 const companyLinks = [
     { label: "Home", href: "/" },
@@ -17,7 +18,9 @@ const companyLinks = [
 
 const legalLinks = [
     { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Cookie Policy", href: "/cookie-policy" },
     { label: "Terms of service", href: "/terms-of-service" },
+    { label: "Do Not Sell or Share My Personal Information", href: "/privacy-policy#jurisdictions" },
 ];
 
 const socialLinks = [
@@ -83,6 +86,9 @@ export default function Footer() {
                                     </Link>
                                 </li>
                             ))}
+                            <li>
+                                <CookieSettingsButton />
+                            </li>
                         </ul>
                     </div>
                 </div>

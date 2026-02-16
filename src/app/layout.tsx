@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Lilita_One } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components";
+import { CookieConsent } from "@/components/cookie-consent";
 
 const lilitaOne = Lilita_One({
   weight: "400",
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body className={`${lilitaOne.variable} font-sans antialiased`}>
         {children}
         <Footer />
+        <CookieConsent />
       </body>
     </html>
   );
