@@ -18,10 +18,12 @@ const companyLinks = [
 
 const legalLinks = [
     { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Privacy Summary", href: "/privacy-summary" },
     { label: "Cookie Policy", href: "/cookie-policy" },
-    { label: "Terms of service", href: "/terms-of-service" },
+    { label: "Terms of Service", href: "/terms-of-service" },
     { label: "Advertising Partners", href: "/advertising-partners" },
-    { label: "Do Not Sell or Share My Personal Information", href: "/privacy-policy#jurisdictions" },
+    { label: "Do Not Sell or Share My Personal Information", href: "/do-not-sell" },
+    { label: "Privacy Request (DSAR)", href: "/privacy/request" },
 ];
 
 const socialLinks = [

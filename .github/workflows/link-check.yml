@@ -1,0 +1,83 @@
+name: Link Check
+
+on:
+    # Run weekly on Mondays at 08:00 UTC
+    schedule:
+        - cron: "0 8 * * 1"
+    # Run on PRs that touch legal/policy pages
+    pull_request:
+        paths:
+            - "src/app/privacy-policy/**"
+            - "src/app/terms-of-service/**"
+            - "src/app/cookie-policy/**"
+            - "src/app/advertising-partners/**"
+            - "src/app/do-not-sell/**"
+            - "src/app/privacy/**"
+            - "src/app/privacy-summary/**"
+    # Allow manual trigger
+    workflow_dispatch:
+
+jobs:
+    link-check:
+        name: Check External Links
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Extract and check links
+              run: |
+                  echo "🔗 Extracting external URLs from legal pages..."
+
+                  # Collect all external URLs from legal page source files
+                  URLS=$(grep -rhoP 'https?://[^\s"'"'"'<>\)\}]+' \
+                    src/app/privacy-policy/ \
+                    src/app/terms-of-service/ \
+                    src/app/cookie-policy/ \
+                    src/app/advertising-partners/ \
+                    src/app/do-not-sell/ \
+                    src/app/privacy/ \
+                    src/app/privacy-summary/ \
+                    2>/dev/null | sort -u)
+
+                  TOTAL=$(echo "$URLS" | wc -l)
+                  echo "Found $TOTAL unique external URLs"
+                  echo ""
+
+                  FAILED=0
+                  SUCCEEDED=0
+
+                  while IFS= read -r url; do
+                    # Skip empty lines
+                    [ -z "$url" ] && continue
+
+                    # Skip mailto and tel links
+                    echo "$url" | grep -qP '^(mailto:|tel:)' && continue
+
+                    # Check the URL (follow redirects, 10s timeout, only check headers)
+                    HTTP_CODE=$(curl -o /dev/null -s -w "%{http_code}" -L --max-time 10 -I "$url" 2>/dev/null || echo "000")
+
+                    if [ "$HTTP_CODE" -ge 200 ] && [ "$HTTP_CODE" -lt 400 ]; then
+                      echo "✅ [$HTTP_CODE] $url"
+                      SUCCEEDED=$((SUCCEEDED + 1))
+                    elif [ "$HTTP_CODE" = "000" ]; then
+                      echo "⚠️  [TIMEOUT] $url"
+                      FAILED=$((FAILED + 1))
+                    else
+                      echo "❌ [$HTTP_CODE] $url"
+                      FAILED=$((FAILED + 1))
+                    fi
+                  done <<< "$URLS"
+
+                  echo ""
+                  echo "================================"
+                  echo "Results: $SUCCEEDED passed, $FAILED failed out of $TOTAL URLs"
+                  echo "================================"
+
+                  if [ "$FAILED" -gt 0 ]; then
+                    echo ""
+                    echo "::warning::$FAILED external link(s) returned errors. Review the log above."
+                    # Exit with warning but don't fail the workflow
+                    # Change to 'exit 1' to make broken links a hard failure
+                    exit 0
+                  fi

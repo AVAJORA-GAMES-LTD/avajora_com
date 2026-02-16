@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import Link from "next/link";
+import { COMPANY as CO } from "@/lib/company";
 
 export const metadata: Metadata = {
     title: "Cookie Policy — AVAJORA GAMES LTD",
@@ -8,18 +9,34 @@ export const metadata: Metadata = {
         "Cookie Policy for the AVAJORA GAMES LTD website. Details on cookies we use, their purposes, and how to manage them.",
 };
 
-const UPDATED = "16 February 2026";
+const UPDATED = "17 February 2026";
+const EFFECTIVE = "17 February 2026";
+const V = "1.1";
 
-const CO = {
-    name: "AVAJORA GAMES LTD",
-    privacy: "privacy@avajora.com",
-    web: "avajora.com",
-} as const;
+const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Cookie Policy",
+    description:
+        "Cookie Policy for the AVAJORA GAMES LTD website. Details on cookies we use, their purposes, and how to manage them.",
+    publisher: {
+        "@type": "Organization",
+        name: CO.name,
+        url: CO.url,
+    },
+    dateModified: "2026-02-17",
+    inLanguage: "en",
+};
 
 export default function CookiePolicyPage() {
     return (
         <>
             <Navbar />
+            {/* JSON-LD structured data */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             <main className="min-h-screen bg-white pt-24 sm:pt-28 md:pt-32 pb-20 sm:pb-24 px-4 sm:px-6">
                 <article className="mx-auto max-w-3xl text-[15px] leading-[1.75] text-neutral-800 sm:text-base sm:leading-[1.8]">
 
@@ -28,7 +45,7 @@ export default function CookiePolicyPage() {
                     </h1>
                     <p className="mt-2 text-neutral-900 font-medium">{CO.name}</p>
                     <p className="mt-4 text-sm text-neutral-500">
-                        Last Updated: {UPDATED}
+                        Version {V} &middot; Last Updated: {UPDATED} &middot; Effective: {EFFECTIVE}
                     </p>
 
                     <hr className="mt-6 mb-8 border-neutral-200" />
@@ -136,14 +153,22 @@ export default function CookiePolicyPage() {
                     <section className="mt-14">
                         <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4">3. How We Obtain Consent</h2>
                         <p>
-                            When you first visit our website, a cookie consent banner is displayed at the bottom of
-                            the page. You can choose to accept or reject non-essential cookies. Your choice is stored
-                            in a first-party cookie so the banner is not shown again.
+                            When you first visit our website, a cookie consent banner (powered by{" "}
+                            <strong>Klaro</strong>, an open-source consent management tool) is displayed at the
+                            bottom of the page. You can choose to accept or reject non-essential cookies. Your
+                            choice is stored in a first-party cookie so the banner is not shown again.
                         </p>
                         <p className="mt-4">
                             Strictly necessary cookies do not require consent as they are essential for the website
                             to function. Non-essential cookies (analytics) are only set after you explicitly consent.
-                            Pre-ticked boxes are not used — consent must be affirmative.
+                            Pre-ticked boxes are not used &mdash; consent must be affirmative.
+                        </p>
+                        <p className="mt-4">
+                            This consent mechanism complies with the <strong>Privacy and Electronic Communications
+                                Regulations 2003</strong> (PECR) in the United Kingdom, the <strong>ePrivacy
+                                    Directive</strong> (2002/58/EC) in the EU, and supplementary guidance from the ICO.
+                            PECR &mdash; not GDPR &mdash; is the primary UK legal framework requiring consent
+                            before setting non-essential cookies.
                         </p>
                     </section>
 

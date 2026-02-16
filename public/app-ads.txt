@@ -1,5 +1,5 @@
 # CAS.ai Updated Feb 16, 2026
-OwnerDomain=cas.ai
+OwnerDomain=avajora.com
 cas.ai, 922e6092, DIRECT
 #=== GoogleAds Jul 25, 2025
 google.com, pub-1022958838828668, DIRECT, f08c47fec0942fa0

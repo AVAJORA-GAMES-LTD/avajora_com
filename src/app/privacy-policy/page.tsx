@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
+import { LegalH3 as H3 } from "@/components/legal";
 import Link from "next/link";
+import { COMPANY as CO } from "@/lib/company";
 
 export const metadata: Metadata = {
     title: "Privacy Policy — AVAJORA GAMES LTD",
@@ -18,27 +20,13 @@ const jsonLd = {
         name: "AVAJORA GAMES LTD",
         url: "https://avajora.com",
     },
-    dateModified: "2025-06-17",
+    dateModified: "2026-02-17",
     inLanguage: "en",
 };
 
-const V = "2.0";
-const UPDATED = "17 June 2025";
-const EFFECTIVE = "17 June 2025";
-
-const CO = {
-    name: "AVAJORA GAMES LTD",
-    trade: "Avajora Games",
-    type: "Private limited company (Ltd)",
-    reg: "17030540",
-    addr: "71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom",
-    country: "England and Wales, United Kingdom",
-    duns: "234577218",
-    email: "ceo@avajora.com",
-    privacy: "privacy@avajora.com",
-    support: "support@avajora.com",
-    web: "avajora.com",
-} as const;
+const V = "2.1";
+const UPDATED = "17 February 2026";
+const EFFECTIVE = "17 February 2026";
 
 const TOC = [
     { id: "who-we-are", label: "Who We Are" },
@@ -59,13 +47,9 @@ const TOC = [
     { id: "notifications", label: "Push Notifications & Marketing" },
     { id: "changes", label: "Changes to This Policy" },
     { id: "misc", label: "General Provisions" },
-    { id: "how-to-contact", label: "How to Contact Us" },
 ];
 
-/* helper — consistent sub-heading */
-const H3 = ({ children }: { children: React.ReactNode }) => (
-    <h3 className="text-lg font-bold text-neutral-900 mt-8 mb-3">{children}</h3>
-);
+/* H3 imported from @/components/legal */
 
 /* ─────────────────────────────────────────────
    Page
@@ -154,7 +138,7 @@ export default function PrivacyPolicyPage() {
                                 ))}
                                 <tr className="border-b border-neutral-100">
                                     <td className="py-2 pr-4 text-neutral-500 align-top whitespace-nowrap">Contact</td>
-                                    <td className="py-2"><a href={`mailto:${CO.email}`} className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">{CO.email}</a></td>
+                                    <td className="py-2"><a href={`mailto:${CO.legal}`} className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">{CO.legal}</a></td>
                                 </tr>
                                 <tr>
                                     <td className="py-2 pr-4 text-neutral-500 align-top whitespace-nowrap">Privacy Enquiries</td>
@@ -510,9 +494,10 @@ export default function PrivacyPolicyPage() {
 
                         <H3>5.6 Consent &amp; Opt-Out Mechanisms</H3>
                         <p>
-                            CAS.ai supports the IAB Transparency &amp; Consent Framework (TCF 2.2). For EEA and UK
+                            CAS.ai supports the IAB Transparency &amp; Consent Framework (TCF 2.2) via its built-in
+                            Consent Management Platform (CMP). For EEA and UK
                             users, personalised advertising via CAS.ai mediation is only displayed after you provide
-                            explicit consent through the consent management popup shown at first launch. You may
+                            explicit consent through the CMP popup shown at first launch. You may
                             update your preferences at any time via Settings &gt; Privacy within the game.
                         </p>
                         <p className="mt-3">
@@ -525,7 +510,7 @@ export default function PrivacyPolicyPage() {
                         </p>
                         <ul className="list-disc pl-5 space-y-2 mt-3">
                             <li><strong>EEA/UK users:</strong> Personalised ads are only shown after you give explicit consent via the consent popup presented at first launch.</li>
-                            <li><strong>US users:</strong> You may opt out of the &ldquo;sale&rdquo; or &ldquo;sharing&rdquo; of your personal information via Settings &gt; Privacy &gt; Advertising Preferences within the game.</li>
+                            <li><strong>US users:</strong> You may opt out of the &ldquo;sale&rdquo; or &ldquo;sharing&rdquo; of your personal information via Settings &gt; Privacy &gt; Advertising Preferences within the game, or via our <Link href="/do-not-sell" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">Do Not Sell or Share</Link> page.</li>
                             <li><strong>To withdraw consent:</strong> Navigate to Settings &gt; Privacy &gt; Advertising Preferences within the game at any time. Withdrawal takes effect immediately.</li>
                             <li><strong>Unity Ads:</strong> Unity Ads displays a Data Privacy icon on ad units through which you can access your data and opt out of future collection.</li>
                             <li><strong>Liftoff opt-out:</strong>{" "}<a href="https://vungle.com/opt-out/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://vungle.com/opt-out/</a></li>
@@ -654,6 +639,15 @@ export default function PrivacyPolicyPage() {
                             will not pass advertising identifiers to downstream networks for targeting.
                         </p>
                         <p className="mt-4">
+                            <strong>UK Age Appropriate Design Code (AADC).</strong> As a UK-registered company, we
+                            are aware of the Age Appropriate Design Code (also known as the Children&rsquo;s Code),
+                            which has been enforceable since September 2021. We have implemented age-appropriate
+                            defaults: behavioural profiling and targeted advertising are disabled by default for
+                            users who may be children, geolocation data is not collected, and data collection is
+                            minimised to what is strictly necessary for the service. Our privacy settings are
+                            designed to be high-privacy by default.
+                        </p>
+                        <p className="mt-4">
                             If a parent or guardian believes their child has provided personal information to us or
                             to one of our advertising partners through our games, please contact us at{" "}
                             <a href={`mailto:${CO.privacy}`} className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">{CO.privacy}</a>.
@@ -711,6 +705,7 @@ export default function PrivacyPolicyPage() {
                         <ul className="list-disc pl-5 space-y-2">
                             <li>Email us at <a href={`mailto:${CO.privacy}`} className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">{CO.privacy}</a>.</li>
                             <li>Use the in-app privacy settings: Settings &gt; Privacy &gt; Contact Us.</li>
+                            <li>Submit a structured request via our <Link href="/privacy/request" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">Privacy Request</Link> page.</li>
                             <li>We may ask you to confirm your account email and provide your in-game user ID to verify your identity before fulfilling a request.</li>
                             <li>GDPR response timeframe: 30 calendar days (extendable by 2 months for complex requests, with notice).</li>
                             <li>CCPA response timeframe: 45 calendar days (extendable by a further 45 days with notice).</li>
@@ -843,6 +838,7 @@ export default function PrivacyPolicyPage() {
                             <li><strong>Encryption at rest.</strong> Data stored on our servers is encrypted at rest using Google Cloud&rsquo;s default encryption.</li>
                             <li><strong>Access controls.</strong> Access to personal data is restricted to authorised personnel who need it to perform their duties. Staff are bound by confidentiality obligations.</li>
                             <li><strong>Breach response.</strong> We maintain a data breach response plan. Under GDPR, we will notify the ICO within 72 hours of becoming aware of a personal data breach likely to result in risk to individuals.</li>
+                            <li><strong>Record of Processing Activities (ROPA).</strong> We maintain a Record of Processing Activities as required by GDPR Article 30, documenting all categories of processing, their purposes, legal bases, recipients, and retention periods.</li>
                         </ul>
                         <p className="mt-4">
                             No method of transmission over the internet or method of electronic storage is 100% secure.
@@ -889,8 +885,11 @@ export default function PrivacyPolicyPage() {
                         </p>
 
                         <p className="mt-4">
-                            <strong>Do Not Track.</strong> Our systems do not currently respond to browser
-                            &ldquo;Do Not Track&rdquo; (DNT) signals.
+                            <strong>Do Not Track (DNT).</strong> Our systems do not currently respond to browser
+                            &ldquo;Do Not Track&rdquo; (DNT) signals, as DNT lacks a common industry standard.
+                            However, we <strong>do</strong> honour the <strong>Global Privacy Control</strong>{" "}
+                            (GPC) browser signal as a valid opt-out request under the CCPA/CPRA and CPA — see
+                            Section 14.4 for details.
                         </p>
 
                         <p className="mt-4">
@@ -1042,6 +1041,14 @@ export default function PrivacyPolicyPage() {
                             activities change to require a formal DPO appointment, we will update this section
                             accordingly.
                         </p>
+                        <p className="mt-4">
+                            Please contact{" "}
+                            <a href={`mailto:${CO.privacy}`} className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">{CO.privacy}</a>{" "}
+                            with any questions regarding this Privacy Policy. You may also submit a structured
+                            request via our{" "}
+                            <Link href="/privacy/request" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">Privacy Request</Link>{" "}
+                            page.
+                        </p>
                     </section>
 
 
@@ -1120,15 +1127,41 @@ export default function PrivacyPolicyPage() {
                     </section>
 
 
-                    {/* ══════════════ 19. HOW TO CONTACT US ══════════════ */}
+                    {/* Section 19 merged into Section 15 (Contact & Data Protection) */}
 
-                    <section id="how-to-contact" className="mt-14">
-                        <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4">19. How to Contact Us</h2>
-                        <p>
-                            Please contact{" "}
-                            <a href={`mailto:${CO.privacy}`} className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">{CO.privacy}</a>{" "}
-                            with any questions regarding this Privacy Policy.
-                        </p>
+
+                    {/* ══════════════ CHANGELOG ══════════════ */}
+
+                    <section className="mt-14">
+                        <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4">Revision History</h2>
+                        <div className="overflow-x-auto">
+                            <table className="w-full text-sm border-collapse">
+                                <thead>
+                                    <tr className="border-b-2 border-neutral-200 text-left">
+                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Version</th>
+                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Date</th>
+                                        <th className="py-2 text-neutral-500 font-semibold">Summary of Changes</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="align-top">
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4 font-medium">2.1</td>
+                                        <td className="py-2 pr-4 whitespace-nowrap">17 Feb 2026</td>
+                                        <td className="py-2">Added UK AADC mention; ROPA statement; CAS.ai CMP ID; GPC vs DNT clarification; merged sections 15 &amp; 19; added links to /do-not-sell, /privacy/request, /privacy-summary pages; changelog added.</td>
+                                    </tr>
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4 font-medium">2.0</td>
+                                        <td className="py-2 pr-4 whitespace-nowrap">17 Jun 2025</td>
+                                        <td className="py-2">Full rewrite for CAS.ai SDK stack (replaced AppLovin MAX mediation); added 11-network advertising partner disclosures; InMobi joint controller language; Liftoff/Vungle opt-out; COPPA dashboard flags; IAB TCF 2.2 via CAS.ai CMP; Unity Analytics replacing Firebase.</td>
+                                    </tr>
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4 font-medium">1.0</td>
+                                        <td className="py-2 pr-4 whitespace-nowrap">Jun 2025</td>
+                                        <td className="py-2">Initial comprehensive privacy policy (19 sections + glossary).</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </section>
 
 

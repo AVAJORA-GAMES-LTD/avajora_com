@@ -1,6 +1,8 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
+import { LegalH3 as H3 } from "@/components/legal";
 import Link from "next/link";
+import { COMPANY as CO } from "@/lib/company";
 
 export const metadata: Metadata = {
     title: "Terms of Service — AVAJORA GAMES LTD",
@@ -19,28 +21,14 @@ const jsonLd = {
         name: "AVAJORA GAMES LTD",
         url: "https://avajora.com",
     },
-    dateModified: "2025-06-17",
+    dateModified: "2026-02-17",
     inLanguage: "en",
 };
 
 /* ── constants ── */
-const V = "1.1";
-const UPDATED = "17 June 2025";
-const EFFECTIVE = "17 June 2025";
-
-const CO = {
-    name: "AVAJORA GAMES LTD",
-    trade: "Avajora Games",
-    type: "Private limited company (Ltd)",
-    reg: "17030540",
-    addr: "71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom",
-    country: "England and Wales, United Kingdom",
-    duns: "234577218",
-    email: "ceo@avajora.com",
-    legal: "legal@avajora.com",
-    support: "support@avajora.com",
-    web: "avajora.com",
-} as const;
+const V = "1.2";
+const UPDATED = "17 February 2026";
+const EFFECTIVE = "17 February 2026";
 
 const TOC = [
     { id: "introduction", label: "Introduction" },
@@ -74,13 +62,7 @@ const TOC = [
     { id: "contact", label: "How to Contact Us" },
 ];
 
-function H3({ children }: { children: React.ReactNode }) {
-    return (
-        <h3 className="mt-6 mb-2 text-base font-semibold text-neutral-900">
-            {children}
-        </h3>
-    );
-}
+/* H3 imported from @/components/legal */
 
 export default function TermsOfServicePage() {
     return (
@@ -110,9 +92,10 @@ export default function TermsOfServicePage() {
                             TL;DR (not legally binding)
                         </p>
                         <p className="text-sm text-neutral-600">
-                            You can use our games for personal entertainment. We show ads (via AppLovin MAX,
-                            Google AdMob, and Unity Ads) and offer optional in-app purchases — you can buy
-                            virtual items but they have no real-world value. We do not sell your personal data.
+                            You can use our games for personal entertainment. We show ads (via CAS.ai
+                            mediation, routing to networks such as Unity Ads, AppLovin, Google AdMob, and
+                            others) and offer optional in-app purchases — you can buy virtual items but
+                            they have no real-world value. We do not sell your personal data.
                             You may cancel or request refunds per your app store&apos;s policies and applicable law
                             (including UK cooling-off rights). We are a UK company and English law applies.
                             Read the full terms below for the legally binding details.
@@ -129,7 +112,7 @@ export default function TermsOfServicePage() {
                                 <li key={item.id}>
                                     <a
                                         href={`#${item.id}`}
-                                        className="text-blue-700 hover:underline"
+                                        className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
                                     >
                                         {item.label}
                                     </a>
@@ -152,7 +135,7 @@ export default function TermsOfServicePage() {
                             (including{" "}
                             <a
                                 href={`https://${CO.web}`}
-                                className="text-blue-700 hover:underline"
+                                className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
@@ -164,7 +147,7 @@ export default function TermsOfServicePage() {
                             By downloading, installing, accessing, or using any of our Services, you
                             confirm that you have read, understood, and agree to be bound by these Terms
                             and our{" "}
-                            <Link href="/privacy-policy" className="text-blue-700 hover:underline">
+                            <Link href="/privacy-policy" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">
                                 Privacy Policy
                             </Link>
                             . If you do not agree, you must not use our Services.
@@ -268,7 +251,7 @@ export default function TermsOfServicePage() {
                                     <td className="py-2">
                                         <a
                                             href={`https://${CO.web}`}
-                                            className="text-blue-700 hover:underline"
+                                            className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
                                         >
                                             {CO.web}
                                         </a>
@@ -344,7 +327,7 @@ export default function TermsOfServicePage() {
                                 Notify us immediately at{" "}
                                 <a
                                     href={`mailto:${CO.support}`}
-                                    className="text-blue-700 hover:underline"
+                                    className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
                                 >
                                     {CO.support}
                                 </a>{" "}
@@ -359,7 +342,7 @@ export default function TermsOfServicePage() {
                             You may request deletion of your account at any time by contacting us at{" "}
                             <a
                                 href={`mailto:${CO.support}`}
-                                className="text-blue-700 hover:underline"
+                                className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
                             >
                                 {CO.support}
                             </a>
@@ -613,7 +596,7 @@ export default function TermsOfServicePage() {
                                 <strong>CAS.ai</strong> (mediation orchestrator) —{" "}
                                 <a
                                     href="https://cas.ai/privacy-policy"
-                                    className="text-blue-700 hover:underline"
+                                    className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
@@ -624,7 +607,7 @@ export default function TermsOfServicePage() {
                                 <strong>Unity Ads</strong> (direct SDK + via CAS.ai) —{" "}
                                 <a
                                     href="https://unity.com/legal/game-player-and-app-user-privacy-policy"
-                                    className="text-blue-700 hover:underline"
+                                    className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
@@ -635,7 +618,7 @@ export default function TermsOfServicePage() {
                                 <strong>Liftoff Monetize (Vungle)</strong> (direct SDK + via CAS.ai) —{" "}
                                 <a
                                     href="https://vungle.com/privacy/"
-                                    className="text-blue-700 hover:underline"
+                                    className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
@@ -644,7 +627,7 @@ export default function TermsOfServicePage() {
                                 | Opt-out:{" "}
                                 <a
                                     href="https://vungle.com/opt-out/"
-                                    className="text-blue-700 hover:underline"
+                                    className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
@@ -655,7 +638,7 @@ export default function TermsOfServicePage() {
                                 <strong>InMobi</strong> (direct SDK + via CAS.ai) —{" "}
                                 <a
                                     href="https://www.inmobi.com/privacy-policy/"
-                                    className="text-blue-700 hover:underline"
+                                    className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
@@ -664,7 +647,7 @@ export default function TermsOfServicePage() {
                                 | Opt-out:{" "}
                                 <a
                                     href="https://www.inmobi.com/page/opt-out/"
-                                    className="text-blue-700 hover:underline"
+                                    className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
@@ -675,7 +658,7 @@ export default function TermsOfServicePage() {
                                 <strong>AppLovin</strong> (via CAS.ai mediation) —{" "}
                                 <a
                                     href="https://legal.applovin.com/privacy/"
-                                    className="text-blue-700 hover:underline"
+                                    className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
@@ -686,7 +669,7 @@ export default function TermsOfServicePage() {
                                 <strong>Google AdMob</strong> (via CAS.ai mediation) —{" "}
                                 <a
                                     href="https://policies.google.com/privacy"
-                                    className="text-blue-700 hover:underline"
+                                    className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
@@ -698,7 +681,7 @@ export default function TermsOfServicePage() {
                             CAS.ai may also route ads to additional networks including ironSource (Unity LevelPlay),
                             Meta Audience Network, Mintegral, Pangle (ByteDance), and Digital Turbine. A full and
                             always up-to-date list is available at{" "}
-                            <Link href="/advertising-partners" className="text-blue-700 hover:underline">
+                            <Link href="/advertising-partners" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">
                                 avajora.com/advertising-partners
                             </Link>
                             .
@@ -710,7 +693,7 @@ export default function TermsOfServicePage() {
                             IP address, usage data, and ad interaction data to serve personalised or
                             contextual advertisements. For full details on what data is collected and how it
                             is used, please see our{" "}
-                            <Link href="/privacy-policy" className="text-blue-700 hover:underline">
+                            <Link href="/privacy-policy" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">
                                 Privacy Policy
                             </Link>
                             .
@@ -740,7 +723,7 @@ export default function TermsOfServicePage() {
                         <p>
                             Your privacy is important to us. Our collection, use, and sharing of personal
                             data is governed by our{" "}
-                            <Link href="/privacy-policy" className="text-blue-700 hover:underline">
+                            <Link href="/privacy-policy" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">
                                 Privacy Policy
                             </Link>
                             , which is incorporated into these Terms by reference. By using the Services, you
@@ -759,7 +742,7 @@ export default function TermsOfServicePage() {
                             LTD) as our ad mediation platform, which may route data to multiple advertising networks
                             including AppLovin, Google AdMob, ironSource, Meta, Vungle/Liftoff, InMobi, and others.
                             We do not sell your personal data. For full details, please refer to our{" "}
-                            <Link href="/privacy-policy" className="text-blue-700 hover:underline">
+                            <Link href="/privacy-policy" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">
                                 Privacy Policy
                             </Link>
                             .
@@ -779,7 +762,7 @@ export default function TermsOfServicePage() {
                         <p className="mt-3">
                             For full details on the cookies we use, their purposes, and how to manage your
                             preferences, please see our{" "}
-                            <Link href="/cookie-policy" className="text-blue-700 hover:underline">
+                            <Link href="/cookie-policy" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">
                                 Cookie Policy
                             </Link>
                             .
@@ -852,7 +835,7 @@ export default function TermsOfServicePage() {
                             that constitutes copyright infringement, please send a written notice to{" "}
                             <a
                                 href={`mailto:${CO.legal}`}
-                                className="text-blue-700 hover:underline"
+                                className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
                             >
                                 {CO.legal}
                             </a>{" "}
@@ -1036,7 +1019,7 @@ export default function TermsOfServicePage() {
                             contacting{" "}
                             <a
                                 href={`mailto:${CO.support}`}
-                                className="text-blue-700 hover:underline"
+                                className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
                             >
                                 {CO.support}
                             </a>
@@ -1073,7 +1056,7 @@ export default function TermsOfServicePage() {
                             the Services through good-faith negotiations by contacting us at{" "}
                             <a
                                 href={`mailto:${CO.legal}`}
-                                className="text-blue-700 hover:underline"
+                                className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
                             >
                                 {CO.legal}
                             </a>
@@ -1094,7 +1077,7 @@ export default function TermsOfServicePage() {
                             Resolution (ODR) platform at{" "}
                             <a
                                 href="https://ec.europa.eu/consumers/odr"
-                                className="text-blue-700 hover:underline"
+                                className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
@@ -1163,7 +1146,7 @@ export default function TermsOfServicePage() {
                             app settings or upon request by contacting{" "}
                             <a
                                 href={`mailto:${CO.support}`}
-                                className="text-blue-700 hover:underline"
+                                className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
                             >
                                 {CO.support}
                             </a>
@@ -1186,7 +1169,7 @@ export default function TermsOfServicePage() {
                             contact us at{" "}
                             <a
                                 href={`mailto:${CO.support}`}
-                                className="text-blue-700 hover:underline"
+                                className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
                             >
                                 {CO.support}
                             </a>{" "}
@@ -1203,11 +1186,11 @@ export default function TermsOfServicePage() {
                         <H3>28.1 Entire agreement</H3>
                         <p>
                             These Terms, together with our{" "}
-                            <Link href="/privacy-policy" className="text-blue-700 hover:underline">
+                            <Link href="/privacy-policy" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">
                                 Privacy Policy
                             </Link>{" "}
                             and{" "}
-                            <Link href="/cookie-policy" className="text-blue-700 hover:underline">
+                            <Link href="/cookie-policy" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">
                                 Cookie Policy
                             </Link>
                             , constitute the entire agreement between you and {CO.name} regarding the Services
@@ -1274,7 +1257,7 @@ export default function TermsOfServicePage() {
                             All notices to us should be sent to{" "}
                             <a
                                 href={`mailto:${CO.legal}`}
-                                className="text-blue-700 hover:underline"
+                                className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
                             >
                                 {CO.legal}
                             </a>{" "}
@@ -1325,7 +1308,7 @@ export default function TermsOfServicePage() {
                                     <td className="py-2">
                                         <a
                                             href={`mailto:${CO.support}`}
-                                            className="text-blue-700 hover:underline"
+                                            className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
                                         >
                                             {CO.support}
                                         </a>
@@ -1338,7 +1321,7 @@ export default function TermsOfServicePage() {
                                     <td className="py-2">
                                         <a
                                             href={`mailto:${CO.legal}`}
-                                            className="text-blue-700 hover:underline"
+                                            className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
                                         >
                                             {CO.legal}
                                         </a>
@@ -1351,7 +1334,7 @@ export default function TermsOfServicePage() {
                                     <td className="py-2">
                                         <a
                                             href={`https://${CO.web}`}
-                                            className="text-blue-700 hover:underline"
+                                            className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
                                         >
                                             {CO.web}
                                         </a>

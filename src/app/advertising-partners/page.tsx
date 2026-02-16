@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import Link from "next/link";
+import { COMPANY as CO } from "@/lib/company";
 
 export const metadata: Metadata = {
     title: "Advertising Partners — AVAJORA GAMES LTD",
@@ -19,16 +20,12 @@ const jsonLd = {
         name: "AVAJORA GAMES LTD",
         url: "https://avajora.com",
     },
-    dateModified: "2025-06-17",
+    dateModified: "2026-02-17",
     inLanguage: "en",
 };
 
-const UPDATED = "17 June 2025";
-
-const CO = {
-    name: "AVAJORA GAMES LTD",
-    privacy: "privacy@avajora.com",
-} as const;
+const UPDATED = "17 February 2026";
+const V = "1.1";
 
 const partners = [
     {
@@ -77,8 +74,8 @@ const partners = [
         name: "ironSource (Unity LevelPlay)",
         how: "Via CAS.ai mediation",
         data: "IDFA/GAID, IP address, device info, ad events",
-        url: "https://ironsrc.com/wp-content/uploads/2019/03/ironSource-Mobile-Privacy-Policy.pdf",
-        urlLabel: "ironSource Privacy Policy",
+        url: "https://unity.com/legal/privacy-policy",
+        urlLabel: "unity.com/legal/privacy-policy",
     },
     {
         name: "Meta Audience Network",
@@ -127,7 +124,7 @@ export default function AdvertisingPartnersPage() {
                     </h1>
                     <p className="mt-2 text-neutral-900 font-medium">{CO.name}</p>
                     <p className="mt-4 text-sm text-neutral-500">
-                        Last Updated: {UPDATED}
+                        Version {V} &middot; Last Updated: {UPDATED}
                     </p>
 
                     <hr className="mt-6 mb-8 border-neutral-200" />
@@ -191,6 +188,45 @@ export default function AdvertisingPartnersPage() {
                                 ))}
                             </tbody>
                         </table>
+                    </div>
+
+                    <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mt-10 mb-4">
+                        How Your Data Flows
+                    </h2>
+                    <div className="bg-neutral-50 border border-neutral-200 rounded-lg p-5 sm:p-6 overflow-x-auto mb-8">
+                        <div className="flex flex-col items-center gap-2 text-sm min-w-[320px]">
+                            <div className="bg-neutral-900 text-white rounded-lg px-6 py-3 text-center font-medium w-full max-w-xs">
+                                📱 Your Device
+                            </div>
+                            <div className="text-neutral-400 text-lg">↓</div>
+                            <div className="bg-white border-2 border-neutral-300 rounded-lg px-6 py-3 text-center font-medium w-full max-w-xs">
+                                🎮 Our Game App
+                            </div>
+                            <div className="flex gap-8 items-start mt-1">
+                                <div className="flex flex-col items-center gap-2">
+                                    <div className="text-neutral-400 text-lg">↓</div>
+                                    <div className="bg-blue-50 border border-blue-200 rounded-lg px-4 py-2 text-center text-xs font-medium">
+                                        📊 Unity Analytics
+                                    </div>
+                                    <div className="text-[11px] text-neutral-500 text-center max-w-[120px]">
+                                        Gameplay data only<br />(device-bound ID)
+                                    </div>
+                                </div>
+                                <div className="flex flex-col items-center gap-2">
+                                    <div className="text-neutral-400 text-lg">↓</div>
+                                    <div className="bg-amber-50 border border-amber-200 rounded-lg px-4 py-2 text-center text-xs font-medium">
+                                        🔀 CAS.ai Mediation
+                                    </div>
+                                    <div className="text-neutral-400 text-lg">↓</div>
+                                    <div className="bg-orange-50 border border-orange-200 rounded-lg px-4 py-2 text-center text-xs font-medium">
+                                        📢 11 Ad Networks
+                                    </div>
+                                    <div className="text-[11px] text-neutral-500 text-center max-w-[140px]">
+                                        Advertising ID, IP,<br />device info, ad events
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mt-10 mb-4">
