@@ -18,13 +18,13 @@ const jsonLd = {
         name: "AVAJORA GAMES LTD",
         url: "https://avajora.com",
     },
-    dateModified: "2026-02-16",
+    dateModified: "2025-06-17",
     inLanguage: "en",
 };
 
-const V = "1.0";
-const UPDATED = "16 February 2026";
-const EFFECTIVE = "16 February 2026";
+const V = "2.0";
+const UPDATED = "17 June 2025";
+const EFFECTIVE = "17 June 2025";
 
 const CO = {
     name: "AVAJORA GAMES LTD",
@@ -197,9 +197,9 @@ export default function PrivacyPolicyPage() {
                             <li><strong>Device Identifiers.</strong> Apple Identifier for Advertisers (IDFA) on iOS; Google Advertising ID (GAID) on Android. These are non-permanent, resettable identifiers that enable ad personalisation, frequency capping, and attribution. You can reset or limit them in your device settings (iOS: Settings &gt; Privacy &amp; Security &gt; Tracking; Android 12+: Settings &gt; Google &gt; Ads &gt; Delete Advertising ID). We also collect the Identifier for Vendor (IDFV) or Android ID for analytics purposes; these do not follow you across apps.</li>
                             <li><strong>IP Address.</strong> Collected automatically. We use your IP address to derive broad geographic location (country and city) and do not store the raw IP address after location derivation is complete.</li>
                             <li><strong>Device &amp; OS Information.</strong> Manufacturer, model, screen resolution, operating system and version, system language and locale, network type (Wi-Fi or mobile data), and basic hardware specifications (CPU, RAM, available storage). Used for game compatibility, performance optimisation, and detecting low-end devices.</li>
-                            <li><strong>Gameplay / Session Data.</strong> Level reached, scores, session start and end times, features used, items purchased, achievements unlocked. This is core analytics data processed via Firebase Analytics.</li>
+                            <li><strong>Gameplay / Session Data.</strong> Level reached, scores, session start and end times, features used, items purchased, achievements unlocked. This is core analytics data processed via Unity Analytics.</li>
                             <li><strong>Ad Interaction Data.</strong> Which ads were shown, viewed, clicked, or resulted in installs. Used for ad measurement, fraud detection, and campaign optimisation.</li>
-                            <li><strong>Crash &amp; Error Logs.</strong> Stack traces, error codes, and device state at the time of a crash. Collected via Firebase Crashlytics. These logs do not ordinarily contain personal identity information.</li>
+                            <li><strong>Crash &amp; Error Logs.</strong> Stack traces, error codes, and device state at the time of a crash. These logs do not ordinarily contain personal identity information.</li>
                             <li><strong>App Performance Metrics.</strong> Frame rate, load times, latency. Used for quality assurance.</li>
                             <li><strong>Broad Geolocation.</strong> Country or city derived from your IP address. We never collect precise GPS-level location data.</li>
                             <li><strong>Third-Party SDK Data.</strong> Third-party SDKs integrated in our games (see Section 5) automatically collect certain device and usage data. Please refer to each SDK&rsquo;s own privacy policy for details.</li>
@@ -207,7 +207,7 @@ export default function PrivacyPolicyPage() {
 
                         <H3>2.3 Data Received From Third Parties</H3>
                         <ul className="list-disc pl-5 space-y-2">
-                            <li><strong>Install Attribution Data.</strong> From advertising networks: which campaign, network, or creative led to a user installing our game. Includes a device ID hash, not personal identity.</li>
+                            <li><strong>Install Attribution Data.</strong> From advertising networks (e.g. CAS.ai downstream partners, Unity Ads): which campaign, network, or creative led to a user installing our game. Includes a device ID hash, not personal identity.</li>
                             <li><strong>App Store Transaction Data.</strong> From Google Play and the Apple App Store: device ID, order timestamp, encrypted order details. Used only to fulfil in-app purchases.</li>
                             <li><strong>Analytics Aggregates.</strong> Third-party analytics providers may share aggregated or benchmarked data back to us. This is not individual-level personal data.</li>
                         </ul>
@@ -231,7 +231,7 @@ export default function PrivacyPolicyPage() {
                             <li><strong>Service Delivery.</strong> To operate our games, enable core features, serve game content, apply updates, and ensure the game runs correctly on your device.</li>
                             <li><strong>In-App Purchase Fulfilment.</strong> To verify, process, and deliver in-app purchases and subscriptions made through the app store.</li>
                             <li><strong>Game Performance &amp; Bug Fixing.</strong> To identify crashes, performance bottlenecks, and technical errors in order to improve game stability.</li>
-                            <li><strong>Analytics &amp; Research.</strong> To understand how users interact with our games, identify popular features, inform product decisions, and improve future game design. Processed via Firebase Analytics.</li>
+                            <li><strong>Analytics &amp; Research.</strong> To understand how users interact with our games, identify popular features, inform product decisions, and improve future game design. Processed via Unity Analytics (see Section 5.8).</li>
                             <li><strong>Displaying Contextual Ads.</strong> To show non-personalised advertisements to users who have not consented to interest-based advertising.</li>
                             <li><strong>Displaying Personalised Ads.</strong> To show targeted, interest-based advertisements to users who have given explicit consent. Legal basis: consent only.</li>
                             <li><strong>Cross-Promotion.</strong> To promote our other games to users of this game.</li>
@@ -380,14 +380,37 @@ export default function PrivacyPolicyPage() {
                             will be contextual and not tailored to you. The number of ads does not change.
                         </p>
 
-                        <H3>5.4 Advertising Network Partners</H3>
+                        <H3>5.4 Ad Mediation &amp; Network Partners</H3>
                         <p>
-                            We integrate the following advertising networks in our games. Each network may receive
-                            your advertising identifier (IDFA/GAID), IP-derived country/city, app bundle identifier,
-                            ad placement identifier, and interaction events (impressions, clicks). They do not receive
-                            your name, email, or precise GPS location.
+                            Our games are free to play and are funded by in-app advertising. To enable this, we and
+                            our advertising partners collect certain information from your device. This subsection
+                            explains what is collected, by whom, for what purpose, and how you can control it.
                         </p>
-                        <ul className="list-disc pl-5 space-y-2 mt-3">
+                        <p className="mt-4">
+                            We use <strong>CAS.ai</strong> (Clever Ads Solutions, operated by CLEAR INVEST LTD) as
+                            our advertising mediation platform. CAS.ai manages in-game advertising by conducting
+                            real-time auctions among multiple advertising networks simultaneously. When an advertising
+                            slot becomes available in the game, CAS.ai sends a request to multiple advertising companies
+                            at the same time. Each company offers a price for that slot, and the highest-paying ad is
+                            displayed. This process takes milliseconds and is invisible to you. As part of this process,
+                            your device&rsquo;s advertising identifier (IDFA on iOS / GAID on Android), IP address,
+                            device model, operating system, app identifier, and ad interaction data may be transmitted
+                            to participating ad networks. For CAS.ai&rsquo;s own data practices, visit:{" "}
+                            <a href="https://cas.ai/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://cas.ai/privacy-policy</a>
+                        </p>
+                        <p className="mt-4">
+                            CAS.ai uses the IAB Open Measurement SDK (OM SDK) to allow third-party ad measurement
+                            companies to verify ad impressions. Third-party measurement partners may collect and process
+                            data as part of the IAB Open Measurement Working Group to perform ad measurement and
+                            related services.
+                        </p>
+                        <p className="mt-4">
+                            Because CAS.ai routes data to many ad networks, your privacy policy disclosures extend to
+                            every downstream network. The following are the direct and mediated ad network partners
+                            integrated in our games:
+                        </p>
+
+                        <ul className="list-disc pl-5 space-y-3 mt-4">
                             <li>
                                 <strong>AppLovin</strong> — We work with AppLovin to deliver ads in our mobile
                                 application and other devices and/or platforms. For more information about
@@ -395,38 +418,123 @@ export default function PrivacyPolicyPage() {
                                 <a href="https://legal.applovin.com/privacy/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://legal.applovin.com/privacy/</a>
                             </li>
                             <li>
-                                <strong>Google AdMob</strong> —{" "}
+                                <strong>Unity Ads</strong> (Unity Technologies Inc.) — Unity Ads displays ads in our
+                                games and may collect your advertising identifier (IDFA/GAID), IP address (used to derive
+                                approximate geographic location at the city/country level), device model and operating
+                                system version, app identifier (bundle ID), and ad interaction events (impression,
+                                completion, click, skip). Unity Ads displays a Data Privacy icon directly on ad units,
+                                through which you can access the personal data collected from your device on a per-app
+                                basis and opt out of future collection. Privacy policy:{" "}
+                                <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://unity.com/legal/game-player-and-app-user-privacy-policy</a>
+                            </li>
+                            <li>
+                                <strong>Liftoff Monetize</strong> (Liftoff Mobile Inc. / LMI Inc., formerly Vungle) —
+                                Liftoff and its demand partners use tracking technologies to collect Ad Data including
+                                your device advertising identifier (IDFA/GAID), IP address (used for approximate
+                                geolocation), device model and OS, app identifier, and ad interaction data (impression,
+                                click, completion) for the purpose of serving targeted advertisements. Liftoff does not
+                                record or store personal information that users cannot easily revoke (such as email
+                                addresses or phone numbers); it relies only on device advertising IDs, which you control
+                                and can reset or delete at any time via device settings. Users who wish to opt out of
+                                Liftoff&rsquo;s collection and use of their information for targeted advertising can do
+                                so at:{" "}
+                                <a href="https://vungle.com/opt-out/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://vungle.com/opt-out/</a>.
+                                Privacy policy:{" "}
+                                <a href="https://vungle.com/privacy/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://vungle.com/privacy/</a>
+                            </li>
+                            <li>
+                                <strong>InMobi</strong> (InMobi Pte. Ltd., Singapore / InMobi Inc., USA) — InMobi
+                                provides advertising services in our games, including <em>retargeting advertising</em> —
+                                ads may be shown to you based on your prior interactions with apps or sites that use
+                                InMobi. InMobi may collect your device advertising identifier (IDFA/GAID), IP address
+                                (used to estimate geographic location at country/city level), device model and operating
+                                system, app bundle identifier, and ad interaction events. InMobi retains device-level
+                                data for a maximum of 13 months, after which data is deleted or retained in aggregated
+                                (non-personal) format. InMobi acts as a <strong>joint controller</strong> with us under
+                                GDPR — both parties share responsibility for how personal data is processed. For EEA and
+                                UK users, InMobi requires consent via the IAB TCF 2.2 framework (IAB Vendor ID 333)
+                                before serving personalised ads. Users can opt out of InMobi&rsquo;s interest-based
+                                advertising at any time by visiting:{" "}
+                                <a href="https://www.inmobi.com/page/opt-out/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://www.inmobi.com/page/opt-out/</a>.
+                                Users who wish to exercise data subject rights (access, deletion, objection) with
+                                respect to InMobi&rsquo;s processing may contact InMobi directly at:{" "}
+                                <a href="mailto:privacy@inmobi.com" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">privacy@inmobi.com</a>.
+                                Privacy policy:{" "}
+                                <a href="https://www.inmobi.com/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://www.inmobi.com/privacy-policy/</a>
+                            </li>
+                            <li>
+                                <strong>Google AdMob</strong> — Reached via CAS.ai mediation.{" "}
                                 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://policies.google.com/privacy</a>
                             </li>
                             <li>
-                                <strong>Unity Ads (including ironSource)</strong> — ironSource was acquired by Unity
-                                and is now part of Unity&rsquo;s advertising platform.{" "}
-                                <a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://unity.com/legal/privacy-policy</a>
+                                <strong>ironSource (Unity LevelPlay)</strong> — Reached via CAS.ai mediation.{" "}
+                                <a href="https://ironsrc.com/wp-content/uploads/2019/03/ironSource-Mobile-Privacy-Policy.pdf" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">ironSource Privacy Policy</a>
+                            </li>
+                            <li>
+                                <strong>Meta Audience Network</strong> — Reached via CAS.ai mediation.{" "}
+                                <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://www.facebook.com/privacy/policy/</a>
+                            </li>
+                            <li>
+                                <strong>Mintegral</strong> — Reached via CAS.ai mediation.{" "}
+                                <a href="https://www.mintegral.com/en/privacy/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://www.mintegral.com/en/privacy/</a>
+                            </li>
+                            <li>
+                                <strong>Pangle (ByteDance)</strong> — Reached via CAS.ai mediation.{" "}
+                                <a href="https://www.pangleglobal.com/privacy/privacy-center-overseas" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://www.pangleglobal.com/privacy/privacy-center-overseas</a>
+                            </li>
+                            <li>
+                                <strong>Digital Turbine</strong> — Reached via CAS.ai mediation.{" "}
+                                <a href="https://www.digitalturbine.com/legal/end-user-privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://www.digitalturbine.com/legal/end-user-privacy-policy/</a>
                             </li>
                         </ul>
+
                         <p className="mt-4">
-                            We use a mediation platform (AppLovin MAX) to manage multiple ad networks simultaneously.
-                            Data may be passed to any of the participating networks based on the mediation
-                            waterfall&rsquo;s decision logic.
-                        </p>
-                        <p className="mt-4">
-                            Third-party measurement partners may collect and process data as part of the IAB Open
-                            Measurement Working Group to perform ad measurement and related services.
+                            Since CAS.ai&rsquo;s partner network list can change over time, a full and always
+                            up-to-date list of all advertising partners who may receive your data through our games
+                            is available at:{" "}
+                            <Link href="/advertising-partners" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">avajora.com/advertising-partners</Link>.
+                            Each partner operates under its own privacy policy and is responsible for its own data
+                            practices.
                         </p>
 
-                        <H3>5.5 Consent &amp; Opt-Out Mechanisms</H3>
+                        <H3>5.5 COPPA &amp; Child-Directed Disclosures (Advertising)</H3>
                         <p>
-                            We use a Consent Management Platform (CMP) — AppLovin&rsquo;s built-in MAX CMP — to
-                            collect and manage advertising consent. Our consent collection meets the IAB Europe
-                            Transparency &amp; Consent Framework version 2.2 (TCF 2.2).
+                            We have flagged all our games in the Unity, Liftoff, InMobi, and CAS.ai dashboards
+                            regarding their COPPA status (directed to children or not). For any game not directed at
+                            children under 13, advertising identifiers may be used for personalised ads. For
+                            child-directed apps: Unity will not collect cross-app advertising identifiers; Liftoff is
+                            instructed not to collect cross-app advertising identifiers for targeting purposes; InMobi
+                            will not conduct behavioural advertising; and CAS.ai will not pass advertising identifiers
+                            to downstream networks for targeting.
+                        </p>
+
+                        <H3>5.6 Consent &amp; Opt-Out Mechanisms</H3>
+                        <p>
+                            CAS.ai supports the IAB Transparency &amp; Consent Framework (TCF 2.2). For EEA and UK
+                            users, personalised advertising via CAS.ai mediation is only displayed after you provide
+                            explicit consent through the consent management popup shown at first launch. You may
+                            update your preferences at any time via Settings &gt; Privacy within the game.
+                        </p>
+                        <p className="mt-3">
+                            For users in the EEA, UK, and applicable US states, consent signals are passed to Unity
+                            Ads, Liftoff, InMobi, and all CAS.ai downstream networks via each SDK&rsquo;s consent API.
+                            Users who opt out of targeted advertising will receive contextual (non-personalised)
+                            ads only. If you opt out of personalised advertising, CAS.ai is instructed not to pass
+                            your advertising identifier to downstream networks, and only contextual (non-targeted) ads
+                            will be displayed.
                         </p>
                         <ul className="list-disc pl-5 space-y-2 mt-3">
-                            <li><strong>EEA/UK users:</strong> Personalised ads are only shown after you give explicit consent via the CMP popup presented at first launch.</li>
-                            <li><strong>US users:</strong> You may opt-out of the &ldquo;sale&rdquo; or &ldquo;sharing&rdquo; of your personal information via Settings &gt; Privacy &gt; Advertising Preferences within the game.</li>
+                            <li><strong>EEA/UK users:</strong> Personalised ads are only shown after you give explicit consent via the consent popup presented at first launch.</li>
+                            <li><strong>US users:</strong> You may opt out of the &ldquo;sale&rdquo; or &ldquo;sharing&rdquo; of your personal information via Settings &gt; Privacy &gt; Advertising Preferences within the game.</li>
                             <li><strong>To withdraw consent:</strong> Navigate to Settings &gt; Privacy &gt; Advertising Preferences within the game at any time. Withdrawal takes effect immediately.</li>
+                            <li><strong>Unity Ads:</strong> Unity Ads displays a Data Privacy icon on ad units through which you can access your data and opt out of future collection.</li>
+                            <li><strong>Liftoff opt-out:</strong>{" "}<a href="https://vungle.com/opt-out/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://vungle.com/opt-out/</a></li>
+                            <li><strong>InMobi opt-out:</strong>{" "}<a href="https://www.inmobi.com/page/opt-out/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://www.inmobi.com/page/opt-out/</a></li>
+                            <li><strong>iOS:</strong> Settings &gt; Privacy &amp; Security &gt; Tracking — you can prevent all apps from requesting your advertising identifier.</li>
+                            <li><strong>Android 12+:</strong> Settings &gt; Google &gt; Ads &gt; Delete Advertising ID — you can permanently delete your advertising ID.</li>
                         </ul>
 
-                        <H3>5.6 Our Ads in Other Apps</H3>
+                        <H3>5.7 Our Ads in Other Apps</H3>
                         <p>
                             We advertise our games in other apps using advertising networks. Your advertising ID may
                             be used to target audiences likely to enjoy our games, to create lookalike audiences (where
@@ -435,8 +543,35 @@ export default function PrivacyPolicyPage() {
                         </p>
                         <p className="mt-3">
                             When you install a game after seeing one of our ads, the install is attributed to the
-                            relevant campaign using your advertising ID. Attribution is handled via AppLovin&rsquo;s
-                            built-in attribution functionality within the MAX SDK.
+                            relevant campaign using your advertising ID. Attribution data (device ID hash, campaign
+                            identifier, network source) is received from advertising networks and used solely for
+                            campaign measurement and fraud detection.
+                        </p>
+
+                        <H3>5.8 Analytics (Unity Analytics)</H3>
+                        <p>
+                            We use Unity Analytics (a product of Unity Technologies Inc.) to collect gameplay analytics
+                            and operational metrics. This SDK collects device session data, event data we define (e.g.
+                            level complete, session start, tutorial steps), device type and OS version, app version, and
+                            a device-bound identifier (not the advertising ID) to identify unique devices.
+                        </p>
+                        <p className="mt-4">
+                            <strong>Purpose:</strong> Unity Analytics is used to understand how players interact with
+                            our games, measure user engagement metrics (daily active users, session length, retention
+                            rates D1/D7/D30), identify gameplay issues, and inform future game design decisions.{" "}
+                            <strong>Legal basis:</strong> Legitimate interests (Art. 6(1)(f) GDPR).
+                        </p>
+                        <p className="mt-4">
+                            Analytics data is aggregated and used at the cohort level for business reporting. We do not
+                            use analytics data to build individual user profiles for advertising. Individual-level event
+                            data is retained by Unity for a defined period per Unity&rsquo;s own data retention policy.
+                            Unity Analytics is configured with the same consent signals as Unity Ads — users who opt
+                            out of data collection will have analytics disabled or anonymised to the extent permitted by
+                            the SDK.
+                        </p>
+                        <p className="mt-4">
+                            Privacy policy:{" "}
+                            <a href="https://unity.com/legal/developer-privacy-policy" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://unity.com/legal/developer-privacy-policy</a>
                         </p>
                     </section>
 
@@ -455,10 +590,9 @@ export default function PrivacyPolicyPage() {
                         </p>
                         <ul className="list-disc pl-5 space-y-2 mt-3">
                             <li><strong>Cloud &amp; Hosting:</strong> Google Cloud Platform — <a href="https://cloud.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">cloud.google.com/privacy</a>. Data is stored in the EU (europe-west) region.</li>
-                            <li><strong>Analytics:</strong> Firebase Analytics (Google) — <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">firebase.google.com/support/privacy</a>. Receives device identifiers, gameplay events, and session data for product analytics.</li>
-                            <li><strong>Crash Reporting:</strong> Firebase Crashlytics (Google) — receives device information, crash logs, and error data. Does not receive personal identity information.</li>
-                            <li><strong>Attribution &amp; Anti-Fraud:</strong> AppLovin (via MAX SDK) — receives advertising IDs, IP-derived location, and install events for campaign measurement and fraud detection.</li>
-                            <li><strong>Consent Management:</strong> AppLovin MAX CMP — manages user consent and passes consent signals to ad networks.</li>
+                            <li><strong>Analytics:</strong> Unity Analytics (Unity Technologies Inc.) — <a href="https://unity.com/legal/developer-privacy-policy" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">unity.com/legal/developer-privacy-policy</a>. Receives device identifiers, gameplay events, and session data for product analytics. Uses a device-bound identifier (not the advertising ID).</li>
+                            <li><strong>Ad Mediation:</strong> CAS.ai (CLEAR INVEST LTD) — <a href="https://cas.ai/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">cas.ai/privacy-policy</a>. Manages real-time ad auctions and routes requests to downstream ad networks. Receives advertising IDs, IP address, device info, and ad interaction data.</li>
+                            <li><strong>Consent Management:</strong> CAS.ai CMP — manages user consent via the IAB TCF 2.2 framework and passes consent signals to ad networks.</li>
                         </ul>
 
                         <H3>6.2 Advertising Networks</H3>
@@ -468,9 +602,12 @@ export default function PrivacyPolicyPage() {
                             your name, email address, or precise GPS location.
                         </p>
                         <p className="mt-3">
-                            Advertising networks are <strong>independent data controllers</strong> — each has its own
-                            privacy policy and is responsible for its own data practices. We are not responsible for
-                            their processing. See Section 5.4 for the full list and privacy policy links.
+                            Most advertising networks are <strong>independent data controllers</strong> — each has its
+                            own privacy policy and is responsible for its own data practices. We are not responsible
+                            for their processing. <strong>Exception:</strong> InMobi acts as a <strong>joint
+                                controller</strong> with us under GDPR — see Section 5.4 for details. For the full list
+                            of all advertising partners and their privacy policy links, see Section 5.4 and our{" "}
+                            <Link href="/advertising-partners" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">Advertising Partners</Link> page.
                         </p>
 
                         <H3>6.3 Legal &amp; Regulatory Disclosures</H3>
@@ -504,13 +641,24 @@ export default function PrivacyPolicyPage() {
                         </p>
                         <p className="mt-4">
                             We do not knowingly collect personal data from children under the applicable minimum age.
-                            We do not knowingly serve targeted or interest-based advertisements to children.
+                            We do not knowingly serve targeted or interest-based advertising to children. Where a game
+                            is or may be accessible to a mixed-age audience, we have configured our ad network settings
+                            (Unity Ads, Liftoff/Vungle, InMobi, and CAS.ai) to disable behavioural targeting for users
+                            below the applicable minimum age.
                         </p>
                         <p className="mt-4">
-                            If a parent or guardian believes their child has provided personal data to us, please
-                            contact us at{" "}
-                            <a href={`mailto:${CO.privacy}`} className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">{CO.privacy}</a>{" "}
-                            and we will delete the data promptly.
+                            We have flagged all our games in the Unity, Liftoff, InMobi, and CAS.ai dashboards
+                            regarding their COPPA status. For child-directed apps: Unity will not collect cross-app
+                            advertising identifiers; Liftoff is instructed not to collect cross-app advertising
+                            identifiers for targeting; InMobi will not conduct behavioural advertising; and CAS.ai
+                            will not pass advertising identifiers to downstream networks for targeting.
+                        </p>
+                        <p className="mt-4">
+                            If a parent or guardian believes their child has provided personal information to us or
+                            to one of our advertising partners through our games, please contact us at{" "}
+                            <a href={`mailto:${CO.privacy}`} className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">{CO.privacy}</a>.
+                            We will take steps to delete such information and notify the relevant advertising partners
+                            of the requirement to do so.
                         </p>
                         <p className="mt-4">
                             Upon discovery that we have collected data from a child without verifiable parental
@@ -592,7 +740,17 @@ export default function PrivacyPolicyPage() {
                             companies, we may also rely on the UK-US Data Bridge (approved October 2023).
                         </p>
                         <p className="mt-4">
-                            Where data is transferred to countries that do not benefit from an adequacy decision, we
+                            Key international data recipients include: Unity Technologies Inc. (San Francisco, USA),
+                            CAS.ai / CLEAR INVEST LTD (Belize), Liftoff Mobile Inc. / LMI Inc. (Palo Alto, USA),
+                            InMobi Pte. Ltd. (Singapore) and InMobi Inc. (USA), AppLovin Corporation (USA), and
+                            Google LLC (USA). Data transfers from EEA/UK users to Unity, Liftoff, and InMobi are
+                            governed by Standard Contractual Clauses as per each company&rsquo;s Data Processing
+                            Addendum. InMobi is headquartered in Singapore with operations in the USA; transfers are
+                            covered by appropriate safeguards per InMobi&rsquo;s own privacy documentation.
+                        </p>
+                        <p className="mt-4">
+                            Where data is transferred to countries that do not benefit from an adequacy decision
+                            (including Belize, where CAS.ai&rsquo;s operator CLEAR INVEST LTD is incorporated), we
                             conduct Transfer Impact Assessments (TIAs) and apply supplementary technical measures
                             including encryption in transit and at rest, pseudonymisation, and strict access controls.
                         </p>
@@ -632,7 +790,7 @@ export default function PrivacyPolicyPage() {
                                     </tr>
                                     <tr className="border-b border-neutral-100">
                                         <td className="py-2 pr-4">Analytics session data</td>
-                                        <td className="py-2">2 months (Firebase Analytics default; configurable up to 14 months)</td>
+                                        <td className="py-2">As defined by Unity Analytics retention policy (see Section 5.8)</td>
                                     </tr>
                                     <tr className="border-b border-neutral-100">
                                         <td className="py-2 pr-4">Customer support communications</td>
@@ -720,8 +878,8 @@ export default function PrivacyPolicyPage() {
                         <p className="mt-4">
                             <strong>In our mobile apps:</strong> SDKs, local storage, device fingerprinting, and
                             advertising identifiers function as the equivalent of cookies. These are disclosed in
-                            Sections 2 and 5 of this policy. Analytics SDKs (Firebase Analytics) and advertising
-                            SDKs (AppLovin MAX, AdMob) collect data via these mechanisms.
+                            Sections 2 and 5 of this policy. Analytics SDKs (Unity Analytics) and advertising
+                            SDKs (CAS.ai mediation, Unity Ads, Liftoff, InMobi) collect data via these mechanisms.
                         </p>
 
                         <p className="mt-4">

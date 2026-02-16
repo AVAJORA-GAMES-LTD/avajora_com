@@ -20,6 +20,7 @@ const legalLinks = [
     { label: "Privacy Policy", href: "/privacy-policy" },
     { label: "Cookie Policy", href: "/cookie-policy" },
     { label: "Terms of service", href: "/terms-of-service" },
+    { label: "Advertising Partners", href: "/advertising-partners" },
     { label: "Do Not Sell or Share My Personal Information", href: "/privacy-policy#jurisdictions" },
 ];
 

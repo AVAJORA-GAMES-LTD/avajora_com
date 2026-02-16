@@ -19,14 +19,14 @@ const jsonLd = {
         name: "AVAJORA GAMES LTD",
         url: "https://avajora.com",
     },
-    dateModified: "2026-02-16",
+    dateModified: "2025-06-17",
     inLanguage: "en",
 };
 
 /* ── constants ── */
-const V = "1.0";
-const UPDATED = "16 February 2026";
-const EFFECTIVE = "16 February 2026";
+const V = "1.1";
+const UPDATED = "17 June 2025";
+const EFFECTIVE = "17 June 2025";
 
 const CO = {
     name: "AVAJORA GAMES LTD",
@@ -602,10 +602,77 @@ export default function TermsOfServicePage() {
                         </p>
 
                         <H3>12.2 Advertising partners</H3>
-                        <p>We use the following advertising SDK partners:</p>
+                        <p>
+                            We use <strong>CAS.ai</strong> (Clever Ads Solutions / CLEAR INVEST LTD) as our ad
+                            mediation platform. CAS.ai runs real-time auctions among multiple advertising networks
+                            to determine the most relevant ad for each placement. Our direct and mediated advertising
+                            SDK partners include:
+                        </p>
                         <ul className="mt-2 space-y-1 list-disc list-inside ml-4">
                             <li>
-                                <strong>AppLovin MAX</strong> (mediation and attribution) —{" "}
+                                <strong>CAS.ai</strong> (mediation orchestrator) —{" "}
+                                <a
+                                    href="https://cas.ai/privacy-policy"
+                                    className="text-blue-700 hover:underline"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Privacy Policy
+                                </a>
+                            </li>
+                            <li>
+                                <strong>Unity Ads</strong> (direct SDK + via CAS.ai) —{" "}
+                                <a
+                                    href="https://unity.com/legal/game-player-and-app-user-privacy-policy"
+                                    className="text-blue-700 hover:underline"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Privacy Policy
+                                </a>
+                            </li>
+                            <li>
+                                <strong>Liftoff Monetize (Vungle)</strong> (direct SDK + via CAS.ai) —{" "}
+                                <a
+                                    href="https://vungle.com/privacy/"
+                                    className="text-blue-700 hover:underline"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Privacy Policy
+                                </a>{" "}
+                                | Opt-out:{" "}
+                                <a
+                                    href="https://vungle.com/opt-out/"
+                                    className="text-blue-700 hover:underline"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    vungle.com/opt-out
+                                </a>
+                            </li>
+                            <li>
+                                <strong>InMobi</strong> (direct SDK + via CAS.ai) —{" "}
+                                <a
+                                    href="https://www.inmobi.com/privacy-policy/"
+                                    className="text-blue-700 hover:underline"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Privacy Policy
+                                </a>{" "}
+                                | Opt-out:{" "}
+                                <a
+                                    href="https://www.inmobi.com/page/opt-out/"
+                                    className="text-blue-700 hover:underline"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    inmobi.com/page/opt-out
+                                </a>
+                            </li>
+                            <li>
+                                <strong>AppLovin</strong> (via CAS.ai mediation) —{" "}
                                 <a
                                     href="https://legal.applovin.com/privacy/"
                                     className="text-blue-700 hover:underline"
@@ -616,7 +683,7 @@ export default function TermsOfServicePage() {
                                 </a>
                             </li>
                             <li>
-                                <strong>Google AdMob</strong> —{" "}
+                                <strong>Google AdMob</strong> (via CAS.ai mediation) —{" "}
                                 <a
                                     href="https://policies.google.com/privacy"
                                     className="text-blue-700 hover:underline"
@@ -626,18 +693,16 @@ export default function TermsOfServicePage() {
                                     Privacy Policy
                                 </a>
                             </li>
-                            <li>
-                                <strong>Unity Ads</strong> (including ironSource) —{" "}
-                                <a
-                                    href="https://unity.com/legal/privacy-policy"
-                                    className="text-blue-700 hover:underline"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Privacy Policy
-                                </a>
-                            </li>
                         </ul>
+                        <p className="mt-3">
+                            CAS.ai may also route ads to additional networks including ironSource (Unity LevelPlay),
+                            Meta Audience Network, Mintegral, Pangle (ByteDance), and Digital Turbine. A full and
+                            always up-to-date list is available at{" "}
+                            <Link href="/advertising-partners" className="text-blue-700 hover:underline">
+                                avajora.com/advertising-partners
+                            </Link>
+                            .
+                        </p>
 
                         <H3>12.3 Data collection by advertising SDKs</H3>
                         <p>
@@ -689,10 +754,11 @@ export default function TermsOfServicePage() {
                             (COPPA), and other applicable privacy laws.
                         </p>
                         <p className="mt-3">
-                            We use <strong>Firebase Analytics</strong> (Google) and{" "}
-                            <strong>AppLovin</strong> built-in attribution to collect anonymised usage data
-                            to improve our Services. We do not sell your personal data. For full details,
-                            please refer to our{" "}
+                            We use <strong>Unity Analytics</strong> (Unity Technologies Inc.) to collect anonymised
+                            gameplay usage data to improve our Services. We use <strong>CAS.ai</strong> (CLEAR INVEST
+                            LTD) as our ad mediation platform, which may route data to multiple advertising networks
+                            including AppLovin, Google AdMob, ironSource, Meta, Vungle/Liftoff, InMobi, and others.
+                            We do not sell your personal data. For full details, please refer to our{" "}
                             <Link href="/privacy-policy" className="text-blue-700 hover:underline">
                                 Privacy Policy
                             </Link>
