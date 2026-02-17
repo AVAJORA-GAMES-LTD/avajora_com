@@ -61,6 +61,32 @@ export default function PrivacyRequestPage() {
                             data protection laws. This page explains how to submit a formal privacy request
                             to {CO.name}.
                         </p>
+
+                        {/* Delete Account Callout */}
+                        <div className="mt-8 p-6 bg-neutral-50 border-l-4 border-neutral-900 rounded">
+                            <h3 className="text-lg font-bold text-neutral-900 mb-2">
+                                🗑️ Delete My Account
+                            </h3>
+                            <p className="text-sm text-neutral-700 mb-4">
+                                To permanently delete your account and all associated data, email us at{" "}
+                                <a
+                                    href={`mailto:${CO.support}?subject=Delete%20My%20Account`}
+                                    className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 font-medium"
+                                >
+                                    {CO.support}
+                                </a>{" "}
+                                with the subject &ldquo;Delete My Account.&rdquo; Include your in-game user ID
+                                and the email address associated with your account. We will process your deletion
+                                request within 30 days. <strong>This action is irreversible.</strong> You will lose
+                                all in-game progress, Virtual Items, and purchase history.
+                            </p>
+                            <a
+                                href={`mailto:${CO.support}?subject=Delete%20My%20Account&body=I%20request%20the%20deletion%20of%20my%20account%20and%20all%20associated%20personal%20data.%0A%0AIn-game%20User%20ID%3A%20%5BYour%20User%20ID%5D%0AEmail%3A%20%5BYour%20Email%5D%0ADevice%3A%20%5BiOS%20or%20Android%5D`}
+                                className="inline-block px-6 py-2.5 bg-neutral-900 text-white text-sm font-medium rounded hover:bg-neutral-700 transition"
+                            >
+                                Delete My Account
+                            </a>
+                        </div>
                     </section>
 
                     {/* What you can request */}

@@ -408,6 +408,14 @@ export default function TermsOfServicePage() {
                                 advantage in the Services.
                             </li>
                             <li>
+                                <strong>Install, use, or distribute modified versions of our games</strong> (including
+                                modified APK files, IPAs, or any repackaged or tampered binaries), use emulators
+                                or virtualisation software to circumvent platform restrictions, or employ automation
+                                tools, macros, scripts, or any other means to automate gameplay or bypass game mechanics.
+                                Use of such unauthorised modifications or tools is a material breach of these Terms and
+                                grounds for immediate termination of your account without refund.
+                            </li>
+                            <li>
                                 Access or attempt to access accounts, servers, or networks connected to the
                                 Services through unauthorised means.
                             </li>
@@ -473,9 +481,18 @@ export default function TermsOfServicePage() {
                             Our Services may include Virtual Items such as virtual currencies, coins,
                             power-ups, skins, characters, and other digital goods. Virtual Items have{" "}
                             <strong>no real-world monetary value</strong> and cannot be exchanged for real
-                            money, goods, or services outside the Services. You do not own Virtual Items;
-                            instead, you receive a limited, revocable licence to use them within the Services
-                            subject to these Terms.
+                            money, goods, or services outside the Services.
+                        </p>
+                        <p className="mt-3">
+                            <strong>No Ownership — Limited Licence Only.</strong> You acknowledge that you have
+                            <strong> no property right</strong> in any Virtual Items. Virtual Items are licensed
+                            to you on a <strong>limited, non-exclusive, non-transferable, revocable basis</strong>.
+                            We may manage, regulate, control, modify, or eliminate Virtual Items at any time,
+                            with or without notice. We reserve the right to change the attributes, functionality,
+                            availability, or pricing of Virtual Items without liability to you. Upon termination
+                            of your account or discontinuation of a game, all Virtual Items associated with your
+                            account will be forfeited without refund or compensation, except as required by
+                            applicable law.
                         </p>
 
                         <H3>9.2 Purchases</H3>

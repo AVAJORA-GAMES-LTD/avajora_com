@@ -17,12 +17,18 @@ const companyLinks = [
     { label: "Contact", href: "/contact" },
 ];
 
-/* Primary legal links — shown in the footer column */
+/* Legal documents — shown in the footer column */
 const legalLinks = [
     { label: "Privacy Policy", href: "/privacy-policy" },
     { label: "Terms of Service", href: "/terms-of-service" },
+    { label: "Imprint", href: "/imprint" },
+];
+
+/* Privacy Tools — shown in the footer column */
+const privacyToolsLinks = [
     { label: "Cookie Policy", href: "/cookie-policy" },
     { label: "Do Not Sell", href: "/do-not-sell" },
+    { label: "Delete My Account", href: "/privacy/request" },
 ];
 
 /* Secondary legal links — shown inline in the bottom bar */
@@ -47,8 +53,8 @@ export default function Footer() {
     return (
         <footer className="bg-[#00071e] text-white">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-12 md:py-14">
-                {/* ── Top section: 3-column grid ── */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 md:gap-8">
+                {/* ── Top section: 4-column grid ── */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-8">
                     {/* Brand */}
                     <div className="space-y-3 sm:space-y-4 sm:col-span-2 lg:col-span-1">
                         <div className="flex items-center gap-2 sm:gap-3">
@@ -110,11 +116,28 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Legal links (primary only) */}
+                    {/* Legal links */}
                     <div className="space-y-3 sm:space-y-4">
                         <h4 className="text-base sm:text-lg font-semibold">Legal</h4>
                         <ul className="space-y-2 text-white/90 text-sm sm:text-base">
                             {legalLinks.map((link) => (
+                                <li key={link.label}>
+                                    <Link
+                                        href={link.href}
+                                        className="hover:text-white hover:underline underline-offset-4 transition"
+                                    >
+                                        {link.label}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Privacy Tools links */}
+                    <div className="space-y-3 sm:space-y-4">
+                        <h4 className="text-base sm:text-lg font-semibold">Privacy Tools</h4>
+                        <ul className="space-y-2 text-white/90 text-sm sm:text-base">
+                            {privacyToolsLinks.map((link) => (
                                 <li key={link.label}>
                                     <Link
                                         href={link.href}

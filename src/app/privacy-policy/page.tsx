@@ -756,6 +756,17 @@ export default function PrivacyPolicyPage() {
                             below the applicable minimum age.
                         </p>
                         <p className="mt-4">
+                            <strong>Mixed Audience Games.</strong> For games that may appeal to a broad audience
+                            including children (&ldquo;Mixed Audience&rdquo;), we implement an age-gate at first launch.
+                            Users identifying as under the age of digital consent (13 in most jurisdictions, 16 in
+                            certain EU member states) are automatically served a &ldquo;Non-Personalised&rdquo;
+                            experience with the following restrictions: (a) restricted data collection (only essential
+                            device and gameplay data required for service delivery); (b) disabled social features
+                            (if applicable); and (c) contextual-only advertising (no behavioural profiling or
+                            cross-app tracking). This treatment applies until the user reaches the applicable minimum
+                            age or until a parent or guardian provides verifiable consent where permitted by law.
+                        </p>
+                        <p className="mt-4">
                             We configure game-level settings in Unity, Liftoff, InMobi, and CAS.ai dashboards
                             regarding their COPPA status. For child-directed apps: Unity will not collect cross-app
                             advertising identifiers; Liftoff is instructed not to collect cross-app advertising
@@ -1383,40 +1394,25 @@ export default function PrivacyPolicyPage() {
                         <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4">Game-Specific Privacy Appendices</h2>
                         <p>
                             Each of our published games may have minor differences in the SDKs integrated,
-                            ad formats used, or age-gate implementation. The table below summarises the
-                            privacy-relevant configuration for every game currently available.
+                            ad formats used, or age-gate implementation. Specific features for individual games
+                            are listed on the store listing page for that game (Google Play Data Safety Section
+                            and Apple App Privacy Details). <strong>That information takes precedence for
+                                game-specific features.</strong> This approach ensures that each game&rsquo;s privacy
+                            disclosures are accurate, up-to-date, and platform-compliant at the time of download.
                         </p>
 
-                        <div className="overflow-x-auto mt-6 mb-6">
-                            <table className="w-full text-sm border-collapse">
-                                <thead>
-                                    <tr className="border-b-2 border-neutral-200 text-left">
-                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Game</th>
-                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Platforms</th>
-                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Age Rating</th>
-                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Mixed Audience?</th>
-                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Ad Networks Active</th>
-                                        <th className="py-2 text-neutral-500 font-semibold">Additional SDKs</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="align-top">
-                                    <tr className="border-b border-neutral-100">
-                                        <td className="py-2 pr-4 italic text-neutral-500" colSpan={6}>
-                                            Games will be listed here as they are published. Each row will specify
-                                            which ad networks are active, the app-store age rating, whether
-                                            COPPA-compliant child-directed treatment is enabled, and any game-specific
-                                            SDKs beyond the baseline stack described in this policy.
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        <p className="mt-4">
+                            The privacy-relevant configuration common to all our games is described throughout
+                            this policy. Game-specific variations (for example, whether a particular title integrates
+                            an additional analytics SDK, offers in-app purchases, or has a specific age rating)
+                            are disclosed on the relevant app store listing page before installation.
+                        </p>
 
-                        <p className="text-sm text-neutral-500">
-                            This appendix is updated each time a new game is released or an existing game&rsquo;s
-                            SDK configuration changes materially. If a game enables child-directed treatment
-                            (COPPA tag / Google Families), personalised advertising is disabled for that title
-                            and the age-gate flow described in Section 7 is applied.
+                        <p className="mt-4 text-sm text-neutral-500">
+                            If a game enables child-directed treatment (COPPA tag / Google Families), personalised
+                            advertising is disabled for that title and the age-gate flow described in Section 7
+                            is applied. For games that may appeal to a mixed audience, refer to Section 7 for our
+                            &ldquo;Mixed Audience&rdquo; safeguards.
                         </p>
                     </section>
 

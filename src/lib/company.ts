@@ -10,6 +10,7 @@ export const COMPANY = {
     addr: "71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom",
     country: "England and Wales, United Kingdom",
     duns: "234577218",
+    contact: "contact@avajora.com",
     ceo: "ceo@avajora.com",
     legal: "legal@avajora.com",
     privacy: "privacy@avajora.com",
