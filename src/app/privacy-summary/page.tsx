@@ -2,6 +2,25 @@ import { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import Link from "next/link";
 import { COMPANY as CO } from "@/lib/company";
+import { LEGAL_VERSIONS } from "@/lib/legal-versions";
+import {
+    Smartphone,
+    ShieldX,
+    Target,
+    Handshake,
+    DollarSign,
+    Baby,
+    Globe,
+    Lock,
+    FileText,
+    Users,
+    FileEdit,
+    Ban,
+    Megaphone,
+    Cookie,
+    FileStack,
+    BarChart3
+} from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Privacy at a Glance — AVAJORA GAMES LTD",
@@ -9,10 +28,13 @@ export const metadata: Metadata = {
         "A plain-language summary of how AVAJORA GAMES LTD handles your data. Not a legal document — see the full Privacy Policy for binding terms.",
 };
 
+const { updated: UPDATED } = LEGAL_VERSIONS.privacySummary;
+
 const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
+    "@type": ["WebPage", "Article"],
     name: "Privacy at a Glance",
+    headline: "Privacy at a Glance — AVAJORA GAMES LTD",
     description:
         "A plain-language summary of how AVAJORA GAMES LTD handles your data.",
     publisher: {
@@ -20,24 +42,34 @@ const jsonLd = {
         name: CO.name,
         url: CO.url,
     },
+    datePublished: "2025-01-15",
     dateModified: "2026-02-17",
+    version: LEGAL_VERSIONS.privacySummary.version,
     inLanguage: "en",
+    mainEntity: {
+        "@type": "WebPage",
+        name: "Privacy at a Glance",
+        description: "Simplified summary of AVAJORA GAMES LTD data practices.",
+    },
+    isPartOf: {
+        "@type": "WebSite",
+        url: CO.url,
+        name: CO.name,
+    },
 };
-
-const UPDATED = "17 February 2026";
 
 function Card({
     icon,
     title,
     children,
 }: {
-    icon: string;
+    icon: React.ReactNode;
     title: string;
     children: React.ReactNode;
 }) {
     return (
         <div className="border border-neutral-200 rounded-lg p-5 sm:p-6">
-            <div className="text-2xl mb-3">{icon}</div>
+            <div className="mb-3 text-neutral-700">{icon}</div>
             <h3 className="text-base font-bold text-neutral-900 mb-2">{title}</h3>
             <div className="text-sm text-neutral-700 leading-relaxed">{children}</div>
         </div>
@@ -92,7 +124,7 @@ export default function PrivacySummaryPage() {
                         <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-6">The Key Points</h2>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-                            <Card icon="📱" title="What Data We Collect">
+                            <Card icon={<Smartphone className="w-6 h-6" />} title="What Data We Collect">
                                 <ul className="list-disc pl-4 space-y-1 mt-1">
                                     <li>Device identifiers (advertising ID, device model, OS)</li>
                                     <li>IP address (used to derive country/city — not stored long-term)</li>
@@ -102,9 +134,9 @@ export default function PrivacySummaryPage() {
                                 </ul>
                             </Card>
 
-                            <Card icon="🚫" title="What We Don't Collect">
+                            <Card icon={<ShieldX className="w-6 h-6" />} title="What We Don't Collect">
                                 <ul className="list-disc pl-4 space-y-1 mt-1">
-                                    <li>Your real name</li>
+                                    <li>Your real name (unless you contact support)</li>
                                     <li>Email address (unless you contact us)</li>
                                     <li>Precise GPS location</li>
                                     <li>Photos, contacts, or phone data</li>
@@ -112,7 +144,7 @@ export default function PrivacySummaryPage() {
                                 </ul>
                             </Card>
 
-                            <Card icon="🎯" title="Why We Collect It">
+                            <Card icon={<Target className="w-6 h-6" />} title="Why We Collect It">
                                 <ul className="list-disc pl-4 space-y-1 mt-1">
                                     <li>To run the game and save your progress</li>
                                     <li>To show you ads (this is how our free games are funded)</li>
@@ -122,10 +154,10 @@ export default function PrivacySummaryPage() {
                                 </ul>
                             </Card>
 
-                            <Card icon="🤝" title="Who Gets Your Data">
+                            <Card icon={<Handshake className="w-6 h-6" />} title="Who Gets Your Data">
                                 <ul className="list-disc pl-4 space-y-1 mt-1">
                                     <li><strong>CAS.ai</strong> — our ad mediation platform</li>
-                                    <li><strong>11 ad networks</strong> — compete to show you ads</li>
+                                    <li><strong>Multiple ad networks</strong> — compete to show you ads</li>
                                     <li><strong>Unity Analytics</strong> — gameplay analytics</li>
                                     <li><strong>Google Cloud</strong> — hosts our servers (EU region)</li>
                                 </ul>
@@ -136,11 +168,14 @@ export default function PrivacySummaryPage() {
                                 </p>
                             </Card>
 
-                            <Card icon="💰" title="We Don't Sell Your Data">
+                            <Card icon={<DollarSign className="w-6 h-6" />} title="We Don't Sell Your Data for Money">
                                 <p>
-                                    We <strong>do&nbsp;not</strong> sell your personal data for money.
-                                    Sharing ad identifiers with ad networks may count as &ldquo;sharing&rdquo; under
-                                    California law (CCPA). You can opt out:
+                                    We <strong>never</strong> sell your personal data for monetary
+                                    consideration. However, the sharing of advertising identifiers
+                                    (e.g., IDFA/GAID) with ad networks for interest-based
+                                    advertising may qualify as a &ldquo;sale&rdquo; or
+                                    &ldquo;sharing&rdquo; under the California Consumer Privacy
+                                    Act (CCPA). You can opt out:
                                 </p>
                                 <p className="mt-2">
                                     <Link href="/do-not-sell" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 text-xs">
@@ -149,7 +184,7 @@ export default function PrivacySummaryPage() {
                                 </p>
                             </Card>
 
-                            <Card icon="🧒" title="Children's Privacy">
+                            <Card icon={<Baby className="w-6 h-6" />} title="Children's Privacy">
                                 <p>
                                     Our games are not directed at children under 13 (or the higher threshold in
                                     your country). We do not knowingly collect data from children or serve them
@@ -157,7 +192,7 @@ export default function PrivacySummaryPage() {
                                 </p>
                             </Card>
 
-                            <Card icon="🌍" title="Where Your Data Goes">
+                            <Card icon={<Globe className="w-6 h-6" />} title="Where Your Data Goes">
                                 <p>
                                     Our servers are in the <strong>EU</strong> (Google Cloud, europe-west).
                                     Some partners are in the USA, Singapore, and Belize.
@@ -167,7 +202,7 @@ export default function PrivacySummaryPage() {
                                 </p>
                             </Card>
 
-                            <Card icon="🔒" title="How We Protect It">
+                            <Card icon={<Lock className="w-6 h-6" />} title="How We Protect It">
                                 <ul className="list-disc pl-4 space-y-1 mt-1">
                                     <li>Encrypted in transit (TLS/SSL)</li>
                                     <li>Encrypted at rest (Google Cloud default encryption)</li>
@@ -176,55 +211,6 @@ export default function PrivacySummaryPage() {
                                 </ul>
                             </Card>
                         </div>
-                    </section>
-
-                    {/* ── DATA FLOW ── */}
-                    <section className="mt-10">
-                        <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-6">How Your Data Flows</h2>
-                        <div className="bg-neutral-50 border border-neutral-200 rounded-lg p-5 sm:p-6 overflow-x-auto">
-                            <div className="flex flex-col items-center gap-2 text-sm min-w-[320px]">
-                                {/* Device */}
-                                <div className="bg-neutral-900 text-white rounded-lg px-6 py-3 text-center font-medium w-full max-w-xs">
-                                    📱 Your Device
-                                </div>
-                                <div className="text-neutral-400 text-lg">↓</div>
-                                {/* App */}
-                                <div className="bg-white border-2 border-neutral-300 rounded-lg px-6 py-3 text-center font-medium w-full max-w-xs">
-                                    🎮 Our Game App
-                                </div>
-                                <div className="flex gap-8 items-start mt-1">
-                                    <div className="flex flex-col items-center gap-2">
-                                        <div className="text-neutral-400 text-lg">↓</div>
-                                        <div className="bg-blue-50 border border-blue-200 rounded-lg px-4 py-2 text-center text-xs font-medium">
-                                            📊 Unity Analytics
-                                        </div>
-                                        <div className="text-[11px] text-neutral-500 text-center max-w-[120px]">
-                                            Gameplay data only<br />(device-bound ID)
-                                        </div>
-                                    </div>
-                                    <div className="flex flex-col items-center gap-2">
-                                        <div className="text-neutral-400 text-lg">↓</div>
-                                        <div className="bg-amber-50 border border-amber-200 rounded-lg px-4 py-2 text-center text-xs font-medium">
-                                            🔀 CAS.ai Mediation
-                                        </div>
-                                        <div className="text-neutral-400 text-lg">↓</div>
-                                        <div className="bg-orange-50 border border-orange-200 rounded-lg px-4 py-2 text-center text-xs font-medium">
-                                            📢 11 Ad Networks
-                                        </div>
-                                        <div className="text-[11px] text-neutral-500 text-center max-w-[140px]">
-                                            Advertising ID, IP,<br />device info, ad events
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <p className="mt-4 text-sm text-neutral-500">
-                            For the complete list of 11 ad networks, see our{" "}
-                            <Link href="/advertising-partners" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">
-                                Advertising Partners
-                            </Link>{" "}
-                            page.
-                        </p>
                     </section>
 
                     {/* ── YOUR RIGHTS ── */}
@@ -288,33 +274,43 @@ export default function PrivacySummaryPage() {
                         <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4">Quick Links</h2>
                         <ul className="space-y-2">
                             <li>
-                                <Link href="/privacy-policy" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">
-                                    📄 Full Privacy Policy
+                                <Link href="/privacy-policy" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 inline-flex items-center gap-2">
+                                    <FileText className="w-4 h-4" /> Full Privacy Policy
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/privacy/request" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">
-                                    📝 Submit a Privacy Request
+                                <Link href="/privacy-for-parents" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 inline-flex items-center gap-2">
+                                    <Users className="w-4 h-4" /> Privacy for Parents &amp; Guardians
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/do-not-sell" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">
-                                    🚫 Do Not Sell or Share My Info
+                                <Link href="/privacy/request" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 inline-flex items-center gap-2">
+                                    <FileEdit className="w-4 h-4" /> Submit a Privacy Request
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/advertising-partners" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">
-                                    📢 Advertising Partners
+                                <Link href="/do-not-sell" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 inline-flex items-center gap-2">
+                                    <Ban className="w-4 h-4" /> Do Not Sell or Share My Info
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/cookie-policy" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">
-                                    🍪 Cookie Policy
+                                <Link href="/advertising-partners" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 inline-flex items-center gap-2">
+                                    <Megaphone className="w-4 h-4" /> Advertising Partners
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/terms-of-service" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">
-                                    📋 Terms of Service
+                                <Link href="/cookie-policy" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 inline-flex items-center gap-2">
+                                    <Cookie className="w-4 h-4" /> Cookie Policy
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/terms-of-service" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 inline-flex items-center gap-2">
+                                    <FileStack className="w-4 h-4" /> Terms of Service
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/transparency" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 inline-flex items-center gap-2">
+                                    <BarChart3 className="w-4 h-4" /> Transparency Report
                                 </Link>
                             </li>
                         </ul>

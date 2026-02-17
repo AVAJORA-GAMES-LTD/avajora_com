@@ -3,6 +3,7 @@ import { Navbar } from "@/components/navbar";
 import { LegalH3 as H3 } from "@/components/legal";
 import Link from "next/link";
 import { COMPANY as CO } from "@/lib/company";
+import { LEGAL_VERSIONS } from "@/lib/legal-versions";
 
 export const metadata: Metadata = {
     title: "Terms of Service — AVAJORA GAMES LTD",
@@ -10,10 +11,13 @@ export const metadata: Metadata = {
         "Terms of Service for AVAJORA GAMES LTD mobile games, website, and related services.",
 };
 
+const { version: V, updated: UPDATED, effective: EFFECTIVE } = LEGAL_VERSIONS.termsOfService;
+
 const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
+    "@type": ["WebPage", "Article"],
     name: "Terms of Service",
+    headline: "Terms of Service — AVAJORA GAMES LTD",
     description:
         "Terms of Service for AVAJORA GAMES LTD mobile games, website, and related services.",
     publisher: {
@@ -21,14 +25,21 @@ const jsonLd = {
         name: "AVAJORA GAMES LTD",
         url: "https://avajora.com",
     },
+    datePublished: "2025-01-15",
     dateModified: "2026-02-17",
+    version: V,
     inLanguage: "en",
+    mainEntity: {
+        "@type": "WebPage",
+        name: "Terms of Service",
+        description: "Terms governing use of AVAJORA GAMES LTD mobile games, website, and related services.",
+    },
+    isPartOf: {
+        "@type": "WebSite",
+        url: "https://avajora.com",
+        name: "AVAJORA GAMES LTD",
+    },
 };
-
-/* ── constants ── */
-const V = "1.2";
-const UPDATED = "17 February 2026";
-const EFFECTIVE = "17 February 2026";
 
 const TOC = [
     { id: "introduction", label: "Introduction" },
@@ -55,11 +66,12 @@ const TOC = [
     { id: "termination", label: "Termination" },
     { id: "dispute", label: "Dispute Resolution & Governing Law" },
     { id: "force-majeure", label: "Force Majeure" },
-    { id: "class-waiver", label: "Class Action Waiver" },
+    { id: "class-waiver", label: "Class Action Waiver & Arbitration" },
     { id: "open-source", label: "Open-Source Attribution" },
     { id: "accessibility", label: "Accessibility" },
     { id: "general", label: "General Provisions" },
     { id: "contact", label: "How to Contact Us" },
+    { id: "version-history", label: "Version History" },
 ];
 
 /* H3 imported from @/components/legal */
@@ -95,7 +107,14 @@ export default function TermsOfServicePage() {
                             You can use our games for personal entertainment. We show ads (via CAS.ai
                             mediation, routing to networks such as Unity Ads, AppLovin, Google AdMob, and
                             others) and offer optional in-app purchases — you can buy virtual items but
-                            they have no real-world value. We do not sell your personal data.
+                            they have no real-world value. We never sell your personal data for monetary
+                            consideration; sharing of advertising identifiers with ad partners for
+                            interest-based ads may qualify as a &ldquo;sale&rdquo; under the CCPA — see
+                            our{" "}
+                            <Link href="/do-not-sell" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">
+                                Do Not Sell / Share
+                            </Link>{" "}
+                            page for controls.
                             You may cancel or request refunds per your app store&apos;s policies and applicable law
                             (including UK cooling-off rights). We are a UK company and English law applies.
                             Read the full terms below for the legally binding details.
@@ -108,7 +127,7 @@ export default function TermsOfServicePage() {
                             Table of Contents
                         </h2>
                         <ol className="list-decimal list-inside space-y-1 text-sm">
-                            {TOC.map((item, i) => (
+                            {TOC.map((item) => (
                                 <li key={item.id}>
                                     <a
                                         href={`#${item.id}`}
@@ -346,7 +365,8 @@ export default function TermsOfServicePage() {
                             >
                                 {CO.support}
                             </a>
-                            . Upon deletion, you will lose access to all associated data, Virtual Items,
+                            . We will process account deletion requests within 30 days of verification.
+                            Upon deletion, you will lose access to all associated data, Virtual Items,
                             in-game progress, and purchase history. Account deletion is irreversible.
                         </p>
                     </section>
@@ -497,6 +517,9 @@ export default function TermsOfServicePage() {
                         </h2>
 
                         <H3>10.1 Subscription services</H3>
+                        <p className="text-sm italic text-neutral-500 mb-2">
+                            This section applies only when subscription features are offered within a specific game.
+                        </p>
                         <p>
                             Some of our Services may offer subscription-based features or premium access
                             (&ldquo;Subscriptions&rdquo;). Subscriptions are billed on a recurring basis (e.g.,
@@ -524,6 +547,25 @@ export default function TermsOfServicePage() {
                             We may offer free trial periods for certain Subscriptions. If you do not cancel
                             before the free trial ends, your Subscription will automatically convert to a paid
                             Subscription at the applicable rate.
+                        </p>
+
+                        <H3>10.5 Cancellation &amp; unused time</H3>
+                        <p>
+                            If you cancel a Subscription, you will retain access to the subscription
+                            benefits until the end of your current paid billing period. No partial refunds
+                            are provided for unused time within a billing period, except where required by
+                            applicable law (including UK and EU cooling-off rights described in Section 11).
+                        </p>
+
+                        <H3>10.6 App store disclosure</H3>
+                        <p>
+                            All subscription terms, pricing, and billing frequency are displayed on the
+                            app store product page before you confirm your purchase. By subscribing,
+                            you acknowledge the recurring nature of the charges. Apple and Google each
+                            require that subscription terms are disclosed before purchase; we comply with
+                            the Apple App Store Review Guidelines (Section 3.1.2) and Google Play Billing
+                            policies, including clear disclosure of the subscription period, price, and
+                            auto-renewal terms.
                         </p>
                     </section>
 
@@ -579,112 +621,41 @@ export default function TermsOfServicePage() {
 
                         <H3>12.1 Advertisements</H3>
                         <p>
-                            Our Services are free to play and are supported in part by advertisements. By
-                            using the Services, you consent to the display of advertisements, which may
-                            include banner ads, interstitial ads, rewarded video ads, and native ads.
+                            Our Services are free to play and are supported in part by advertisements. Our
+                            Services display advertisements, which may include banner ads, interstitial ads,
+                            rewarded video ads, and native ads. <strong>Contextual (non-personalised) ads</strong>{" "}
+                            are displayed as part of the service without separate consent.
+                            <strong> Personalised (interest-based) ads</strong> are only displayed with your
+                            explicit, separate consent in accordance with GDPR and applicable privacy laws.
+                            If you do not consent to personalised ads, you will still see contextual ads.
                         </p>
 
                         <H3>12.2 Advertising partners</H3>
                         <p>
                             We use <strong>CAS.ai</strong> (Clever Ads Solutions / CLEAR INVEST LTD) as our ad
                             mediation platform. CAS.ai runs real-time auctions among multiple advertising networks
-                            to determine the most relevant ad for each placement. Our direct and mediated advertising
-                            SDK partners include:
+                            to determine the most relevant ad for each placement. Our principal advertising
+                            SDK partners are listed on our{" "}
+                            <Link href="/advertising-partners" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">
+                                Advertising Partners
+                            </Link>{" "}
+                            page, which is the canonical, up-to-date source. Key partners include:
                         </p>
                         <ul className="mt-2 space-y-1 list-disc list-inside ml-4">
-                            <li>
-                                <strong>CAS.ai</strong> (mediation orchestrator) —{" "}
-                                <a
-                                    href="https://cas.ai/privacy-policy"
-                                    className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Privacy Policy
-                                </a>
-                            </li>
-                            <li>
-                                <strong>Unity Ads</strong> (direct SDK + via CAS.ai) —{" "}
-                                <a
-                                    href="https://unity.com/legal/game-player-and-app-user-privacy-policy"
-                                    className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Privacy Policy
-                                </a>
-                            </li>
-                            <li>
-                                <strong>Liftoff Monetize (Vungle)</strong> (direct SDK + via CAS.ai) —{" "}
-                                <a
-                                    href="https://vungle.com/privacy/"
-                                    className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Privacy Policy
-                                </a>{" "}
-                                | Opt-out:{" "}
-                                <a
-                                    href="https://vungle.com/opt-out/"
-                                    className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    vungle.com/opt-out
-                                </a>
-                            </li>
-                            <li>
-                                <strong>InMobi</strong> (direct SDK + via CAS.ai) —{" "}
-                                <a
-                                    href="https://www.inmobi.com/privacy-policy/"
-                                    className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Privacy Policy
-                                </a>{" "}
-                                | Opt-out:{" "}
-                                <a
-                                    href="https://www.inmobi.com/page/opt-out/"
-                                    className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    inmobi.com/page/opt-out
-                                </a>
-                            </li>
-                            <li>
-                                <strong>AppLovin</strong> (via CAS.ai mediation) —{" "}
-                                <a
-                                    href="https://legal.applovin.com/privacy/"
-                                    className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Privacy Policy
-                                </a>
-                            </li>
-                            <li>
-                                <strong>Google AdMob</strong> (via CAS.ai mediation) —{" "}
-                                <a
-                                    href="https://policies.google.com/privacy"
-                                    className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Privacy Policy
-                                </a>
-                            </li>
+                            <li>CAS.ai (mediation orchestrator)</li>
+                            <li>Unity Ads (direct SDK + via CAS.ai)</li>
+                            <li>Liftoff Monetize / Vungle (direct SDK + via CAS.ai)</li>
+                            <li>InMobi (direct SDK + via CAS.ai)</li>
+                            <li>AppLovin (via CAS.ai)</li>
+                            <li>Google AdMob (via CAS.ai)</li>
                         </ul>
-                        <p className="mt-3">
-                            CAS.ai may also route ads to additional networks including ironSource (Unity LevelPlay),
-                            Meta Audience Network, Mintegral, Pangle (ByteDance), and Digital Turbine. A full and
-                            always up-to-date list is available at{" "}
+                        <p className="mt-3 text-sm text-neutral-600">
+                            For full details — including privacy policy links, opt-out mechanisms, and
+                            data-retention periods — visit our{" "}
                             <Link href="/advertising-partners" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">
-                                avajora.com/advertising-partners
-                            </Link>
-                            .
+                                Advertising Partners
+                            </Link>{" "}
+                            page.
                         </p>
 
                         <H3>12.3 Data collection by advertising SDKs</H3>
@@ -741,7 +712,14 @@ export default function TermsOfServicePage() {
                             gameplay usage data to improve our Services. We use <strong>CAS.ai</strong> (CLEAR INVEST
                             LTD) as our ad mediation platform, which may route data to multiple advertising networks
                             including AppLovin, Google AdMob, ironSource, Meta, Vungle/Liftoff, InMobi, and others.
-                            We do not sell your personal data. For full details, please refer to our{" "}
+                            We never sell your personal data for monetary consideration. The sharing of
+                            advertising identifiers with ad networks for interest-based advertising may
+                            constitute a &ldquo;sale&rdquo; or &ldquo;sharing&rdquo; under the California
+                            Consumer Privacy Act (CCPA). You can opt out via our{" "}
+                            <Link href="/do-not-sell" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">
+                                Do Not Sell / Share
+                            </Link>{" "}
+                            page. For full details, please refer to our{" "}
                             <Link href="/privacy-policy" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">
                                 Privacy Policy
                             </Link>
@@ -809,6 +787,9 @@ export default function TermsOfServicePage() {
                         <h2 className="text-lg font-semibold text-neutral-900 mb-3">
                             16. User-Generated Content
                         </h2>
+                        <p className="text-sm italic text-neutral-500 mb-3">
+                            This section applies only if a game includes user-generated content features.
+                        </p>
 
                         <H3>16.1 Licence grant</H3>
                         <p>
@@ -903,6 +884,17 @@ export default function TermsOfServicePage() {
                             automatic updates. We are not liable to you for any such changes or
                             discontinuation.
                         </p>
+
+                        <H3>18.1 Beta &amp; Early Access Programs</H3>
+                        <p>
+                            We may invite you to test pre-release versions of our games or features
+                            (&ldquo;Beta&rdquo; or &ldquo;Early Access&rdquo; builds). Beta content is
+                            provided &ldquo;as is&rdquo; without warranty, may contain bugs or incomplete
+                            features, and may be discontinued at any time. Progress, virtual items, or
+                            data from Beta builds may not carry over to the final release. By
+                            participating in a Beta programme you agree to keep all pre-release
+                            information confidential unless we state otherwise.
+                        </p>
                     </section>
 
                     {/* 19. Disclaimers & Warranty Exclusions */}
@@ -992,6 +984,15 @@ export default function TermsOfServicePage() {
                             This indemnification obligation does not apply to the extent that the claim
                             arises from our own negligence or wilful misconduct.
                         </p>
+                        <p className="mt-3">
+                            <strong>Consumer law carve-out.</strong> Nothing in this Section 21 requires you
+                            to indemnify us for any matter to the extent that doing so would contravene
+                            your statutory rights as a consumer under the UK Consumer Rights Act 2015,
+                            the EU Consumer Rights Directive (2011/83/EU), or any other mandatory consumer
+                            protection law applicable in your jurisdiction. This indemnification clause
+                            applies only to losses caused by your breach, misuse, or unlawful conduct —
+                            not to ordinary use of the Services.
+                        </p>
                     </section>
 
                     {/* 22. Termination */}
@@ -1002,16 +1003,20 @@ export default function TermsOfServicePage() {
 
                         <H3>22.1 Termination by us</H3>
                         <p>
-                            We may suspend or terminate your access to the Services at any time, with or
-                            without cause, with or without notice, including for:
+                            We may suspend or terminate your access to the Services in the following
+                            circumstances:
                         </p>
                         <ul className="mt-2 space-y-1 list-disc list-inside ml-4">
-                            <li>Breach of these Terms.</li>
-                            <li>Fraudulent, illegal, or harmful activity.</li>
-                            <li>Conduct that harms other users or the integrity of the Services.</li>
-                            <li>Extended periods of inactivity.</li>
-                            <li>At our discretion for any lawful reason.</li>
+                            <li><strong>Immediate termination (no prior notice)</strong> — for breach of these Terms, fraudulent, illegal, or harmful activity, or conduct that harms other users or the integrity of the Services.</li>
+                            <li><strong>With 30 days&rsquo; prior notice</strong> — for extended periods of inactivity (12&nbsp;months or more with no logins), or at our discretion for any other lawful reason not related to your misconduct.</li>
                         </ul>
+                        <p className="mt-3">
+                            Where we terminate without cause (i.e. not due to your breach or misconduct),
+                            we will provide at least <strong>30 calendar days&rsquo; written notice</strong>{" "}
+                            to the email address associated with your account (if available) or via an
+                            in-app notification. During this notice period you may export any data or
+                            in-game progress that our Services allow you to export.
+                        </p>
 
                         <H3>22.2 Termination by you</H3>
                         <p>
@@ -1072,26 +1077,44 @@ export default function TermsOfServicePage() {
 
                         <H3>23.4 EU consumers</H3>
                         <p>
-                            If you are a consumer in the European Union, you may also have the right to
-                            submit a complaint through the European Commission&apos;s Online Dispute
-                            Resolution (ODR) platform at{" "}
+                            If you are a consumer in the European Union, nothing in these Terms affects
+                            your statutory rights as a consumer under the laws of the EU Member State in
+                            which you reside.
+                        </p>
+
+                        <H3>23.5 UK Alternative Dispute Resolution (ADR)</H3>
+                        <p>
+                            In accordance with the Alternative Dispute Resolution for Consumer Disputes
+                            (Competent Authorities and Information) Regulations 2015, we are required to
+                            inform UK consumers that we are not currently registered with, or obligated
+                            to use, a certified Alternative Dispute Resolution (ADR) provider. If we are
+                            unable to resolve your complaint through our internal process, you may wish to
+                            contact the Centre for Effective Dispute Resolution (CEDR) at{" "}
                             <a
-                                href="https://ec.europa.eu/consumers/odr"
+                                href="https://www.cedr.com"
                                 className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                ec.europa.eu/consumers/odr
-                            </a>
-                            . Nothing in these Terms affects your statutory rights as a consumer under the
-                            laws of the EU Member State in which you reside.
+                                cedr.com
+                            </a>{" "}
+                            or the relevant ombudsman service. You also retain the right to take your
+                            complaint to the courts.
                         </p>
 
-                        <H3>23.5 Time limitation</H3>
+                        <H3>23.6 Time limitation</H3>
                         <p>
-                            To the extent permitted by applicable law, any claim or cause of action arising
-                            out of or related to the Services must be filed within one (1) year after such
-                            claim or cause of action arose, or it will be permanently barred.
+                            <strong>United States residents:</strong> To the extent permitted by
+                            applicable law, any claim or cause of action arising out of or related to the
+                            Services must be filed within one (1) year after such claim or cause of action
+                            arose, or it will be permanently barred.
+                        </p>
+                        <p className="mt-3">
+                            <strong>United Kingdom &amp; EU residents:</strong> The limitation period
+                            applicable to you is determined by mandatory law in your jurisdiction
+                            (e.g., six years under the Limitation Act 1980 in England and Wales, or the
+                            equivalent period under EU consumer protection legislation). Nothing in
+                            these Terms reduces the statutory limitation period available to you.
                         </p>
                     </section>
 
@@ -1114,8 +1137,10 @@ export default function TermsOfServicePage() {
                     {/* 25. Class Action Waiver */}
                     <section id="class-waiver" className="mb-8">
                         <h2 className="text-lg font-semibold text-neutral-900 mb-3">
-                            25. Class Action Waiver
+                            25. Class Action Waiver &amp; Arbitration
                         </h2>
+
+                        <H3>25.1 Class action waiver</H3>
                         <p>
                             To the maximum extent permitted by applicable law, you agree that any dispute
                             resolution proceedings will be conducted only on an individual basis and not in a
@@ -1127,6 +1152,51 @@ export default function TermsOfServicePage() {
                             This waiver applies to the fullest extent permitted by law. If you reside in a
                             jurisdiction that does not permit class action waivers, this section may not apply
                             to you.
+                        </p>
+
+                        <H3>25.2 Arbitration (US users only)</H3>
+                        <p>
+                            <strong>If you are a resident of the United States,</strong> you and {CO.name}
+                            agree that any dispute, claim, or controversy arising out of or relating to these
+                            Terms or the Services (except for claims for injunctive or equitable relief) shall
+                            be resolved by binding individual arbitration administered by JAMS under its
+                            Streamlined Arbitration Rules and Procedures, rather than in court.
+                        </p>
+                        <p className="mt-3">
+                            The arbitration shall be conducted by a single arbitrator, in the English language,
+                            and the seat of arbitration shall be London, United Kingdom — provided that the
+                            arbitration hearing may be conducted remotely (by videoconference) at your
+                            election. The arbitrator&rsquo;s decision shall be final and binding and may be
+                            entered as a judgement in any court of competent jurisdiction.
+                        </p>
+                        <p className="mt-3">
+                            <strong>Opt-out.</strong> You may opt out of this arbitration provision by
+                            sending written notice to{" "}
+                            <a
+                                href={`mailto:${CO.legal}?subject=Arbitration%20Opt-Out`}
+                                className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
+                            >
+                                {CO.legal}
+                            </a>{" "}
+                            within 30 days of first accepting these Terms. The notice must include your
+                            name, email address, and a clear statement that you wish to opt out of
+                            arbitration.
+                        </p>
+                        <p className="mt-3">
+                            <strong>Small claims exception.</strong> Either party may bring qualifying
+                            claims in small claims court.
+                        </p>
+                        <p className="mt-3">
+                            <strong>Fee allocation.</strong> {CO.name} will pay all arbitration filing,
+                            administration, and arbitrator fees that exceed the amount of a court filing
+                            fee in the jurisdiction where you reside. Each party bears its own legal
+                            costs unless the arbitrator awards fees to the prevailing party under
+                            applicable law.
+                        </p>
+                        <p className="mt-3">
+                            This arbitration provision does not apply to residents of the United Kingdom,
+                            the European Economic Area, or any jurisdiction where mandatory arbitration of
+                            consumer disputes is prohibited by law.
                         </p>
                     </section>
 
@@ -1346,6 +1416,41 @@ export default function TermsOfServicePage() {
                             We will make every effort to respond to your enquiry within a reasonable
                             timeframe.
                         </p>
+                    </section>
+
+                    {/* 30. Version History */}
+                    <section id="version-history" className="mb-8">
+                        <h2 className="text-lg font-semibold text-neutral-900 mb-3">
+                            30. Version History
+                        </h2>
+                        <div className="overflow-x-auto mt-3">
+                            <table className="w-full text-sm border-collapse">
+                                <thead>
+                                    <tr className="border-b-2 border-neutral-200 text-left">
+                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Version</th>
+                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Date</th>
+                                        <th className="py-2 text-neutral-500 font-semibold">Changes</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="align-top">
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4">{V}</td>
+                                        <td className="py-2 pr-4">{UPDATED}</td>
+                                        <td className="py-2">Added consumer law carve-out to indemnification (Section 21); revised termination clause to require 30-day notice for termination without cause (Section 22.1); added version history table (Section 30).</td>
+                                    </tr>
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4">1.2</td>
+                                        <td className="py-2 pr-4">17 Feb 2026</td>
+                                        <td className="py-2">Centralised versioning; improved JSON-LD; accessibility section added.</td>
+                                    </tr>
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4">1.0&ndash;1.1</td>
+                                        <td className="py-2 pr-4">31 Jan 2026</td>
+                                        <td className="py-2">Initial terms of service and minor corrections.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </section>
 
                     {/* Footer */}

@@ -171,3 +171,75 @@
 .touch-manipulation {
   touch-action: manipulation;
 }
+
+/* ── Print-friendly styles for legal pages ── */
+@media print {
+
+  /* Hide navigation, footer, cookie banner, and non-essential UI */
+  nav,
+  footer,
+  .klaro,
+  [data-noprint],
+  button {
+    display: none !important;
+  }
+
+  /* Reset background and text colours for readability */
+  body,
+  main,
+  article {
+    background: white !important;
+    color: black !important;
+  }
+
+  /* Remove padding/margin from main layout */
+  main {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Ensure links show their URLs */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    color: #666;
+    word-break: break-all;
+  }
+
+  /* Don't print link decorations for internal navigation */
+  a[href^="#"]::after,
+  a[href^="/"]::after {
+    content: none;
+  }
+
+  /* Prevent page breaks inside sections and tables */
+  section,
+  table,
+  tr {
+    page-break-inside: avoid;
+  }
+
+  /* Headings should not be orphaned at bottom of page */
+  h1,
+  h2,
+  h3,
+  h4 {
+    page-break-after: avoid;
+  }
+
+  /* Ensure tables have visible borders */
+  table {
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    border: 1px solid #ccc;
+    padding: 4px 8px;
+  }
+
+  /* Page margins */
+  @page {
+    margin: 2cm;
+  }
+}

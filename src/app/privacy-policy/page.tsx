@@ -3,6 +3,7 @@ import { Navbar } from "@/components/navbar";
 import { LegalH3 as H3 } from "@/components/legal";
 import Link from "next/link";
 import { COMPANY as CO } from "@/lib/company";
+import { LEGAL_VERSIONS } from "@/lib/legal-versions";
 
 export const metadata: Metadata = {
     title: "Privacy Policy — AVAJORA GAMES LTD",
@@ -12,21 +13,32 @@ export const metadata: Metadata = {
 
 const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
+    "@type": ["WebPage", "Article"],
     name: "Privacy Policy",
+    headline: "Privacy Policy",
     description: "Privacy Policy for AVAJORA GAMES LTD mobile games, website, and related services.",
     publisher: {
         "@type": "Organization",
         name: "AVAJORA GAMES LTD",
         url: "https://avajora.com",
     },
+    datePublished: "2026-01-31",
     dateModified: "2026-02-17",
     inLanguage: "en",
+    version: LEGAL_VERSIONS.privacyPolicy.version,
+    mainEntity: {
+        "@type": "WebPage",
+        name: "Privacy Policy",
+        description: "Comprehensive privacy policy covering data collection, advertising, children's privacy, and user rights.",
+    },
+    isPartOf: {
+        "@type": "WebSite",
+        url: "https://avajora.com",
+        name: "AVAJORA GAMES LTD",
+    },
 };
 
-const V = "2.1";
-const UPDATED = "17 February 2026";
-const EFFECTIVE = "17 February 2026";
+const { version: V, updated: UPDATED, effective: EFFECTIVE } = LEGAL_VERSIONS.privacyPolicy;
 
 const TOC = [
     { id: "who-we-are", label: "Who We Are" },
@@ -47,6 +59,7 @@ const TOC = [
     { id: "notifications", label: "Push Notifications & Marketing" },
     { id: "changes", label: "Changes to This Policy" },
     { id: "misc", label: "General Provisions" },
+    { id: "glossary", label: "Glossary" },
 ];
 
 /* H3 imported from @/components/legal */
@@ -79,8 +92,11 @@ export default function PrivacyPolicyPage() {
 
                     <p className="text-sm text-neutral-500 italic leading-relaxed mb-8">
                         In short — We collect only the data necessary to operate our games, serve relevant
-                        advertising, and improve your experience. We never sell your personal information. You
-                        may contact us at any time to access, correct, or delete your data. Where our games are
+                        advertising, and improve your experience. We do not sell your personal data for direct
+                        monetary consideration. Under certain broad legal definitions (such as the California
+                        Consumer Privacy Act), sharing advertising identifiers with ad networks may qualify as
+                        a &ldquo;sale&rdquo; or &ldquo;sharing&rdquo; &mdash; you can opt out at any time. You
+                        may contact us to access, correct, or delete your data. Where our games are
                         played by children, additional safeguards apply. The full details follow below.
                     </p>
 
@@ -95,9 +111,11 @@ export default function PrivacyPolicyPage() {
 
                     <p className="mt-4">
                         By downloading, installing, or playing any of our games, visiting our website, or otherwise
-                        using our Services, you acknowledge that you have read and understood this Privacy Policy
-                        and agree to the collection, use, and disclosure of your information as described herein.
-                        If you do not agree with this policy, please do not use our Services.
+                        using our Services, you acknowledge that you have read and understood this Privacy Policy.
+                        Where our processing relies on consent (for example, personalised advertising), we will ask
+                        for your specific, informed consent separately. Where processing relies on other legal bases
+                        (such as contractual necessity or legitimate interests), your use of the Services is governed
+                        by this policy. If you do not agree with this policy, please do not use our Services.
                     </p>
 
                     {/* Table of Contents */}
@@ -161,6 +179,8 @@ export default function PrivacyPolicyPage() {
                             appropriate data processing agreements. They do not independently determine the purposes
                             of processing and may not use your data for their own ends.
                         </p>
+
+
                     </section>
 
 
@@ -179,7 +199,7 @@ export default function PrivacyPolicyPage() {
                         <p>When you use our Services, the following data is collected automatically:</p>
                         <ul className="list-disc pl-5 space-y-2 mt-3">
                             <li><strong>Device Identifiers.</strong> Apple Identifier for Advertisers (IDFA) on iOS; Google Advertising ID (GAID) on Android. These are non-permanent, resettable identifiers that enable ad personalisation, frequency capping, and attribution. You can reset or limit them in your device settings (iOS: Settings &gt; Privacy &amp; Security &gt; Tracking; Android 12+: Settings &gt; Google &gt; Ads &gt; Delete Advertising ID). We also collect the Identifier for Vendor (IDFV) or Android ID for analytics purposes; these do not follow you across apps.</li>
-                            <li><strong>IP Address.</strong> Collected automatically. We use your IP address to derive broad geographic location (country and city) and do not store the raw IP address after location derivation is complete.</li>
+                            <li><strong>IP Address.</strong> Collected automatically. We use your IP address to derive broad geographic location (country and city). Raw IP addresses are retained for a maximum of <strong>14 days</strong> for security, fraud prevention, and operational logging, after which they are deleted or truncated. The IP-derived geolocation (country/city only) may be retained as part of aggregated session data for the durations specified in Section 10.</li>
                             <li><strong>Device &amp; OS Information.</strong> Manufacturer, model, screen resolution, operating system and version, system language and locale, network type (Wi-Fi or mobile data), and basic hardware specifications (CPU, RAM, available storage). Used for game compatibility, performance optimisation, and detecting low-end devices.</li>
                             <li><strong>Gameplay / Session Data.</strong> Level reached, scores, session start and end times, features used, items purchased, achievements unlocked. This is core analytics data processed via Unity Analytics.</li>
                             <li><strong>Ad Interaction Data.</strong> Which ads were shown, viewed, clicked, or resulted in installs. Used for ad measurement, fraud detection, and campaign optimisation.</li>
@@ -288,9 +308,32 @@ export default function PrivacyPolicyPage() {
                         <p className="mt-4">
                             <strong>Legitimate Interests Assessment.</strong> Where we rely on legitimate interests, we
                             have conducted an internal Legitimate Interests Assessment (LIA) that balances our
-                            interests against your rights and freedoms. A copy of the LIA is available on request by
-                            contacting{" "}
+                            interests against your rights and freedoms. In summary: our legitimate interest in
+                            analytics is balanced against minimal privacy impact because we use device-bound
+                            identifiers (not advertising IDs) for analytics, data is aggregated at the cohort level,
+                            and individual users are not profiled for advertising purposes. For contextual ads, no
+                            personal targeting occurs. For fraud detection, the security benefit to all users
+                            outweighs the limited processing involved. A full copy of the LIA is available on
+                            request by contacting{" "}
                             <a href={`mailto:${CO.privacy}`} className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">{CO.privacy}</a>.
+                        </p>
+
+                        <p className="mt-4">
+                            <strong>Data Protection Impact Assessment (DPIA).</strong> We have conducted a Data
+                            Protection Impact Assessment under GDPR Article 35 for our large-scale processing of
+                            advertising identifiers and behavioural data across our user base. The DPIA evaluates
+                            the necessity and proportionality of the processing, assesses risks to data subjects,
+                            and documents the safeguards and measures we apply to mitigate those risks. A summary
+                            of the DPIA is available on request by contacting{" "}
+                            <a href={`mailto:${CO.privacy}`} className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">{CO.privacy}</a>.
+                        </p>
+
+                        <p className="mt-4">
+                            <strong>Automated Decision-Making.</strong> We do not use automated decision-making
+                            (including profiling) that produces legal effects concerning you or similarly
+                            significantly affects you, as described in GDPR Article 22. Ad personalisation is based
+                            on interest signals processed by our advertising partners and does not constitute
+                            automated decision-making with legal or similarly significant effects.
                         </p>
                     </section>
 
@@ -323,8 +366,10 @@ export default function PrivacyPolicyPage() {
                             <strong>GAID (Android)</strong> — Google&rsquo;s Advertising ID is the equivalent
                             identifier on Android devices. It serves the same purposes. Note: Google is transitioning
                             Android to the Privacy Sandbox, which will eventually replace GAID with privacy-preserving
-                            APIs such as the Topics API. As this technology evolves, we will update our data practices
-                            accordingly.
+                            APIs such as the Topics API, Attribution Reporting API, and FLEDGE (Protected Audiences).
+                            As these APIs become available, we will migrate our data practices accordingly and update
+                            this policy. We are committed to adopting privacy-preserving alternatives as they become
+                            production-ready.
                         </p>
                         <p className="mt-3">
                             These advertising identifiers can be used by ad networks to track user behaviour across
@@ -435,7 +480,13 @@ export default function PrivacyPolicyPage() {
                                 system, app bundle identifier, and ad interaction events. InMobi retains device-level
                                 data for a maximum of 13 months, after which data is deleted or retained in aggregated
                                 (non-personal) format. InMobi acts as a <strong>joint controller</strong> with us under
-                                GDPR — both parties share responsibility for how personal data is processed. For EEA and
+                                GDPR Article 26 — both parties share responsibility for how personal data is processed.
+                                The essence of our joint controller arrangement is as follows: InMobi is responsible for
+                                its own data collection, ad serving, and compliance with data subject requests directed
+                                to InMobi; {CO.name} is responsible for obtaining valid consent from users and passing
+                                consent signals to InMobi via the SDK. A copy of the joint controller arrangement is
+                                available on request by contacting{" "}
+                                <a href={`mailto:${CO.privacy}`} className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">{CO.privacy}</a>. For EEA and
                                 UK users, InMobi requires consent via the IAB TCF 2.2 framework (IAB Vendor ID 333)
                                 before serving personalised ads. Users can opt out of InMobi&rsquo;s interest-based
                                 advertising at any time by visiting:{" "}
@@ -447,12 +498,21 @@ export default function PrivacyPolicyPage() {
                                 <a href="https://www.inmobi.com/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://www.inmobi.com/privacy-policy/</a>
                             </li>
                             <li>
-                                <strong>Google AdMob</strong> — Reached via CAS.ai mediation.{" "}
+                                <strong>Google AdMob</strong> (Google LLC, USA) — Google AdMob serves ads
+                                in our games via CAS.ai mediation. AdMob may collect your advertising
+                                identifier (IDFA/GAID), IP address (used to derive approximate geographic
+                                location), device model and operating system, app identifier (bundle ID),
+                                and ad interaction data (impression, click, conversion). Google acts as an
+                                <strong>independent data controller</strong> for the data it collects
+                                through AdMob. Google is certified under the <strong>EU-US Data Privacy
+                                    Framework</strong>. Users can manage Google&rsquo;s ad personalisation at{" "}
+                                <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">adssettings.google.com</a>.
+                                Privacy policy:{" "}
                                 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://policies.google.com/privacy</a>
                             </li>
                             <li>
                                 <strong>ironSource (Unity LevelPlay)</strong> — Reached via CAS.ai mediation.{" "}
-                                <a href="https://ironsrc.com/wp-content/uploads/2019/03/ironSource-Mobile-Privacy-Policy.pdf" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">ironSource Privacy Policy</a>
+                                <a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://unity.com/legal/privacy-policy</a>
                             </li>
                             <li>
                                 <strong>Meta Audience Network</strong> — Reached via CAS.ai mediation.{" "}
@@ -473,17 +533,17 @@ export default function PrivacyPolicyPage() {
                         </ul>
 
                         <p className="mt-4">
-                            Since CAS.ai&rsquo;s partner network list can change over time, a full and always
-                            up-to-date list of all advertising partners who may receive your data through our games
-                            is available at:{" "}
+                            Since CAS.ai&rsquo;s partner network list can change over time, we publish the current
+                            list of principal advertising partners at: {" "}
                             <Link href="/advertising-partners" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">avajora.com/advertising-partners</Link>.
-                            Each partner operates under its own privacy policy and is responsible for its own data
-                            practices.
+                            This list is updated periodically and may not reflect every downstream reseller or
+                            measurement provider in real time. Each partner operates under its own privacy policy
+                            and is responsible for its own data practices.
                         </p>
 
                         <H3>5.5 COPPA &amp; Child-Directed Disclosures (Advertising)</H3>
                         <p>
-                            We have flagged all our games in the Unity, Liftoff, InMobi, and CAS.ai dashboards
+                            We configure game-level settings in Unity, Liftoff, InMobi, and CAS.ai dashboards
                             regarding their COPPA status (directed to children or not). For any game not directed at
                             children under 13, advertising identifiers may be used for personalised ads. For
                             child-directed apps: Unity will not collect cross-app advertising identifiers; Liftoff is
@@ -494,11 +554,7 @@ export default function PrivacyPolicyPage() {
 
                         <H3>5.6 Consent &amp; Opt-Out Mechanisms</H3>
                         <p>
-                            CAS.ai supports the IAB Transparency &amp; Consent Framework (TCF 2.2) via its built-in
-                            Consent Management Platform (CMP). For EEA and UK
-                            users, personalised advertising via CAS.ai mediation is only displayed after you provide
-                            explicit consent through the CMP popup shown at first launch. You may
-                            update your preferences at any time via Settings &gt; Privacy within the game.
+                            <strong>Consent flow sequence.</strong> On iOS 14.5+, Apple&rsquo;s App Tracking Transparency (ATT) prompt is displayed <strong>first</strong>, before any other consent dialogue. If you decline tracking via ATT, personalised advertising is disabled immediately regardless of any subsequent CMP selection — the CMP will not be shown for personalised ads in this case. If you allow tracking via ATT (or on Android / pre-iOS 14.5), the CAS.ai Consent Management Platform (CMP) is presented next, requesting your consent for personalised advertising under the IAB Transparency &amp; Consent Framework (TCF 2.2). For EEA and UK users, personalised advertising via CAS.ai mediation is only displayed after you provide explicit consent through this CMP popup. You may update your preferences at any time via Settings &gt; Privacy within the game.
                         </p>
                         <p className="mt-3">
                             For users in the EEA, UK, and applicable US states, consent signals are passed to Unity
@@ -558,6 +614,22 @@ export default function PrivacyPolicyPage() {
                             Privacy policy:{" "}
                             <a href="https://unity.com/legal/developer-privacy-policy" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://unity.com/legal/developer-privacy-policy</a>
                         </p>
+
+                        <H3>5.9 Crash Reporting &amp; Performance Monitoring</H3>
+                        <p>
+                            As of the date of this policy, we do <strong>not</strong> use Firebase Crashlytics,
+                            Google Firebase Analytics, or any standalone crash-reporting SDK. Crash and performance
+                            data is collected only through Unity&rsquo;s built-in crash-reporting facilities as
+                            part of the Unity SDK already disclosed above.
+                        </p>
+                        <p className="mt-4">
+                            If we integrate a dedicated crash-reporting or performance-monitoring service
+                            (e.g. Firebase Crashlytics, Sentry, Bugsnag) in the future, we will update this
+                            policy to disclose: (a) the provider and its role, (b) data collected, (c) retention
+                            period, (d) applicable legal basis, and (e) any international transfers involved.
+                            Material additions of this kind will be communicated in accordance with Section 17
+                            (Changes to This Policy).
+                        </p>
                     </section>
 
 
@@ -566,14 +638,66 @@ export default function PrivacyPolicyPage() {
                     <section id="sharing" className="mt-14">
                         <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4">6. How We Share Your Data</h2>
 
-                        <H3>6.1 Service Providers (Data Processors)</H3>
+                        <H3>6.1 Service Providers (Data Processors) &amp; Sub-Processor Register</H3>
                         <p>
                             Service providers act as data processors — they process data only on our instructions, are
                             contractually bound, and cannot use the data for their own purposes. We have signed Data
                             Processing Agreements with all service providers that require them, in compliance with
-                            GDPR Article 28.
+                            GDPR Article 28. The following is our sub-processor register (GDPR Art. 28(2)):
                         </p>
-                        <ul className="list-disc pl-5 space-y-2 mt-3">
+
+                        <div className="overflow-x-auto mt-4 mb-6">
+                            <table className="w-full text-sm border-collapse">
+                                <thead>
+                                    <tr className="border-b-2 border-neutral-200 text-left">
+                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Sub-Processor</th>
+                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Function</th>
+                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Location</th>
+                                        <th className="py-2 text-neutral-500 font-semibold">Transfer Mechanism</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="align-top">
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4 font-medium text-neutral-900">Google Cloud Platform</td>
+                                        <td className="py-2 pr-4">Cloud hosting &amp; infrastructure</td>
+                                        <td className="py-2 pr-4">EU (europe-west)</td>
+                                        <td className="py-2">Adequacy (intra-EEA)</td>
+                                    </tr>
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4 font-medium text-neutral-900">Unity Analytics</td>
+                                        <td className="py-2 pr-4">Gameplay analytics</td>
+                                        <td className="py-2 pr-4">USA</td>
+                                        <td className="py-2">SCCs + DPA</td>
+                                    </tr>
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4 font-medium text-neutral-900">CAS.ai (CLEAR INVEST LTD)</td>
+                                        <td className="py-2 pr-4">Ad mediation &amp; consent management</td>
+                                        <td className="py-2 pr-4">Belize</td>
+                                        <td className="py-2">SCCs + TIA + supplementary measures</td>
+                                    </tr>
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4 font-medium text-neutral-900">Resend Inc.</td>
+                                        <td className="py-2 pr-4">Transactional email (privacy requests)</td>
+                                        <td className="py-2 pr-4">USA</td>
+                                        <td className="py-2">DPF certified</td>
+                                    </tr>
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4 font-medium text-neutral-900">Vercel Inc.</td>
+                                        <td className="py-2 pr-4">Website hosting &amp; CDN</td>
+                                        <td className="py-2 pr-4">USA / Edge</td>
+                                        <td className="py-2">DPF certified + SCCs</td>
+                                    </tr>
+                                    <tr>
+                                        <td className="py-2 pr-4 font-medium text-neutral-900">Cloudinary Ltd.</td>
+                                        <td className="py-2 pr-4">Image CDN (website assets)</td>
+                                        <td className="py-2 pr-4">USA / Israel</td>
+                                        <td className="py-2">SCCs</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <ul className="list-disc pl-5 space-y-2">
                             <li><strong>Cloud &amp; Hosting:</strong> Google Cloud Platform — <a href="https://cloud.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">cloud.google.com/privacy</a>. Data is stored in the EU (europe-west) region.</li>
                             <li><strong>Analytics:</strong> Unity Analytics (Unity Technologies Inc.) — <a href="https://unity.com/legal/developer-privacy-policy" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">unity.com/legal/developer-privacy-policy</a>. Receives device identifiers, gameplay events, and session data for product analytics. Uses a device-bound identifier (not the advertising ID).</li>
                             <li><strong>Ad Mediation:</strong> CAS.ai (CLEAR INVEST LTD) — <a href="https://cas.ai/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">cas.ai/privacy-policy</a>. Manages real-time ad auctions and routes requests to downstream ad networks. Receives advertising IDs, IP address, device info, and ad interaction data.</li>
@@ -632,7 +756,7 @@ export default function PrivacyPolicyPage() {
                             below the applicable minimum age.
                         </p>
                         <p className="mt-4">
-                            We have flagged all our games in the Unity, Liftoff, InMobi, and CAS.ai dashboards
+                            We configure game-level settings in Unity, Liftoff, InMobi, and CAS.ai dashboards
                             regarding their COPPA status. For child-directed apps: Unity will not collect cross-app
                             advertising identifiers; Liftoff is instructed not to collect cross-app advertising
                             identifiers for targeting; InMobi will not conduct behavioural advertising; and CAS.ai
@@ -662,6 +786,12 @@ export default function PrivacyPolicyPage() {
                             This policy complies with the Children&rsquo;s Online Privacy Protection Act (COPPA,
                             15 U.S.C. &sect; 6501 et seq.) for distribution on United States app stores.
                         </p>
+                        <p className="mt-4">
+                            For a plain-language explanation of our children&rsquo;s data practices written specifically
+                            for parents and guardians, please see our{" "}
+                            <Link href="/privacy-for-parents" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">Privacy for Parents</Link>{" "}
+                            page.
+                        </p>
                     </section>
 
 
@@ -688,6 +818,7 @@ export default function PrivacyPolicyPage() {
                         <ul className="list-disc pl-5 space-y-2 mt-2">
                             <li>Know what personal information has been collected, from which sources, for what purposes, and with whom it has been shared or sold — covering the prior 12 months.</li>
                             <li>Request deletion of personal information collected from you, subject to legal exceptions.</li>
+                            <li>Request correction of inaccurate personal information (CPRA &sect; 1798.106).</li>
                             <li>Direct us to stop &ldquo;selling&rdquo; or &ldquo;sharing&rdquo; (including for cross-context behavioural advertising) your personal information. See our &ldquo;Do Not Sell or Share My Personal Information&rdquo; toggle in Settings &gt; Privacy.</li>
                             <li>Not be discriminated against for exercising your privacy rights — we will not deny service, charge a different price, or provide a lower quality of service.</li>
                         </ul>
@@ -746,9 +877,17 @@ export default function PrivacyPolicyPage() {
                         <p className="mt-4">
                             Where data is transferred to countries that do not benefit from an adequacy decision
                             (including Belize, where CAS.ai&rsquo;s operator CLEAR INVEST LTD is incorporated), we
-                            conduct Transfer Impact Assessments (TIAs) and apply supplementary technical measures
-                            including encryption in transit and at rest, pseudonymisation, and strict access controls.
+                            conduct Transfer Impact Assessments (TIAs) and apply supplementary technical measures.
+                            Belize does not currently have comprehensive data protection legislation. For transfers
+                            to CAS.ai/CLEAR INVEST LTD, the following supplementary measures are in place:
                         </p>
+                        <ul className="list-disc pl-5 space-y-2 mt-3">
+                            <li>All data transmitted to CAS.ai is encrypted in transit (TLS 1.2+) and at rest.</li>
+                            <li>Advertising identifiers are pseudonymised before transmission where technically feasible.</li>
+                            <li>CAS.ai&rsquo;s processing is limited to real-time ad mediation; it does not retain personal data beyond the auction cycle except for fraud detection logs.</li>
+                            <li>CAS.ai is bound by contractual data protection obligations equivalent to GDPR Article 28 requirements.</li>
+                            <li>We regularly review CAS.ai&rsquo;s data handling practices and reserve the right to terminate the relationship if adequate protections are not maintained.</li>
+                        </ul>
                         <p className="mt-4 text-sm text-neutral-500">
                             Note: We do not reference the EU-US Privacy Shield or Swiss-US Privacy Shield, as both
                             were invalidated and are no longer a valid transfer mechanism.
@@ -785,7 +924,7 @@ export default function PrivacyPolicyPage() {
                                     </tr>
                                     <tr className="border-b border-neutral-100">
                                         <td className="py-2 pr-4">Analytics session data</td>
-                                        <td className="py-2">As defined by Unity Analytics retention policy (see Section 5.8)</td>
+                                        <td className="py-2">12 months from collection (Unity Analytics default retention)</td>
                                     </tr>
                                     <tr className="border-b border-neutral-100">
                                         <td className="py-2 pr-4">Customer support communications</td>
@@ -837,7 +976,7 @@ export default function PrivacyPolicyPage() {
                             <li><strong>Encryption in transit.</strong> Data transmitted between your device and our servers is encrypted using TLS/SSL.</li>
                             <li><strong>Encryption at rest.</strong> Data stored on our servers is encrypted at rest using Google Cloud&rsquo;s default encryption.</li>
                             <li><strong>Access controls.</strong> Access to personal data is restricted to authorised personnel who need it to perform their duties. Staff are bound by confidentiality obligations.</li>
-                            <li><strong>Breach response.</strong> We maintain a data breach response plan. Under GDPR, we will notify the ICO within 72 hours of becoming aware of a personal data breach likely to result in risk to individuals.</li>
+                            <li><strong>Breach response.</strong> We maintain a data breach response plan. Under GDPR, we will notify the ICO within 72 hours of becoming aware of a personal data breach likely to result in risk to individuals. Where a breach is likely to result in a <strong>high risk</strong> to your rights and freedoms (GDPR Art. 34), we will also notify affected users directly without undue delay, describing the nature of the breach, the likely consequences, and the measures taken or proposed to address it.</li>
                             <li><strong>Record of Processing Activities (ROPA).</strong> We maintain a Record of Processing Activities as required by GDPR Article 30, documenting all categories of processing, their purposes, legal bases, recipients, and retention periods.</li>
                         </ul>
                         <p className="mt-4">
@@ -862,10 +1001,14 @@ export default function PrivacyPolicyPage() {
                             enable websites to recognise your browser and store preferences. We use:
                         </p>
                         <ul className="list-disc pl-5 space-y-1 mt-2">
-                            <li><em>Strictly necessary cookies</em> — required for the website to function; cannot be opted out.</li>
-                            <li><em>Analytics cookies</em> — help us understand website usage patterns (e.g. Google Analytics).</li>
-                            <li><em>Advertising/targeting cookies</em> — used by ad networks to serve relevant ads.</li>
+                            <li><em>Strictly necessary cookies</em> — required for the website to function; cannot be opted out (e.g. cookie consent preferences via Klaro).</li>
+                            <li><em>Analytics cookies</em> — help us understand website usage patterns (Google Analytics 4, set only with consent).</li>
                         </ul>
+                        <p className="mt-3">
+                            We do not use advertising, marketing, or targeting cookies on our website. Advertising
+                            identifiers and SDKs are used only within our mobile games, as described in Sections 2
+                            and 5 of this policy.
+                        </p>
                         <p className="mt-3">
                             A cookie consent banner is presented to EU/UK visitors on first visit, allowing you to
                             accept or reject non-essential cookies. Pre-ticked boxes are not valid consent.
@@ -887,9 +1030,10 @@ export default function PrivacyPolicyPage() {
                         <p className="mt-4">
                             <strong>Do Not Track (DNT).</strong> Our systems do not currently respond to browser
                             &ldquo;Do Not Track&rdquo; (DNT) signals, as DNT lacks a common industry standard.
-                            However, we <strong>do</strong> honour the <strong>Global Privacy Control</strong>{" "}
-                            (GPC) browser signal as a valid opt-out request under the CCPA/CPRA and CPA — see
-                            Section 14.4 for details.
+                            We support opt-out controls through our in-app Privacy Settings and request channels.
+                            Where technically available on our website, we also attempt to treat the <strong>Global
+                                Privacy Control</strong> (GPC) browser signal as an opt-out request — see Section 14.4
+                            for details.
                         </p>
 
                         <p className="mt-4">
@@ -956,14 +1100,65 @@ export default function PrivacyPolicyPage() {
                             This subsection applies to California residents and supplements the main policy, as
                             required by the California Consumer Privacy Act (Cal. Civ. Code &sect; 1798.100 et seq.).
                         </p>
-                        <p className="mt-3"><strong>Categories of personal information collected:</strong> Identifiers (advertising IDs, IP-derived location); Internet/Electronic Activity (gameplay data, ad interactions); Geolocation (country/city from IP); Inferences (gameplay preferences).</p>
-                        <p className="mt-3"><strong>Sources:</strong> Directly from you; automatically from your device; from advertising partners; from app stores.</p>
+                        <div className="overflow-x-auto mt-4 mb-6">
+                            <table className="w-full text-sm border-collapse">
+                                <thead>
+                                    <tr className="border-b-2 border-neutral-200 text-left">
+                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Category of PI</th>
+                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Examples</th>
+                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Sources</th>
+                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Business Purpose</th>
+                                        <th className="py-2 text-neutral-500 font-semibold">Third Parties</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="align-top">
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4 font-medium text-neutral-900">Identifiers</td>
+                                        <td className="py-2 pr-4">IDFA, GAID, IDFV, Android&nbsp;ID, IP-derived location</td>
+                                        <td className="py-2 pr-4">Your device (automatic)</td>
+                                        <td className="py-2 pr-4">Ad serving, attribution, fraud detection</td>
+                                        <td className="py-2">CAS.ai, ad networks (see Sec.&nbsp;5.4)</td>
+                                    </tr>
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4 font-medium text-neutral-900">Internet / Electronic Activity</td>
+                                        <td className="py-2 pr-4">Gameplay data, session times, ad impressions/clicks</td>
+                                        <td className="py-2 pr-4">Your device (automatic)</td>
+                                        <td className="py-2 pr-4">Analytics, game improvement, ad measurement</td>
+                                        <td className="py-2">Unity Analytics, CAS.ai</td>
+                                    </tr>
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4 font-medium text-neutral-900">Geolocation</td>
+                                        <td className="py-2 pr-4">Country / city (derived from IP &mdash; never precise GPS)</td>
+                                        <td className="py-2 pr-4">Your device (automatic)</td>
+                                        <td className="py-2 pr-4">Content localisation, fraud detection</td>
+                                        <td className="py-2">CAS.ai, ad networks</td>
+                                    </tr>
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4 font-medium text-neutral-900">Commercial Info</td>
+                                        <td className="py-2 pr-4">IAP transaction IDs, products purchased</td>
+                                        <td className="py-2 pr-4">App stores (Google Play, Apple)</td>
+                                        <td className="py-2 pr-4">Purchase fulfilment, tax records</td>
+                                        <td className="py-2">None (internal only)</td>
+                                    </tr>
+                                    <tr>
+                                        <td className="py-2 pr-4 font-medium text-neutral-900">Inferences</td>
+                                        <td className="py-2 pr-4">Gameplay preferences, engagement level</td>
+                                        <td className="py-2 pr-4">Derived from above</td>
+                                        <td className="py-2 pr-4">Product improvement</td>
+                                        <td className="py-2">None (internal only)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p className="mt-3"><strong>Sources:</strong> Directly from you (support); automatically from your device; from advertising partners (attribution); from app stores (transactions).</p>
                         <p className="mt-3"><strong>Business purposes:</strong> As described in Section 3.</p>
                         <p className="mt-3">
-                            <strong>Sale / Sharing.</strong> Sharing advertising identifiers with ad networks for
-                            cross-context behavioural advertising may qualify as &ldquo;sharing&rdquo; under CCPA. You
-                            may opt out via our &ldquo;Do Not Sell or Share My Personal Information&rdquo; toggle in
-                            Settings &gt; Privacy.
+                            <strong>Sale / Sharing.</strong> We do not sell personal information for direct monetary
+                            consideration. However, sharing advertising identifiers with ad networks for cross-context
+                            behavioural advertising may qualify as a &ldquo;sale&rdquo; or &ldquo;sharing&rdquo; under
+                            the CCPA&rsquo;s broad definitions. You may opt out via our &ldquo;Do Not Sell or Share My
+                            Personal Information&rdquo; toggle in Settings &gt; Privacy, or via our{" "}
+                            <Link href="/do-not-sell" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">Do Not Sell or Share</Link> page.
                         </p>
 
                         <H3>14.4 Other US States</H3>
@@ -971,15 +1166,33 @@ export default function PrivacyPolicyPage() {
                             Virginia (VCDPA), Colorado (CPA), Connecticut (CTDPA), Utah (UCPA), Texas (TDPSA), and
                             other states have enacted privacy legislation granting opt-out rights for targeted
                             advertising. Our unified Settings &gt; Privacy mechanism satisfies all applicable state
-                            requirements. We honour the Global Privacy Control (GPC) browser signal as an opt-out
-                            request, as required by applicable US state privacy laws including the CCPA/CPRA and CPA.
+                            requirements. Where technically detected on our website, we treat the Global Privacy
+                            Control (GPC) browser signal as an opt-out request. Because GPC is browser-based, it may
+                            not apply to in-app mobile environments; for mobile gameplay, please use the in-app
+                            privacy controls or contact us directly.
                         </p>
 
                         <H3>14.5 Brazil (LGPD)</H3>
                         <p>
-                            The Lei Geral de Prote&ccedil;&atilde;o de Dados applies to processing of Brazilian
-                            residents&rsquo; data. We honour data subject rights equivalent to those described in
-                            Section 8, including access, correction, deletion, and portability.
+                            The Lei Geral de Prote&ccedil;&atilde;o de Dados (LGPD, Law No. 13.709/2018) applies to
+                            processing of Brazilian residents&rsquo; data. We honour data subject rights equivalent to
+                            those described in Section 8, including access, correction, deletion, portability, and
+                            information about public and private entities with which data has been shared.
+                        </p>
+                        <p className="mt-3">
+                            <strong>LGPD legal bases (Art. 7):</strong>
+                        </p>
+                        <ul className="list-disc pl-5 space-y-1 mt-2">
+                            <li><strong>Consent (Art. 7, I):</strong> Personalised advertising.</li>
+                            <li><strong>Contract performance (Art. 7, V):</strong> Service delivery, in-app purchase fulfilment.</li>
+                            <li><strong>Legitimate interests (Art. 7, IX):</strong> Analytics, contextual advertising, fraud detection.</li>
+                            <li><strong>Legal obligation (Art. 7, II):</strong> Tax records, law enforcement requests.</li>
+                        </ul>
+                        <p className="mt-3">
+                            Brazilian users may contact the Autoridade Nacional de Prote&ccedil;&atilde;o de Dados
+                            (ANPD) at{" "}
+                            <a href="https://www.gov.br/anpd" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">gov.br/anpd</a>{" "}
+                            to exercise their rights or lodge a complaint.
                         </p>
 
                         <H3>14.6 Other Jurisdictions</H3>
@@ -1041,6 +1254,7 @@ export default function PrivacyPolicyPage() {
                             activities change to require a formal DPO appointment, we will update this section
                             accordingly.
                         </p>
+
                         <p className="mt-4">
                             Please contact{" "}
                             <a href={`mailto:${CO.privacy}`} className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">{CO.privacy}</a>{" "}
@@ -1098,7 +1312,9 @@ export default function PrivacyPolicyPage() {
                         </p>
                         <p className="mt-4">
                             Continued use of our Services after changes are posted constitutes your acceptance of the
-                            updated policy.
+                            updated policy. <strong>However, where our processing relies on your consent (for example,
+                                personalised advertising), we will seek your renewed, specific consent separately and will
+                                not treat continued use of the Services as consent to materially different processing.</strong>
                         </p>
                         <p className="mt-4">
                             We review this policy at least annually and update it to reflect changes in law, data
@@ -1106,6 +1322,36 @@ export default function PrivacyPolicyPage() {
                             contacting{" "}
                             <a href={`mailto:${CO.privacy}`} className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">{CO.privacy}</a>.
                         </p>
+
+                        <H3>17.1 Version History</H3>
+                        <div className="overflow-x-auto mt-3">
+                            <table className="w-full text-sm border-collapse">
+                                <thead>
+                                    <tr className="border-b-2 border-neutral-200 text-left">
+                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Version</th>
+                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Date</th>
+                                        <th className="py-2 text-neutral-500 font-semibold">Changes</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="align-top">
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4">2.2</td>
+                                        <td className="py-2 pr-4">17 Feb 2026</td>
+                                        <td className="py-2">Aligned &ldquo;sale&rdquo; language with CCPA definitions, added CCPA PI disclosure table, added CPRA right to correct, expanded LGPD legal basis mapping, expanded Google AdMob disclosure, added LIA summary, removed placeholder EU representative section, consolidated version history, added glossary to TOC.</td>
+                                    </tr>
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4">2.0&ndash;2.1</td>
+                                        <td className="py-2 pr-4">17 Feb 2026</td>
+                                        <td className="py-2">Comprehensive rewrite covering CAS.ai mediation, expanded ad partner disclosures, jurisdiction-specific sections, COPPA/AADC compliance, DPIA disclosure, automated decision-making statement, CAS.ai/Belize transfer safeguards, InMobi Art.&nbsp;26 arrangement, Unity Analytics retention, and updated US opt-out disclosures.</td>
+                                    </tr>
+                                    <tr>
+                                        <td className="py-2 pr-4">1.0</td>
+                                        <td className="py-2 pr-4">31 Jan 2026</td>
+                                        <td className="py-2">Initial privacy policy.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </section>
 
 
@@ -1117,7 +1363,8 @@ export default function PrivacyPolicyPage() {
                         <ul className="list-disc pl-5 space-y-3">
                             <li><strong>Third-Party Links.</strong> Our games and website may contain links to third-party websites or services. We are not responsible for the privacy practices of those third parties. We encourage you to review their privacy policies before providing any personal information.</li>
                             <li><strong>App Store Terms.</strong> This policy supplements the privacy policies and terms of the Apple App Store and Google Play Store. Please also review those policies, as they govern how the platforms handle data related to your use of their services.</li>
-                            <li><strong>No Sale of Personal Data.</strong> We do not sell your personal data. Note that under the CCPA&rsquo;s broader definition, sharing advertising identifiers with ad networks for cross-context behavioural advertising may qualify as &ldquo;sharing&rdquo; — see Section 14.3.</li>
+                            <li><strong>App Store Privacy Labels.</strong> We provide simplified data-collection disclosures via Apple&rsquo;s App Privacy Nutrition Labels and Google Play&rsquo;s Data Safety Section, as required by each platform. In the event of any discrepancy between those simplified store-level summaries and this Privacy Policy, this Privacy Policy is the comprehensive, authoritative statement of our data practices.</li>
+                            <li><strong>No Sale of Personal Data for Monetary Consideration.</strong> We do not sell your personal data for direct monetary consideration. Note that under the CCPA&rsquo;s broader definitions, sharing advertising identifiers with ad networks for cross-context behavioural advertising may qualify as a &ldquo;sale&rdquo; or &ldquo;sharing&rdquo; &mdash; see Section 14.3 and our <Link href="/do-not-sell" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">Do Not Sell or Share</Link> page.</li>
                             <li><strong>Aggregated &amp; Anonymised Data.</strong> We may use aggregated and anonymised data — which cannot identify you individually — for research, benchmarking, industry reports, and business analysis. Such data is not subject to this policy.</li>
                             <li><strong>Severability.</strong> If any provision of this Privacy Policy is found to be unenforceable, the remaining provisions will continue in full force and effect.</li>
                             <li><strong>Governing Law.</strong> This policy is governed by the laws of England and Wales.</li>
@@ -1130,13 +1377,54 @@ export default function PrivacyPolicyPage() {
                     {/* Section 19 merged into Section 15 (Contact & Data Protection) */}
 
 
+                    {/* ══════════════ GAME-SPECIFIC APPENDICES ══════════════ */}
 
+                    <section id="game-appendices" className="mt-14">
+                        <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4">Game-Specific Privacy Appendices</h2>
+                        <p>
+                            Each of our published games may have minor differences in the SDKs integrated,
+                            ad formats used, or age-gate implementation. The table below summarises the
+                            privacy-relevant configuration for every game currently available.
+                        </p>
+
+                        <div className="overflow-x-auto mt-6 mb-6">
+                            <table className="w-full text-sm border-collapse">
+                                <thead>
+                                    <tr className="border-b-2 border-neutral-200 text-left">
+                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Game</th>
+                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Platforms</th>
+                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Age Rating</th>
+                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Mixed Audience?</th>
+                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Ad Networks Active</th>
+                                        <th className="py-2 text-neutral-500 font-semibold">Additional SDKs</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="align-top">
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4 italic text-neutral-500" colSpan={6}>
+                                            Games will be listed here as they are published. Each row will specify
+                                            which ad networks are active, the app-store age rating, whether
+                                            COPPA-compliant child-directed treatment is enabled, and any game-specific
+                                            SDKs beyond the baseline stack described in this policy.
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p className="text-sm text-neutral-500">
+                            This appendix is updated each time a new game is released or an existing game&rsquo;s
+                            SDK configuration changes materially. If a game enables child-directed treatment
+                            (COPPA tag / Google Families), personalised advertising is disabled for that title
+                            and the age-gate flow described in Section 7 is applied.
+                        </p>
+                    </section>
 
 
                     {/* ══════════════ DEFINITIONS GLOSSARY ══════════════ */}
 
-                    <section className="mt-14">
-                        <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4">Glossary</h2>
+                    <section id="glossary" className="mt-14">
+                        <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4">19. Glossary</h2>
                         <ul className="space-y-3 text-sm list-none pl-0">
                             <li><span className="font-medium text-neutral-900">Personal Data</span> — Any information relating to an identified or identifiable natural person.</li>
                             <li><span className="font-medium text-neutral-900">Data Controller</span> — The entity that determines the purposes and means of the processing of personal data.</li>

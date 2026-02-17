@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import Link from "next/link";
 import { COMPANY as CO } from "@/lib/company";
+import { LEGAL_VERSIONS } from "@/lib/legal-versions";
 
 export const metadata: Metadata = {
     title: "Do Not Sell or Share My Personal Information — AVAJORA GAMES LTD",
@@ -9,10 +10,13 @@ export const metadata: Metadata = {
         "Exercise your right to opt out of the sale or sharing of your personal information under the CCPA/CPRA and other US state privacy laws.",
 };
 
+const { version: V, updated: UPDATED } = LEGAL_VERSIONS.doNotSell;
+
 const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
+    "@type": ["WebPage", "Article"],
     name: "Do Not Sell or Share My Personal Information",
+    headline: "Do Not Sell or Share My Personal Information — AVAJORA GAMES LTD",
     description:
         "Exercise your right to opt out of the sale or sharing of your personal information under the CCPA/CPRA and other US state privacy laws.",
     publisher: {
@@ -20,12 +24,21 @@ const jsonLd = {
         name: CO.name,
         url: CO.url,
     },
+    datePublished: "2025-01-15",
     dateModified: "2026-02-17",
+    version: V,
     inLanguage: "en",
+    mainEntity: {
+        "@type": "WebPage",
+        name: "Do Not Sell or Share My Personal Information",
+        description: "Opt-out page for the sale or sharing of personal information under CCPA/CPRA.",
+    },
+    isPartOf: {
+        "@type": "WebSite",
+        url: CO.url,
+        name: CO.name,
+    },
 };
-
-const V = "1.0";
-const UPDATED = "17 February 2026";
 
 export default function DoNotSellPage() {
     return (
@@ -85,6 +98,46 @@ export default function DoNotSellPage() {
                         </p>
                     </section>
 
+                    {/* Sensitive Personal Information */}
+                    <section className="mt-10">
+                        <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4">Sensitive Personal Information</h2>
+                        <p>
+                            Under the CPRA (Cal.&nbsp;Civ.&nbsp;Code&nbsp;&sect;&nbsp;1798.121), &ldquo;sensitive personal
+                            information&rdquo; includes categories such as Social Security numbers, financial account
+                            details, precise geolocation, racial or ethnic origin, religious beliefs,
+                            biometric data, and health information.
+                        </p>
+                        <p className="mt-4">
+                            <strong>{CO.name} does not collect, use, or disclose sensitive personal information</strong> as
+                            defined by the CPRA. We do not process precise geolocation (our games use IP-derived
+                            approximate location only), biometric data, genetic data, health data, or any other
+                            category of sensitive personal information.
+                        </p>
+                    </section>
+
+                    {/* Financial Incentive Disclosure */}
+                    <section className="mt-10">
+                        <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4">Financial Incentive Disclosure</h2>
+                        <p>
+                            Our games may offer <strong>rewarded video ads</strong>, where you can voluntarily
+                            watch an advertisement in exchange for an in-game benefit (such as extra lives,
+                            virtual currency, or bonus content). Under the CCPA/CPRA, offering a benefit in
+                            exchange for data use may be considered a &ldquo;financial incentive&rdquo;
+                            (Cal.&nbsp;Civ.&nbsp;Code&nbsp;&sect;&nbsp;1798.125).
+                        </p>
+                        <p className="mt-4">
+                            <strong>How this works:</strong> When you choose to watch a rewarded ad, your
+                            advertising identifier and device data are shared with the ad network that serves
+                            the ad. The in-game reward you receive is the consideration for viewing the ad.
+                        </p>
+                        <p className="mt-4">
+                            <strong>Opt-out:</strong> Rewarded ads are always voluntary. You are never required
+                            to watch them. You can also opt out of personalised ads entirely via Settings &gt;
+                            Privacy &gt; Advertising Preferences in any of our games, and you will still be
+                            able to watch rewarded ads with contextual (non-personalised) content.
+                        </p>
+                    </section>
+
                     {/* How to opt out */}
                     <section className="mt-10">
                         <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4">How to Opt Out</h2>
@@ -118,12 +171,24 @@ export default function DoNotSellPage() {
                             </li>
                         </ul>
 
-                        <h3 className="mt-8 mb-3 text-lg font-bold text-neutral-900">3. Global Privacy Control (GPC)</h3>
+                        <h3 className="mt-8 mb-3 text-lg font-bold text-neutral-900">3. Global Privacy Control (GPC) &amp; Browser-Based Opt-Out Signals</h3>
                         <p>
-                            We honour the <strong>Global Privacy Control</strong> (GPC) browser signal as a
-                            valid opt-out request under the CCPA/CPRA and Colorado CPA. If your browser or
-                            extension sends a GPC signal, we will treat it as an instruction not to share your
-                            personal information for behavioural advertising.
+                            Where technically detected on our website, we treat the <strong>Global Privacy
+                                Control</strong> (GPC) browser signal as an opt-out request under applicable US
+                            privacy laws. If your browser or extension sends a GPC signal, we attempt to apply
+                            that instruction for web-based interactions.
+                        </p>
+                        <p className="mt-4">
+                            Because GPC is browser-based, it may not apply inside native iOS/Android gameplay
+                            environments. For our mobile games, please use the in-app opt-out controls
+                            (Settings &gt; Privacy &gt; Advertising Preferences) or email {" "}
+                            <a
+                                href={`mailto:${CO.privacy}?subject=Do%20Not%20Sell%20or%20Share%20Request`}
+                                className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
+                            >
+                                {CO.privacy}
+                            </a>{" "}
+                            so we can process your request directly.
                         </p>
 
                         <h3 className="mt-8 mb-3 text-lg font-bold text-neutral-900">4. Email Request</h3>
@@ -159,6 +224,49 @@ export default function DoNotSellPage() {
                                 <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">
                                     adssettings.google.com
                                 </a>
+                            </li>
+                            <li>
+                                <strong>AppLovin:</strong>{" "}
+                                <a href="https://www.applovin.com/optout/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">
+                                    https://www.applovin.com/optout/
+                                </a>
+                            </li>
+                        </ul>
+
+                        <h3 className="mt-8 mb-3 text-lg font-bold text-neutral-900">6. Industry-Wide Opt-Out Tools</h3>
+                        <p>
+                            In addition to the network-specific controls above, you can use the following
+                            industry-wide opt-out programmes to limit interest-based advertising across
+                            many ad networks at once:
+                        </p>
+                        <ul className="list-disc pl-5 space-y-2 mt-3">
+                            <li>
+                                <strong>NAI Consumer Opt-Out:</strong>{" "}
+                                <a href="https://optout.networkadvertising.org/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">
+                                    optout.networkadvertising.org
+                                </a>{" "}
+                                — opt out of interest-based advertising from Network Advertising Initiative members.
+                            </li>
+                            <li>
+                                <strong>DAA WebChoices:</strong>{" "}
+                                <a href="https://optout.aboutads.info/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">
+                                    optout.aboutads.info
+                                </a>{" "}
+                                — opt out of interest-based advertising from Digital Advertising Alliance members.
+                            </li>
+                            <li>
+                                <strong>DAA AppChoices (Mobile):</strong>{" "}
+                                <a href="https://youradchoices.com/appchoices" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">
+                                    youradchoices.com/appchoices
+                                </a>{" "}
+                                — download the AppChoices app to opt out of interest-based advertising in mobile apps.
+                            </li>
+                            <li>
+                                <strong>EDAA Your Online Choices (EU):</strong>{" "}
+                                <a href="https://www.youronlinechoices.eu/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">
+                                    youronlinechoices.eu
+                                </a>{" "}
+                                — European Interactive Digital Advertising Alliance opt-out for EU users.
                             </li>
                         </ul>
                     </section>
@@ -218,6 +326,34 @@ export default function DoNotSellPage() {
                             </Link>{" "}
                             page.
                         </p>
+                    </section>
+
+                    {/* Version History */}
+                    <section className="mt-10">
+                        <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4">Version History</h2>
+                        <div className="overflow-x-auto">
+                            <table className="w-full text-sm border-collapse">
+                                <thead>
+                                    <tr className="border-b-2 border-neutral-200 text-left">
+                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Version</th>
+                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Date</th>
+                                        <th className="py-2 text-neutral-500 font-semibold">Changes</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="align-top">
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4">1.1</td>
+                                        <td className="py-2 pr-4">17 Feb 2026</td>
+                                        <td className="py-2">Centralised versioning; improved JSON-LD; minor language refinements.</td>
+                                    </tr>
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4">1.0</td>
+                                        <td className="py-2 pr-4">15 Jan 2025</td>
+                                        <td className="py-2">Initial publication.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </section>
 
                     <hr className="mt-14 mb-6 border-neutral-200" />

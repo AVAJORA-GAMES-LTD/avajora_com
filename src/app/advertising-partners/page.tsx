@@ -2,30 +2,43 @@ import { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import Link from "next/link";
 import { COMPANY as CO } from "@/lib/company";
+import { LEGAL_VERSIONS } from "@/lib/legal-versions";
 
 export const metadata: Metadata = {
     title: "Advertising Partners — AVAJORA GAMES LTD",
     description:
-        "Full list of advertising networks and data partners used in AVAJORA GAMES LTD mobile games.",
+        "Current principal advertising networks and data partners used in AVAJORA GAMES LTD mobile games.",
 };
+
+const { version: V, updated: UPDATED } = LEGAL_VERSIONS.advertisingPartners;
 
 const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
+    "@type": ["WebPage", "Article"],
     name: "Advertising Partners",
+    headline: "Advertising Partners — AVAJORA GAMES LTD",
     description:
-        "Full list of advertising networks and data partners used in AVAJORA GAMES LTD mobile games.",
+        "Current principal advertising networks and data partners used in AVAJORA GAMES LTD mobile games.",
     publisher: {
         "@type": "Organization",
         name: "AVAJORA GAMES LTD",
         url: "https://avajora.com",
     },
+    datePublished: "2025-01-15",
     dateModified: "2026-02-17",
+    version: V,
     inLanguage: "en",
+    mainEntity: {
+        "@type": "WebPage",
+        name: "Advertising Partners",
+        description: "List of advertising networks and data partners used in AVAJORA GAMES LTD mobile games.",
+    },
+    isPartOf: {
+        "@type": "WebSite",
+        url: "https://avajora.com",
+        name: "AVAJORA GAMES LTD",
+    },
 };
-
-const UPDATED = "17 February 2026";
-const V = "1.1";
 
 const partners = [
     {
@@ -34,6 +47,8 @@ const partners = [
         data: "IDFA/GAID, IP address, device info — passes to winning network",
         url: "https://cas.ai/privacy-policy",
         urlLabel: "cas.ai/privacy-policy",
+        role: "Data processor",
+        retention: "Duration of ad session",
     },
     {
         name: "AppLovin",
@@ -41,6 +56,8 @@ const partners = [
         data: "IDFA/GAID, IP address, device info, ad events",
         url: "https://legal.applovin.com/privacy/",
         urlLabel: "legal.applovin.com/privacy",
+        role: "Independent controller",
+        retention: "Up to 36 months (ad data); aggregated data may be kept longer",
     },
     {
         name: "Google AdMob",
@@ -48,6 +65,8 @@ const partners = [
         data: "IDFA/GAID, IP address, device info, crash logs",
         url: "https://policies.google.com/privacy",
         urlLabel: "policies.google.com/privacy",
+        role: "Independent controller",
+        retention: "Up to 26 months (analytics); ad data per Google retention policy (DPF certified)",
     },
     {
         name: "Unity Ads",
@@ -55,6 +74,8 @@ const partners = [
         data: "IDFA/GAID, IP address, device info, ad interaction data",
         url: "https://unity.com/legal/game-player-and-app-user-privacy-policy",
         urlLabel: "unity.com/legal/game-player-and-app-user-privacy-policy",
+        role: "Independent controller",
+        retention: "12 months (ad data), 24 months (analytics)",
     },
     {
         name: "Liftoff Monetize (Vungle)",
@@ -62,13 +83,17 @@ const partners = [
         data: "IDFA/GAID, IP address, device info, within-app behavioural data",
         url: "https://vungle.com/privacy/",
         urlLabel: "vungle.com/privacy",
+        role: "Independent controller",
+        retention: "See privacy policy",
     },
     {
         name: "InMobi",
         how: "Direct SDK + via CAS.ai mediation",
-        data: "IDFA/GAID, IP (geo), device info, ad events (retained 13 months)",
+        data: "IDFA/GAID, IP (geo), device info, ad events",
         url: "https://www.inmobi.com/privacy-policy/",
         urlLabel: "inmobi.com/privacy-policy",
+        role: "Joint controller (Art. 26)",
+        retention: "13 months",
     },
     {
         name: "ironSource (Unity LevelPlay)",
@@ -76,6 +101,8 @@ const partners = [
         data: "IDFA/GAID, IP address, device info, ad events",
         url: "https://unity.com/legal/privacy-policy",
         urlLabel: "unity.com/legal/privacy-policy",
+        role: "Independent controller",
+        retention: "12 months (ad data), 24 months (analytics — same as Unity Ads)",
     },
     {
         name: "Meta Audience Network",
@@ -83,6 +110,8 @@ const partners = [
         data: "IDFA/GAID (if user has Facebook app installed), device info",
         url: "https://www.facebook.com/privacy/policy/",
         urlLabel: "facebook.com/privacy/policy",
+        role: "Independent controller",
+        retention: "Up to 2 years; off-Facebook activity data cleared after 48 hours of disconnect",
     },
     {
         name: "Mintegral",
@@ -90,6 +119,8 @@ const partners = [
         data: "IDFA/GAID, IP address, device info, ad events",
         url: "https://www.mintegral.com/en/privacy/",
         urlLabel: "mintegral.com/en/privacy",
+        role: "Independent controller",
+        retention: "Up to 13 months (ad events); logs purged within 90 days",
     },
     {
         name: "Pangle (ByteDance)",
@@ -97,6 +128,8 @@ const partners = [
         data: "IDFA/GAID, IP address, device info, ad events",
         url: "https://www.pangleglobal.com/privacy/privacy-center-overseas",
         urlLabel: "pangleglobal.com/privacy",
+        role: "Independent controller",
+        retention: "Up to 12 months (ad attribution data); per ByteDance retention schedule",
     },
     {
         name: "Digital Turbine",
@@ -104,6 +137,8 @@ const partners = [
         data: "IDFA/GAID, device info, ad events",
         url: "https://www.digitalturbine.com/legal/end-user-privacy-policy/",
         urlLabel: "digitalturbine.com/legal/end-user-privacy-policy",
+        role: "Independent controller",
+        retention: "Up to 24 months (ad interaction data); shorter for raw IP addresses",
     },
 ] as const;
 
@@ -148,6 +183,11 @@ export default function AdvertisingPartnersPage() {
                         as a <strong>joint controller</strong> with us under GDPR.
                     </p>
                     <p className="mt-4">
+                        This page lists our current principal partners. Because mediation supply chains can
+                        change quickly, additional downstream resellers or measurement providers may process data
+                        in specific auctions. We review and update this page periodically.
+                    </p>
+                    <p className="mt-4">
                         For full details on how we handle your data, please see our{" "}
                         <Link href="/privacy-policy" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">
                             Privacy Policy
@@ -163,8 +203,10 @@ export default function AdvertisingPartnersPage() {
                             <thead>
                                 <tr className="border-b-2 border-neutral-200 text-left">
                                     <th className="py-2 pr-4 text-neutral-500 font-semibold">Ad Network</th>
+                                    <th className="py-2 pr-4 text-neutral-500 font-semibold">Legal Role</th>
                                     <th className="py-2 pr-4 text-neutral-500 font-semibold">How It Reaches Your Users</th>
                                     <th className="py-2 pr-4 text-neutral-500 font-semibold">Data It Receives</th>
+                                    <th className="py-2 pr-4 text-neutral-500 font-semibold">Retention</th>
                                     <th className="py-2 text-neutral-500 font-semibold">Privacy Policy</th>
                                 </tr>
                             </thead>
@@ -172,8 +214,10 @@ export default function AdvertisingPartnersPage() {
                                 {partners.map((p, i) => (
                                     <tr key={i} className="border-b border-neutral-100">
                                         <td className="py-3 pr-4 font-medium text-neutral-900 whitespace-nowrap">{p.name}</td>
+                                        <td className="py-3 pr-4 whitespace-nowrap">{p.role}</td>
                                         <td className="py-3 pr-4">{p.how}</td>
                                         <td className="py-3 pr-4">{p.data}</td>
+                                        <td className="py-3 pr-4 whitespace-nowrap">{p.retention}</td>
                                         <td className="py-3">
                                             <a
                                                 href={p.url}
@@ -191,45 +235,6 @@ export default function AdvertisingPartnersPage() {
                     </div>
 
                     <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mt-10 mb-4">
-                        How Your Data Flows
-                    </h2>
-                    <div className="bg-neutral-50 border border-neutral-200 rounded-lg p-5 sm:p-6 overflow-x-auto mb-8">
-                        <div className="flex flex-col items-center gap-2 text-sm min-w-[320px]">
-                            <div className="bg-neutral-900 text-white rounded-lg px-6 py-3 text-center font-medium w-full max-w-xs">
-                                📱 Your Device
-                            </div>
-                            <div className="text-neutral-400 text-lg">↓</div>
-                            <div className="bg-white border-2 border-neutral-300 rounded-lg px-6 py-3 text-center font-medium w-full max-w-xs">
-                                🎮 Our Game App
-                            </div>
-                            <div className="flex gap-8 items-start mt-1">
-                                <div className="flex flex-col items-center gap-2">
-                                    <div className="text-neutral-400 text-lg">↓</div>
-                                    <div className="bg-blue-50 border border-blue-200 rounded-lg px-4 py-2 text-center text-xs font-medium">
-                                        📊 Unity Analytics
-                                    </div>
-                                    <div className="text-[11px] text-neutral-500 text-center max-w-[120px]">
-                                        Gameplay data only<br />(device-bound ID)
-                                    </div>
-                                </div>
-                                <div className="flex flex-col items-center gap-2">
-                                    <div className="text-neutral-400 text-lg">↓</div>
-                                    <div className="bg-amber-50 border border-amber-200 rounded-lg px-4 py-2 text-center text-xs font-medium">
-                                        🔀 CAS.ai Mediation
-                                    </div>
-                                    <div className="text-neutral-400 text-lg">↓</div>
-                                    <div className="bg-orange-50 border border-orange-200 rounded-lg px-4 py-2 text-center text-xs font-medium">
-                                        📢 11 Ad Networks
-                                    </div>
-                                    <div className="text-[11px] text-neutral-500 text-center max-w-[140px]">
-                                        Advertising ID, IP,<br />device info, ad events
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mt-10 mb-4">
                         Opt-Out Options
                     </h2>
                     <ul className="list-disc pl-5 space-y-2">
@@ -244,6 +249,10 @@ export default function AdvertisingPartnersPage() {
                         <li>
                             <strong>InMobi opt-out:</strong>{" "}
                             <a href="https://www.inmobi.com/page/opt-out/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://www.inmobi.com/page/opt-out/</a>
+                        </li>
+                        <li>
+                            <strong>AppLovin opt-out:</strong>{" "}
+                            <a href="https://www.applovin.com/optout/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://www.applovin.com/optout/</a>
                         </li>
                         <li>
                             <strong>iOS:</strong> Settings &gt; Privacy &amp; Security &gt; Tracking &mdash; prevent
@@ -273,8 +282,8 @@ export default function AdvertisingPartnersPage() {
                     </h2>
                     <p>
                         CAS.ai&rsquo;s partner network list may change over time as networks are added or removed.
-                        We will update this page accordingly. If you have questions about any of our advertising
-                        partners, please contact{" "}
+                        We update this page periodically as part of our compliance review process. If you have
+                        questions about any of our advertising partners, please contact{" "}
                         <a href={`mailto:${CO.privacy}`} className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">{CO.privacy}</a>.
                     </p>
 

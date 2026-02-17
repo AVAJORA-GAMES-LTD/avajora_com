@@ -2,6 +2,8 @@ import { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import Link from "next/link";
 import { COMPANY as CO } from "@/lib/company";
+import { LEGAL_VERSIONS } from "@/lib/legal-versions";
+import { PrivacyRequestForm } from "./PrivacyRequestForm";
 
 export const metadata: Metadata = {
     title: "Privacy Request — AVAJORA GAMES LTD",
@@ -9,10 +11,13 @@ export const metadata: Metadata = {
         "Submit a data subject access request (DSAR). Exercise your GDPR, UK GDPR, CCPA/CPRA, and other privacy rights.",
 };
 
+const { version: V, updated: UPDATED } = LEGAL_VERSIONS.privacyRequest;
+
 const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
+    "@type": ["WebPage", "Article"],
     name: "Privacy Request",
+    headline: "Privacy Request — AVAJORA GAMES LTD",
     description:
         "Submit a data subject access request (DSAR) to AVAJORA GAMES LTD.",
     publisher: {
@@ -20,12 +25,11 @@ const jsonLd = {
         name: CO.name,
         url: CO.url,
     },
+    datePublished: "2025-01-15",
     dateModified: "2026-02-17",
+    version: V,
     inLanguage: "en",
 };
-
-const V = "1.0";
-const UPDATED = "17 February 2026";
 
 export default function PrivacyRequestPage() {
     return (
@@ -143,7 +147,22 @@ export default function PrivacyRequestPage() {
                             <li><strong>Country / State of residence</strong> (to determine which law applies)</li>
                         </ul>
 
-                        <h3 className="mt-8 mb-3 text-lg font-bold text-neutral-900">Option 2 — In-App</h3>
+                        <h3 className="mt-8 mb-3 text-lg font-bold text-neutral-900">Option 2 — Web Form</h3>
+                        <p className="mb-4">
+                            Use our structured form below. It will open your default email client
+                            with a pre-filled message. If the button does not open your email app,
+                            please email us directly at{" "}
+                            <a
+                                href={`mailto:${CO.privacy}?subject=Privacy%20Request`}
+                                className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
+                            >
+                                {CO.privacy}
+                            </a>
+                            .
+                        </p>
+                        <PrivacyRequestForm />
+
+                        <h3 className="mt-8 mb-3 text-lg font-bold text-neutral-900">Option 3 — In-App</h3>
                         <p>
                             Open any of our games and navigate to:
                         </p>
@@ -151,7 +170,7 @@ export default function PrivacyRequestPage() {
                             Settings &gt; Privacy &gt; Contact Us
                         </p>
 
-                        <h3 className="mt-8 mb-3 text-lg font-bold text-neutral-900">Option 3 — Postal Mail</h3>
+                        <h3 className="mt-8 mb-3 text-lg font-bold text-neutral-900">Option 4 — Postal Mail</h3>
                         <p>
                             Write to us at: <strong>{CO.addr}</strong>
                         </p>
@@ -172,6 +191,23 @@ export default function PrivacyRequestPage() {
                         <p className="mt-4">
                             We will never ask for your password, credit card number, or government-issued ID
                             as part of the verification process.
+                        </p>
+
+                        <h3 className="mt-8 mb-3 text-lg font-bold text-neutral-900">Requests Involving Children</h3>
+                        <p>
+                            If you are a parent or legal guardian submitting a request on behalf of a child under
+                            16 (or under 13 where COPPA applies), we may ask you to:
+                        </p>
+                        <ul className="list-disc pl-5 space-y-2 mt-3">
+                            <li>Provide your own identity verification (name and email).</li>
+                            <li>Confirm your relationship to the child (parent or legal guardian).</li>
+                            <li>Provide the child&rsquo;s in-game user ID or device information.</li>
+                        </ul>
+                        <p className="mt-4">
+                            We do not require government-issued identification for parental verification. We
+                            will use reasonable methods to confirm the parent-child relationship, such as
+                            matching the email address used to contact support or verifying account ownership
+                            through in-game identifiers.
                         </p>
                     </section>
 
@@ -209,6 +245,71 @@ export default function PrivacyRequestPage() {
                         <p>
                             All requests are processed <strong>free of charge</strong>, unless requests are
                             manifestly unfounded or excessive (GDPR Art. 12(5)).
+                        </p>
+                        <p className="mt-4">
+                            <strong>Request handling workflow.</strong> We track each privacy request through
+                            intake, identity verification, fulfilment/denial decision, and closure. If your
+                            request is denied in whole or in part, we provide the reason and appeal route in
+                            accordance with applicable law.
+                        </p>
+                        <p className="mt-4">
+                            For auditability, we keep an internal record of request date, request type,
+                            verification status, outcome, and completion date.
+                        </p>
+                    </section>
+
+                    {/* CCPA Metrics */}
+                    <section className="mt-10">
+                        <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4">CCPA Consumer Request Metrics</h2>
+                        <p>
+                            In accordance with CCPA regulations (Cal.&nbsp;Code&nbsp;Regs.&nbsp;tit.&nbsp;11,&nbsp;&sect;&nbsp;7102),
+                            we publish annual metrics on consumer privacy requests. The following data covers the
+                            most recent reporting period:
+                        </p>
+                        <div className="overflow-x-auto mt-4 mb-6">
+                            <table className="w-full text-sm border-collapse">
+                                <thead>
+                                    <tr className="border-b-2 border-neutral-200 text-left">
+                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Metric</th>
+                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Access</th>
+                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Deletion</th>
+                                        <th className="py-2 text-neutral-500 font-semibold">Opt-Out</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="align-top">
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-3 pr-4 font-medium text-neutral-900">Requests received</td>
+                                        <td className="py-3 pr-4">N/A</td>
+                                        <td className="py-3 pr-4">N/A</td>
+                                        <td className="py-3">N/A</td>
+                                    </tr>
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-3 pr-4 font-medium text-neutral-900">Requests complied with</td>
+                                        <td className="py-3 pr-4">N/A</td>
+                                        <td className="py-3 pr-4">N/A</td>
+                                        <td className="py-3">N/A</td>
+                                    </tr>
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-3 pr-4 font-medium text-neutral-900">Requests denied</td>
+                                        <td className="py-3 pr-4">N/A</td>
+                                        <td className="py-3 pr-4">N/A</td>
+                                        <td className="py-3">N/A</td>
+                                    </tr>
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-3 pr-4 font-medium text-neutral-900">Median response time (days)</td>
+                                        <td className="py-3 pr-4">N/A</td>
+                                        <td className="py-3 pr-4">N/A</td>
+                                        <td className="py-3">N/A</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p className="text-sm text-neutral-500">
+                            Metrics are updated annually. &ldquo;N/A&rdquo; indicates that no reportable figures are
+                            currently published for the reporting period (for example, where the first annual
+                            reporting cycle has not yet completed or publication is not currently required).
+                            The reporting period runs from 1&nbsp;January to 31&nbsp;December of each
+                            calendar year; metrics are published by 1&nbsp;July of the following year.
                         </p>
                     </section>
 
