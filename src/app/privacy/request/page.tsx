@@ -65,7 +65,7 @@ export default function PrivacyRequestPage() {
                         {/* Delete Account Callout */}
                         <div className="mt-8 p-6 bg-neutral-50 border-l-4 border-neutral-900 rounded">
                             <h3 className="text-lg font-bold text-neutral-900 mb-2">
-                                🗑️ Delete My Account
+                                Delete My Account
                             </h3>
                             <p className="text-sm text-neutral-700 mb-4">
                                 To permanently delete your account and all associated data, email us at{" "}

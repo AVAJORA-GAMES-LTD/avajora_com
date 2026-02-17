@@ -235,8 +235,8 @@ export default function DoNotSellPage() {
                                 <a href="https://apps.apple.com/app/applovin-privacy-management/id1622498498" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">iOS</a>{" | "}
                                 <a href="https://play.google.com/store/apps/details?id=com.applovin.gdpr" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">Android</a>.
                                 AppLovin&rsquo;s full partner list:{" "}
-                                <a href="https://legal.applovin.com/partners/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">
-                                    https://legal.applovin.com/partners/
+                                <a href="https://legal.applovin.com/applovin-partners-privacy/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">
+                                    https://legal.applovin.com/applovin-partners-privacy/
                                 </a>
                             </li>
                         </ul>

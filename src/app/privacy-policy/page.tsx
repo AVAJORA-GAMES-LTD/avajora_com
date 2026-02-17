@@ -500,7 +500,7 @@ export default function PrivacyPolicyPage() {
                                 partner list, each AppLovin advertising partner is an <strong>independent
                                     controller</strong> of your data. You can view AppLovin&rsquo;s full list of
                                 advertising partners at:{" "}
-                                <a href="https://legal.applovin.com/partners/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://legal.applovin.com/partners/</a>.
+                                <a href="https://legal.applovin.com/applovin-partners-privacy/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://legal.applovin.com/applovin-partners-privacy/</a>.
                                 <br /><br />
                                 AppLovin acts as an <strong>independent data controller</strong> for the data it
                                 collects through its SDK and Services. AppLovin is certified under the{" "}

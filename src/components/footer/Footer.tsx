@@ -199,7 +199,7 @@ export default function Footer() {
 
                     {/* Address — centered at the very bottom */}
                     <p className="text-center text-s text-white pt-4">
-                        AVAJORA GAMES LTD. 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ.
+                        AVAJORA GAMES LTD. 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom.
                     </p>
                 </div>
             </div>
