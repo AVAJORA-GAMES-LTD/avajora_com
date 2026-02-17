@@ -24,7 +24,7 @@ const jsonLd = {
         name: "AVAJORA GAMES LTD",
         url: "https://avajora.com",
     },
-    datePublished: "2025-01-15",
+    datePublished: "2026-02-17",
     dateModified: "2026-02-17",
     version: V,
     inLanguage: "en",

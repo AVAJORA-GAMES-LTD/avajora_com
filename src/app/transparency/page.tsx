@@ -261,7 +261,7 @@ export default function TransparencyReportPage() {
                                     </tr>
                                     <tr className="border-b border-neutral-100">
                                         <td className="py-2 pr-4">Privacy Policy version changes</td>
-                                        <td className="py-2 pr-4">3 (v2.0, v2.1, v2.2)</td>
+                                        <td className="py-2 pr-4">1 (v1.0)</td>
                                         <td className="py-2">As needed</td>
                                     </tr>
                                     <tr className="border-b border-neutral-100">

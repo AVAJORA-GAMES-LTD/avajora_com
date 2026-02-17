@@ -24,7 +24,7 @@ const jsonLd = {
         name: CO.name,
         url: CO.url,
     },
-    datePublished: "2025-01-15",
+    datePublished: "2026-02-17",
     dateModified: "2026-02-17",
     version: V,
     inLanguage: "en",
@@ -349,14 +349,9 @@ export default function DoNotSellPage() {
                                     </tr>
                                 </thead>
                                 <tbody className="align-top">
-                                    <tr className="border-b border-neutral-100">
-                                        <td className="py-2 pr-4">1.1</td>
-                                        <td className="py-2 pr-4">17 Feb 2026</td>
-                                        <td className="py-2">Centralised versioning; improved JSON-LD; minor language refinements.</td>
-                                    </tr>
-                                    <tr className="border-b border-neutral-100">
+                                    <tr>
                                         <td className="py-2 pr-4">1.0</td>
-                                        <td className="py-2 pr-4">15 Jan 2025</td>
+                                        <td className="py-2 pr-4">17 Feb 2026</td>
                                         <td className="py-2">Initial publication.</td>
                                     </tr>
                                 </tbody>

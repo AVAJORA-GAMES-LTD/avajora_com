@@ -25,7 +25,7 @@ const jsonLd = {
         name: "AVAJORA GAMES LTD",
         url: "https://avajora.com",
     },
-    datePublished: "2025-01-15",
+    datePublished: "2026-02-17",
     dateModified: "2026-02-17",
     version: V,
     inLanguage: "en",
@@ -1850,20 +1850,10 @@ export default function TermsOfServicePage() {
                                     </tr>
                                 </thead>
                                 <tbody className="align-top">
-                                    <tr className="border-b border-neutral-100">
-                                        <td className="py-2 pr-4">{V}</td>
-                                        <td className="py-2 pr-4">{UPDATED}</td>
-                                        <td className="py-2">Added consumer law carve-out to indemnification (Section 21); revised termination clause to require 30-day notice for termination without cause (Section 22.1); added version history table (Section 30).</td>
-                                    </tr>
-                                    <tr className="border-b border-neutral-100">
-                                        <td className="py-2 pr-4">1.2</td>
+                                    <tr>
+                                        <td className="py-2 pr-4">1.0</td>
                                         <td className="py-2 pr-4">17 Feb 2026</td>
-                                        <td className="py-2">Centralised versioning; improved JSON-LD; accessibility section added.</td>
-                                    </tr>
-                                    <tr className="border-b border-neutral-100">
-                                        <td className="py-2 pr-4">1.0&ndash;1.1</td>
-                                        <td className="py-2 pr-4">31 Jan 2026</td>
-                                        <td className="py-2">Initial terms of service and minor corrections.</td>
+                                        <td className="py-2">Initial terms of service.</td>
                                     </tr>
                                 </tbody>
                             </table>

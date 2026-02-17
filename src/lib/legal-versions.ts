@@ -8,34 +8,34 @@
  */
 export const LEGAL_VERSIONS = {
     privacyPolicy: {
-        version: "2.4",
+        version: "1.0",
         updated: "17 February 2026",
         effective: "17 February 2026",
     },
     termsOfService: {
-        version: "1.5",
+        version: "1.0",
         updated: "17 February 2026",
         effective: "17 February 2026",
     },
     cookiePolicy: {
-        version: "1.3",
+        version: "1.0",
         updated: "17 February 2026",
         effective: "17 February 2026",
     },
     privacySummary: {
-        version: "1.2",
+        version: "1.0",
         updated: "17 February 2026",
     },
     doNotSell: {
-        version: "1.2",
+        version: "1.0",
         updated: "17 February 2026",
     },
     advertisingPartners: {
-        version: "1.3",
+        version: "1.0",
         updated: "17 February 2026",
     },
     privacyRequest: {
-        version: "1.1",
+        version: "1.0",
         updated: "17 February 2026",
     },
     privacyForParents: {

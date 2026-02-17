@@ -22,7 +22,7 @@ const jsonLd = {
         name: "AVAJORA GAMES LTD",
         url: "https://avajora.com",
     },
-    datePublished: "2026-01-31",
+    datePublished: "2026-02-17",
     dateModified: "2026-02-17",
     inLanguage: "en",
     version: LEGAL_VERSIONS.privacyPolicy.version,
@@ -1659,19 +1659,9 @@ export default function PrivacyPolicyPage() {
                                     </tr>
                                 </thead>
                                 <tbody className="align-top">
-                                    <tr className="border-b border-neutral-100">
-                                        <td className="py-2 pr-4">2.2</td>
-                                        <td className="py-2 pr-4">17 Feb 2026</td>
-                                        <td className="py-2">Aligned &ldquo;sale&rdquo; language with CCPA definitions, added CCPA PI disclosure table, added CPRA right to correct, expanded LGPD legal basis mapping, expanded Google AdMob disclosure, added LIA summary, removed placeholder EU representative section, consolidated version history, added glossary to TOC.</td>
-                                    </tr>
-                                    <tr className="border-b border-neutral-100">
-                                        <td className="py-2 pr-4">2.0&ndash;2.1</td>
-                                        <td className="py-2 pr-4">17 Feb 2026</td>
-                                        <td className="py-2">Comprehensive rewrite covering CAS.ai mediation, expanded ad partner disclosures, jurisdiction-specific sections, COPPA/AADC compliance, DPIA disclosure, automated decision-making statement, CAS.ai/Belize transfer safeguards, InMobi Art.&nbsp;26 arrangement, Unity Analytics retention, and updated US opt-out disclosures.</td>
-                                    </tr>
                                     <tr>
                                         <td className="py-2 pr-4">1.0</td>
-                                        <td className="py-2 pr-4">31 Jan 2026</td>
+                                        <td className="py-2 pr-4">17 Feb 2026</td>
                                         <td className="py-2">Initial privacy policy.</td>
                                     </tr>
                                 </tbody>
