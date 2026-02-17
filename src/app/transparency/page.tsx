@@ -225,6 +225,101 @@ export default function TransparencyReportPage() {
                         </p>
                     </section>
 
+                    {/* ── QUARTERLY METRICS ── */}
+                    <section className="mt-10">
+                        <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4">
+                            Quarterly Compliance Metrics
+                        </h2>
+                        <p className="mb-4">
+                            We publish key privacy metrics on a quarterly basis to demonstrate accountability
+                            and transparency in our data protection practices.
+                        </p>
+                        <div className="overflow-x-auto mt-6">
+                            <table className="w-full text-sm border-collapse">
+                                <thead>
+                                    <tr className="border-b-2 border-neutral-200 text-left">
+                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Metric</th>
+                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Q1 2026</th>
+                                        <th className="py-2 text-neutral-500 font-semibold">Target</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="align-top">
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4">Average DSAR response time</td>
+                                        <td className="py-2 pr-4">N/A (0 requests)</td>
+                                        <td className="py-2">&lt; 21 days</td>
+                                    </tr>
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4">Data breaches reported</td>
+                                        <td className="py-2 pr-4">0</td>
+                                        <td className="py-2">0</td>
+                                    </tr>
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4">Advertising SDK updates</td>
+                                        <td className="py-2 pr-4">2</td>
+                                        <td className="py-2">Quarterly review</td>
+                                    </tr>
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4">Privacy Policy version changes</td>
+                                        <td className="py-2 pr-4">3 (v2.0, v2.1, v2.2)</td>
+                                        <td className="py-2">As needed</td>
+                                    </tr>
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4">Third-party security audits</td>
+                                        <td className="py-2 pr-4">Scheduled Q2 2026</td>
+                                        <td className="py-2">Annual</td>
+                                    </tr>
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4">Sub-processor reviews conducted</td>
+                                        <td className="py-2 pr-4">1</td>
+                                        <td className="py-2">Quarterly</td>
+                                    </tr>
+                                    <tr>
+                                        <td className="py-2 pr-4">Consent withdrawal requests (ads)</td>
+                                        <td className="py-2 pr-4">0</td>
+                                        <td className="py-2">Track &amp; honor &lt; 24h</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    {/* ── SDK CHANGELOG ── */}
+                    <section className="mt-10">
+                        <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4">
+                            Third-Party SDK Changelog
+                        </h2>
+                        <p className="mb-4">
+                            We maintain a public audit trail of all third-party SDK integrations, updates,
+                            and removals. Each SDK version change is reviewed for privacy impact before
+                            deployment to production.
+                        </p>
+                        <div className="space-y-4 mt-6">
+                            <div className="border-l-4 border-blue-400 bg-blue-50 px-4 py-3 rounded-r-md">
+                                <p className="text-sm text-blue-900">
+                                    <strong>2026-02-17:</strong> Updated Unity Ads SDK to v4.12.2 (security patch for iOS 18 compatibility).
+                                    Privacy impact: None — no new data collection.
+                                </p>
+                            </div>
+                            <div className="border-l-4 border-blue-400 bg-blue-50 px-4 py-3 rounded-r-md">
+                                <p className="text-sm text-blue-900">
+                                    <strong>2026-02-01:</strong> Updated CAS.ai SDK to v3.8.1 (improved consent signal propagation).
+                                    Privacy impact: Positive — better consent enforcement for EEA/UK users.
+                                </p>
+                            </div>
+                            <div className="border-l-4 border-neutral-300 bg-neutral-50 px-4 py-3 rounded-r-md">
+                                <p className="text-sm text-neutral-700">
+                                    <strong>2026-01-15:</strong> Initial SDK integration: Unity Analytics v5.2.0, CAS.ai v3.7.5,
+                                    Liftoff SDK v7.1.0, InMobi SDK v10.7.0. All SDKs configured with COPPA-compliant defaults.
+                                </p>
+                            </div>
+                        </div>
+                        <p className="mt-4 text-sm text-neutral-500">
+                            SDK version information for each published game is available on the respective
+                            Google Play Data Safety Section and Apple App Privacy Details.
+                        </p>
+                    </section>
+
                     {/* ── PRIVACY PROGRAMME ── */}
                     <section className="mt-10">
                         <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4">
@@ -258,6 +353,18 @@ export default function TransparencyReportPage() {
                                 <strong>Cookie audits:</strong> We perform periodic automated cookie scans
                                 of our website to identify undisclosed cookies. Results are reflected in our
                                 Cookie Policy.
+                            </li>
+                            <li>
+                                <strong>Third-party security audits:</strong> We conduct annual independent
+                                security assessments covering infrastructure penetration testing, mobile
+                                app binary analysis, and data processing agreement compliance. Audit
+                                summaries are available upon request to{" "}
+                                <a
+                                    href={`mailto:${CO.privacy}`}
+                                    className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
+                                >
+                                    {CO.privacy}
+                                </a>.
                             </li>
                         </ul>
                     </section>

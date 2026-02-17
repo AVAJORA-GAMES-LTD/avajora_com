@@ -8,12 +8,12 @@
  */
 export const LEGAL_VERSIONS = {
     privacyPolicy: {
-        version: "2.3",
+        version: "2.4",
         updated: "17 February 2026",
         effective: "17 February 2026",
     },
     termsOfService: {
-        version: "1.4",
+        version: "1.5",
         updated: "17 February 2026",
         effective: "17 February 2026",
     },

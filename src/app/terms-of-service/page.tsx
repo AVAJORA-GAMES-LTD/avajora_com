@@ -324,6 +324,48 @@ export default function TermsOfServicePage() {
                         </p>
                     </section>
 
+                    {/* 4.2 Age Ratings & Content Advisories */}
+                    <section id="age-ratings" className="mb-8">
+                        <h2 className="text-lg font-semibold text-neutral-900 mb-3">
+                            4.2 Age Ratings &amp; Content Advisories
+                        </h2>
+                        <p>
+                            Our games carry age ratings assigned by platform rating boards (IARC for Google Play,
+                            and platform-specific ratings for the Apple App Store). Each game&apos;s age rating is
+                            displayed on its store listing page before download.
+                        </p>
+                        <p className="mt-3">
+                            <strong>Our games are NOT directed at children.</strong> While our casual mobile games
+                            may have broad appeal and family-friendly content, they are designed for and marketed
+                            to a general audience aged 13 and above (or the applicable minimum age in your
+                            jurisdiction). We do not knowingly target, advertise to, or collect personal data from
+                            children below the applicable age threshold.
+                        </p>
+                        <p className="mt-3">
+                            Age ratings reflect content descriptors (e.g., &ldquo;Mild Fantasy Violence,&rdquo;
+                            &ldquo;In-App Purchases,&rdquo; &ldquo;Digital Purchases&rdquo;). Parents and guardians
+                            should review age ratings and content descriptors before allowing children to download
+                            or play our games. For more information on how we handle data when children may access
+                            our Services, see our{" "}
+                            <Link href="/privacy-for-parents" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">
+                                Privacy for Parents
+                            </Link>{" "}
+                            page.
+                        </p>
+                        <p className="mt-3">
+                            <strong>Third-party advertising:</strong> Our free-to-play games display advertisements
+                            served by third-party ad networks. While we take steps to filter inappropriate ad
+                            content, we do not control the specific ads shown by third-party networks. If you see
+                            an inappropriate ad, please report it via in-game settings or contact us at{" "}
+                            <a
+                                href={`mailto:${CO.support}?subject=Inappropriate%20Ad%20Report`}
+                                className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
+                            >
+                                {CO.support}
+                            </a>.
+                        </p>
+                    </section>
+
                     {/* 5. Account Registration & Security */}
                     <section id="accounts" className="mb-8">
                         <h2 className="text-lg font-semibold text-neutral-900 mb-3">
@@ -495,6 +537,35 @@ export default function TermsOfServicePage() {
                             applicable law.
                         </p>
 
+                        <H3>9.1B Consumable vs. Non-Consumable Virtual Items</H3>
+                        <p>
+                            Virtual Items in our games fall into two categories:
+                        </p>
+                        <ul className="list-disc pl-5 space-y-2 mt-3">
+                            <li>
+                                <strong>Consumable Items:</strong> Single-use items that are consumed immediately
+                                upon use (e.g., extra lives, boosters, temporary power-ups, in-game currency used
+                                to purchase other items). Once consumed, these items are <strong>permanently
+                                    removed from your account and cannot be restored</strong>, even if you delete and
+                                reinstall the game or switch devices. <strong>Most purchases in our games are
+                                    consumable.</strong>
+                            </li>
+                            <li>
+                                <strong>Non-Consumable Items:</strong> Permanent unlocks that remain in your
+                                account indefinitely (e.g., ad-free upgrades, permanent character unlocks, level
+                                packs). Non-consumable items may be restored if you reinstall the game or switch
+                                devices, provided you sign in with the same platform account (Google Play or
+                                Apple ID) used for the original purchase. However, even non-consumable items are
+                                lost if your account is terminated or the game is discontinued.
+                            </li>
+                        </ul>
+                        <p className="mt-4">
+                            <strong>Important:</strong> Because consumable items are used immediately, they cannot
+                            be refunded after consumption, except where required by law. Before making a purchase,
+                            carefully review whether the item is consumable or non-consumable. The item type is
+                            indicated on the purchase screen.
+                        </p>
+
                         <H3>9.2 Purchases</H3>
                         <p>
                             You may purchase Virtual Items through In-App Purchases via the Apple App Store,
@@ -502,6 +573,28 @@ export default function TermsOfServicePage() {
                             the platform operator, and you agree to comply with their terms and conditions.
                             Prices are displayed in the currency of your app store or payment method and may
                             include applicable taxes.
+                        </p>
+
+                        <H3>9.2B Pricing &amp; Currency Transparency</H3>
+                        <p>
+                            Virtual Item prices are displayed in your local app store currency and include any
+                            applicable taxes (VAT in the UK/EU, GST in applicable jurisdictions, sales tax in
+                            the United States) as required by law. The final price shown at checkout on the app
+                            store is the amount you will be charged.
+                        </p>
+                        <p className="mt-3">
+                            <strong>Exchange rates and platform fees:</strong> Exchange rates for non-local
+                            currencies and platform service fees (Apple App Store commission, Google Play
+                            service fee) are determined by the platform operator (Apple or Google). We do not
+                            control these rates or fees and cannot provide refunds for currency fluctuations,
+                            foreign transaction fees charged by your bank, or changes in platform pricing
+                            policies.
+                        </p>
+                        <p className="mt-3">
+                            <strong>Price localization:</strong> Prices may vary by country or region due to
+                            local taxes, currency exchange rates, purchasing power parity adjustments, and
+                            platform requirements. We reserve the right to offer region-specific pricing or
+                            promotional discounts at our discretion.
                         </p>
 
                         <H3>9.3 Pricing changes</H3>
@@ -675,6 +768,25 @@ export default function TermsOfServicePage() {
                             page.
                         </p>
 
+                        <H3>12.2B Cross-Promotion of Our Games</H3>
+                        <p>
+                            We may display advertisements promoting our other games within our Services
+                            (&ldquo;cross-promotion&rdquo;). Cross-promotional ads are served directly by us,
+                            not via external ad networks, and are part of our normal business operations.
+                        </p>
+                        <p className="mt-3">
+                            Cross-promotional ads may use aggregated gameplay data from your current session
+                            (e.g., suggesting games similar to the one you are playing), but do not use
+                            cross-app tracking identifiers or link your identity across different games in our
+                            portfolio. You cannot opt out of cross-promotional ads, as they are integral to
+                            how we operate free-to-play games and fund development of new content.
+                        </p>
+                        <p className="mt-3">
+                            We reserve the right to promote our own games within our Services without separate
+                            consent, as this constitutes legitimate business interest and does not involve
+                            third-party data sharing.
+                        </p>
+
                         <H3>12.3 Data collection by advertising SDKs</H3>
                         <p>
                             These advertising partners may collect device identifiers (e.g., IDFA, GAID),
@@ -701,6 +813,58 @@ export default function TermsOfServicePage() {
                                 ID&rdquo; or &ldquo;Opt out of Ads Personalisation.&rdquo;
                             </li>
                         </ul>
+
+                        <H3>12.5 Regional Content Restrictions</H3>
+                        <p>
+                            The Services are distributed worldwide via the Apple App Store and Google Play
+                            Store. Certain game content, features, or in-app advertisements may be restricted,
+                            modified, or unavailable in specific countries or regions due to:
+                        </p>
+                        <ul className="mt-2 space-y-1 list-disc list-inside ml-4">
+                            <li>
+                                <strong>Legal or regulatory requirements</strong> (e.g., restrictions on
+                                gambling-themed content, loot boxes, or specific types of advertisements
+                                under local law);
+                            </li>
+                            <li>
+                                <strong>Platform policies</strong> imposed by Apple or Google in specific
+                                jurisdictions;
+                            </li>
+                            <li>
+                                <strong>Age rating classifications</strong> (PEGI in Europe, ESRB in North
+                                America, IARC globally, or local rating boards);
+                            </li>
+                            <li>
+                                <strong>Cultural sensitivities</strong> or content standards applicable in
+                                certain markets;
+                            </li>
+                            <li>
+                                <strong>Advertising network availability</strong> (certain ad partners may not
+                                operate in all countries, which may affect ad delivery or revenue-sharing
+                                mechanisms);
+                            </li>
+                            <li>
+                                <strong>Payment method restrictions</strong> (In-App Purchases may be
+                                unavailable in regions where Apple or Google does not support local payment
+                                methods).
+                            </li>
+                        </ul>
+                        <p className="mt-3">
+                            <strong>No guarantee of availability.</strong> We do not guarantee that the
+                            Services, or any specific feature or content, will be available in your country
+                            or region. Regional restrictions may be imposed or lifted at any time based on
+                            platform requirements, legal changes, or our business decisions. We are not
+                            obligated to provide refunds or compensation if a feature or Service becomes
+                            unavailable in your region due to platform policy changes or legal requirements.
+                        </p>
+                        <p className="mt-3">
+                            <strong>General restrictions only.</strong> We do not implement country-specific
+                            content filtering or geo-blocking for individual countries. Restrictions are
+                            determined by the Apple App Store and Google Play Store based on their regional
+                            compliance frameworks and our designated age ratings. If you access the Services
+                            from a restricted region, you are responsible for ensuring your use complies
+                            with applicable local laws.
+                        </p>
                     </section>
 
                     {/* 13. Data Protection & Privacy */}
@@ -796,6 +960,43 @@ export default function TermsOfServicePage() {
                             Any feedback, suggestions, or ideas you provide to us regarding the Services
                             will be considered non-confidential and non-proprietary. We are free to use such
                             feedback for any purpose without any obligation or compensation to you.
+                        </p>
+
+                        <H3>15.4 User Screenshots &amp; Gameplay Videos</H3>
+                        <p>
+                            You are permitted to capture screenshots, video recordings, and audio-visual
+                            recordings of gameplay from our Services for <strong>personal,
+                                non-commercial use</strong> only, including sharing on social media platforms,
+                            personal blogs, and with friends and family.
+                        </p>
+                        <p className="mt-3">
+                            <strong>Commercial use.</strong> If you wish to use screenshots or gameplay
+                            footage for commercial purposes (e.g., YouTube monetisation, Twitch affiliate
+                            or partner programs, sponsored content, advertising, or for-profit streaming),
+                            you must obtain our prior written permission by contacting{" "}
+                            <a
+                                href={`mailto:${CO.support}?subject=Commercial%20Use%20Request`}
+                                className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
+                            >
+                                {CO.support}
+                            </a>
+                            . We grant permission on a case-by-case basis and may require attribution or
+                            impose additional conditions.
+                        </p>
+                        <p className="mt-3">
+                            <strong>Reservation of rights.</strong> All intellectual property rights in
+                            the underlying game content (graphics, music, characters, storyline, code)
+                            remain our exclusive property. Your creation of screenshots or gameplay videos
+                            does not grant you any ownership rights in our intellectual property. You may
+                            not use our trademarks, logos, or game assets outside of fair-use gameplay
+                            recording without express written permission.
+                        </p>
+                        <p className="mt-3">
+                            <strong>Prohibited uses.</strong> You may not use screenshots or gameplay videos
+                            in a manner that: (a) suggests endorsement or affiliation with {CO.name} without
+                            our permission; (b) contains or promotes illegal, defamatory, obscene, or harmful
+                            content; (c) misrepresents the nature of the Services; or (d) violates any
+                            third-party rights.
                         </p>
                     </section>
 
@@ -911,6 +1112,94 @@ export default function TermsOfServicePage() {
                             data from Beta builds may not carry over to the final release. By
                             participating in a Beta programme you agree to keep all pre-release
                             information confidential unless we state otherwise.
+                        </p>
+
+                        <H3>18.2 In-Game Events &amp; Promotions</H3>
+                        <p>
+                            Our Services may include limited-time events, seasonal content, special
+                            promotions, leaderboard competitions, or exclusive rewards (&ldquo;In-Game
+                            Events&rdquo;). In-Game Events are temporary by design and may expire, rotate,
+                            or be removed without notice.
+                        </p>
+                        <p className="mt-3">
+                            <strong>Event rules &amp; rewards.</strong> Each In-Game Event may have
+                            specific rules, eligibility criteria, duration, and reward structures. We
+                            will communicate these details within the game user interface or via in-app
+                            notifications. By participating in an In-Game Event, you agree to comply
+                            with its rules.
+                        </p>
+                        <p className="mt-3">
+                            <strong>Right to modify or cancel.</strong> We reserve the right to modify,
+                            suspend, or cancel any In-Game Event at any time, including changing reward
+                            values, event duration, or eligibility requirements. We will provide advance
+                            notice where reasonably practicable, but are not required to do so if the
+                            change is necessary to prevent exploitation, maintain game balance, or address
+                            technical issues.
+                        </p>
+                        <p className="mt-3">
+                            <strong>No compensation for expired events.</strong> Once an In-Game Event
+                            concludes or is removed, any unclaimed rewards, incomplete progress, or
+                            event-specific Virtual Items may be forfeited without compensation. We are
+                            not obligated to extend event deadlines or provide retroactive rewards,
+                            except where required by applicable consumer protection law.
+                        </p>
+
+                        <H3>18.3 Game Discontinuation &amp; End-of-Service</H3>
+                        <p>
+                            We reserve the right to discontinue any game or Service at our sole discretion.
+                            If we decide to permanently shut down a game or Service, we will provide
+                            <strong> at least 90 days&rsquo; advance notice</strong> via email (if you
+                            have provided one) and/or in-app notification, except in cases of force majeure,
+                            legal or regulatory requirements, or where immediate shutdown is necessary to
+                            protect our systems or users.
+                        </p>
+                        <p className="mt-3">
+                            <strong>Data loss &amp; Virtual Items.</strong> Upon discontinuation of a
+                            game or Service, all user accounts, progress, Virtual Items, and associated
+                            data will be permanently deleted and cannot be recovered. We are not obligated
+                            to provide refunds for previously purchased Virtual Items or unused
+                            Subscriptions, except where required by applicable consumer protection law
+                            (including the UK Consumer Rights Act 2015 and EU consumer rights legislation).
+                        </p>
+                        <p className="mt-3">
+                            <strong>Platform-specific refunds.</strong> If a game is discontinued within
+                            a short period after launch (e.g., less than 6 months), we will work with
+                            the Apple App Store and Google Play Store to facilitate refunds for recent
+                            purchases in accordance with their refund policies and applicable law.
+                            For games operated for longer periods, no refunds will be provided except
+                            as required by law.
+                        </p>
+                        <p className="mt-3">
+                            <strong>Server maintenance vs. discontinuation.</strong> Scheduled or
+                            emergency server maintenance, temporary outages, or Service interruptions do
+                            not constitute discontinuation. This section applies only to permanent,
+                            irreversible shutdown of a game or Service.
+                        </p>
+
+                        <H3>18.4 Live Ops &amp; Server-Side Events</H3>
+                        <p>
+                            Our Services operate on a &ldquo;live operations&rdquo; (Live Ops) model,
+                            meaning that gameplay content, features, difficulty balancing, economy
+                            adjustments, and in-game events may be updated, modified, or rebalanced via
+                            server-side configuration changes without requiring you to download a new
+                            app version.
+                        </p>
+                        <p className="mt-3">
+                            <strong>Server-side changes.</strong> We may deploy server-side updates at
+                            any time to: adjust Virtual Item pricing or availability; rebalance game
+                            difficulty or reward structures; activate or deactivate features; fix
+                            exploits or unintended behaviour; or introduce new content. These changes
+                            take effect immediately upon deployment and do not require advance notice.
+                        </p>
+                        <p className="mt-3">
+                            <strong>No compensation for balance changes.</strong> Live Ops updates may
+                            affect the value, utility, or effectiveness of Virtual Items you have
+                            purchased or earned. We are not obligated to provide refunds, compensation,
+                            or equivalent Virtual Items if a server-side update reduces the utility of
+                            an item, changes game balance, or alters reward structures. By using our
+                            Services, you acknowledge and accept that the gaming experience is subject
+                            to ongoing changes as part of our commitment to maintaining a fair, balanced,
+                            and engaging experience for all players.
                         </p>
                     </section>
 
@@ -1070,6 +1359,17 @@ export default function TermsOfServicePage() {
                             accordance with the laws of England and Wales, without regard to conflict of law
                             provisions.
                         </p>
+                        <p className="mt-3">
+                            <strong>United States residents.</strong> If you are a resident of the United
+                            States, the choice of English law does not deprive you of the protection of
+                            mandatory consumer protection laws that cannot be waived by contract under
+                            the laws of your state of residence or the federal laws of the United States.
+                            In the event of a conflict between English law and the mandatory consumer
+                            protection laws of your jurisdiction, the mandatory consumer protection laws
+                            shall prevail to the extent of the conflict. This includes, but is not limited
+                            to, state consumer protection statutes, unfair and deceptive trade practices
+                            acts, and federal consumer protection regulations.
+                        </p>
 
                         <H3>23.2 Informal resolution</H3>
                         <p>
@@ -1144,10 +1444,36 @@ export default function TermsOfServicePage() {
                             We will not be liable for any failure or delay in performing our obligations
                             under these Terms where such failure or delay results from any cause beyond our
                             reasonable control, including but not limited to: acts of God, natural disasters,
-                            pandemics, epidemics, war, terrorism, riots, embargoes, acts of civil or military
-                            authorities, fire, flood, accidents, strikes, labour shortages, transportation
-                            disruptions, power or telecommunications failures, cyberattacks, or disruptions to
-                            third-party services (such as app stores, cloud hosting, or CDN providers).
+                            pandemics, epidemics, public health emergencies (including lockdowns, quarantines,
+                            or government-mandated restrictions on movement or commerce), war, terrorism,
+                            riots, embargoes, acts of civil or military authorities, fire, flood, earthquakes,
+                            accidents, strikes, labour shortages, supply chain disruptions, transportation
+                            disruptions, power outages, telecommunications failures, internet backbone
+                            failures, cyberattacks, distributed denial-of-service (DDoS) attacks, or
+                            disruptions to third-party services (such as app stores, cloud hosting providers,
+                            CDN providers, payment processors, or advertising networks).
+                        </p>
+                        <p className="mt-3">
+                            <strong>Pandemic-specific provisions.</strong> In the event of a pandemic,
+                            epidemic, or public health emergency recognized by the World Health Organization
+                            (WHO), national governments, or relevant health authorities, we may experience
+                            delays or interruptions in providing the Services due to: remote work transitions,
+                            reduced workforce availability, supply chain disruptions affecting third-party
+                            SDK or cloud infrastructure providers, increased demand on server infrastructure,
+                            or platform policy changes imposed by Apple, Google, or other third parties in
+                            response to the public health crisis. We will make commercially reasonable
+                            efforts to minimize disruptions and provide notice where practicable, but are
+                            not liable for delays or failures caused by such circumstances.
+                        </p>
+                        <p className="mt-3">
+                            <strong>Third-party dependencies.</strong> Our Services rely on third-party
+                            platforms and infrastructure providers, including but not limited to: Apple
+                            App Store, Google Play Store, Unity Technologies (game engine &amp; analytics),
+                            CAS.ai (ad mediation), Google Cloud Platform (hosting), Vercel (website hosting),
+                            and various advertising SDK providers. If any of these third parties experience
+                            outages, policy changes, service terminations, or force majeure events, we are
+                            not liable for resulting interruptions to the Services. We will use reasonable
+                            efforts to mitigate the impact and communicate with affected users.
                         </p>
                     </section>
 
@@ -1209,6 +1535,18 @@ export default function TermsOfServicePage() {
                             fee in the jurisdiction where you reside. Each party bears its own legal
                             costs unless the arbitrator awards fees to the prevailing party under
                             applicable law.
+                        </p>
+                        <p className="mt-3">
+                            <strong>Severability.</strong> If any portion of this arbitration provision
+                            (including the class action waiver in Section 25.1) is found to be
+                            unenforceable by a court or arbitrator, the unenforceable portion shall be
+                            severed, and the remainder of the arbitration agreement shall remain in full
+                            force and effect. If the class action waiver is found unenforceable as to a
+                            particular claim or request for relief, that claim or request for relief shall
+                            be severed and may proceed in court, while all other claims shall be
+                            arbitrated. If a court finds the arbitration agreement entirely unenforceable,
+                            disputes shall be resolved exclusively in the courts of England and Wales in
+                            accordance with Section 23.3.
                         </p>
                         <p className="mt-3">
                             This arbitration provision does not apply to residents of the United Kingdom,

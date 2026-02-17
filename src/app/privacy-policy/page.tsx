@@ -198,11 +198,12 @@ export default function PrivacyPolicyPage() {
                         <H3>2.2 Data Collected Automatically</H3>
                         <p>When you use our Services, the following data is collected automatically:</p>
                         <ul className="list-disc pl-5 space-y-2 mt-3">
-                            <li><strong>Device Identifiers.</strong> Apple Identifier for Advertisers (IDFA) on iOS; Google Advertising ID (GAID) on Android. These are non-permanent, resettable identifiers that enable ad personalisation, frequency capping, and attribution. You can reset or limit them in your device settings (iOS: Settings &gt; Privacy &amp; Security &gt; Tracking; Android 12+: Settings &gt; Google &gt; Ads &gt; Delete Advertising ID). We also collect the Identifier for Vendor (IDFV) or Android ID for analytics purposes; these do not follow you across apps.</li>
+                            <li><strong>Device Identifiers.</strong> Apple Identifier for Advertisers (IDFA) on iOS; Google Advertising ID (GAID) on Android. These are non-permanent, resettable identifiers that enable ad personalisation, frequency capping, and attribution. You can reset or limit them in your device settings (iOS: Settings &gt; Privacy &amp; Security &gt; Tracking; Android 12+: Settings &gt; Google &gt; Ads &gt; Delete Advertising ID). We also collect the Identifier for Vendor (IDFV) or Android ID for analytics purposes; these do not follow you across apps. <strong>Zero-State Handling:</strong> If you have disabled ad tracking (iOS &ldquo;Limit Ad Tracking&rdquo; or declined ATT prompt) or deleted your advertising ID (Android 12+), we will serve only contextual (non-personalised) ads and use device-bound identifiers (IDFV/Android ID) for analytics only. This does not affect core gameplay functionality.</li>
                             <li><strong>IP Address.</strong> Collected automatically. We use your IP address to derive broad geographic location (country and city). Raw IP addresses are retained for a maximum of <strong>14 days</strong> for security, fraud prevention, and operational logging, after which they are deleted or truncated. The IP-derived geolocation (country/city only) may be retained as part of aggregated session data for the durations specified in Section 10.</li>
                             <li><strong>Device &amp; OS Information.</strong> Manufacturer, model, screen resolution, operating system and version, system language and locale, network type (Wi-Fi or mobile data), and basic hardware specifications (CPU, RAM, available storage). Used for game compatibility, performance optimisation, and detecting low-end devices.</li>
                             <li><strong>Gameplay / Session Data.</strong> Level reached, scores, session start and end times, features used, items purchased, achievements unlocked. This is core analytics data processed via Unity Analytics.</li>
                             <li><strong>Ad Interaction Data.</strong> Which ads were shown, viewed, clicked, or resulted in installs. Used for ad measurement, fraud detection, and campaign optimisation.</li>
+                            <li><strong>Anti-Cheat &amp; Integrity Data.</strong> We employ automated detection systems to identify modified game clients (modded APKs, jailbreak tweaks), emulator or virtualisation usage, abnormal progression patterns (impossible score changes, timing anomalies), and payment fraud indicators (chargebacks, refund abuse patterns). Detection methods include device fingerprinting (hardware identifiers, screen properties, sensor data), behavioral analytics (gameplay velocity, input patterns), code integrity checks (binary signature verification, runtime tampering detection), and transaction anomaly scoring. This processing is necessary to maintain fair gameplay, prevent economic harm to legitimate players, protect our revenue from fraud, and comply with anti-money laundering obligations. Legal basis: Legitimate interests (GDPR Art. 6(1)(f)) — our legitimate interest in preventing fraud and ensuring service integrity outweighs any minimal privacy impact, as the data collected is technical and non-sensitive. Violators may be permanently banned without refund and may have their device identifiers blocklisted from future access.</li>
                             <li><strong>Crash &amp; Error Logs.</strong> Stack traces, error codes, and device state at the time of a crash. These logs do not ordinarily contain personal identity information.</li>
                             <li><strong>App Performance Metrics.</strong> Frame rate, load times, latency. Used for quality assurance.</li>
                             <li><strong>Broad Geolocation.</strong> Country or city derived from your IP address. We never collect precise GPS-level location data.</li>
@@ -587,6 +588,23 @@ export default function PrivacyPolicyPage() {
                             relevant campaign using your advertising ID. Attribution data (device ID hash, campaign
                             identifier, network source) is received from advertising networks and used solely for
                             campaign measurement and fraud detection.
+                        </p>
+
+                        <H3>5.7B Cross-Promotion of Our Portfolio</H3>
+                        <p>
+                            We may display advertisements promoting our other games within our apps
+                            (&ldquo;cross-promotion&rdquo;). These ads function differently from third-party advertising:
+                        </p>
+                        <ul className="list-disc pl-5 space-y-2 mt-3">
+                            <li>Cross-promotional ads are served directly by us, not via external ad networks.</li>
+                            <li>We may use aggregated gameplay data from your current session (e.g., &ldquo;Players who reached Level 10 also enjoy [Other Game]&rdquo;) to suggest relevant titles from our portfolio.</li>
+                            <li>Cross-promotion does not use cross-app tracking identifiers. We do not link your identity or gameplay data across different games in our portfolio.</li>
+                            <li>Cross-promotional ads do not require separate consent as they are part of our legitimate business operations (GDPR Art. 6(1)(f)) and do not involve third-party data sharing.</li>
+                        </ul>
+                        <p className="mt-3">
+                            You cannot opt out of cross-promotional ads, as they are integral to how we operate
+                            free-to-play games, but they are non-intrusive and do not collect additional data beyond
+                            what is already collected for the current game session.
                         </p>
 
                         <H3>5.8 Analytics (Unity Analytics)</H3>
@@ -999,6 +1017,79 @@ export default function PrivacyPolicyPage() {
                             passwords. If you suspect unauthorised access to your account, please contact us immediately
                             at <a href={`mailto:${CO.support}`} className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">{CO.support}</a>.
                         </p>
+
+                        <H3>11.1 Data Breach Incident Response Timeline</H3>
+                        <p>
+                            In the event of a personal data breach, we follow a structured incident response process:
+                        </p>
+                        <div className="overflow-x-auto mt-4 mb-6">
+                            <table className="w-full text-sm border-collapse">
+                                <thead>
+                                    <tr className="border-b-2 border-neutral-200 text-left">
+                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Phase</th>
+                                        <th className="py-2 pr-4 text-neutral-500 font-semibold">Timeline</th>
+                                        <th className="py-2 text-neutral-500 font-semibold">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="align-top">
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4 font-medium text-neutral-900">Detection &amp; Assessment</td>
+                                        <td className="py-2 pr-4">Within 24 hours</td>
+                                        <td className="py-2">Identify scope, affected data categories, and number of individuals</td>
+                                    </tr>
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4 font-medium text-neutral-900">Containment</td>
+                                        <td className="py-2 pr-4">Within 48 hours</td>
+                                        <td className="py-2">Stop data exfiltration, patch vulnerabilities, secure affected systems</td>
+                                    </tr>
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4 font-medium text-neutral-900">ICO Notification</td>
+                                        <td className="py-2 pr-4">Within 72 hours</td>
+                                        <td className="py-2">Report to ICO if likely to result in risk (GDPR Art. 33)</td>
+                                    </tr>
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4 font-medium text-neutral-900">User Notification</td>
+                                        <td className="py-2 pr-4">Without undue delay</td>
+                                        <td className="py-2">Notify affected users if high risk (GDPR Art. 34), via email or in-app notification</td>
+                                    </tr>
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4 font-medium text-neutral-900">Remediation</td>
+                                        <td className="py-2 pr-4">Ongoing</td>
+                                        <td className="py-2">Implement technical and organisational measures to prevent recurrence</td>
+                                    </tr>
+                                    <tr>
+                                        <td className="py-2 pr-4 font-medium text-neutral-900">Post-Incident Review</td>
+                                        <td className="py-2 pr-4">Within 30 days</td>
+                                        <td className="py-2">Conduct root cause analysis, document lessons learned, update security policies</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p className="mt-3">
+                            Redacted incident reports (with personally identifiable information removed) are published
+                            on our <Link href="/transparency" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">Transparency Report</Link> page
+                            within 90 days of incident closure, where disclosure does not compromise ongoing security measures.
+                        </p>
+
+                        <H3>11.2 Third-Party Security Audits</H3>
+                        <p>
+                            We conduct annual independent third-party security assessments covering:
+                        </p>
+                        <ul className="list-disc pl-5 space-y-2 mt-3">
+                            <li><strong>Infrastructure penetration testing:</strong> External security firms conduct penetration tests of our cloud infrastructure, APIs, and authentication systems to identify vulnerabilities.</li>
+                            <li><strong>Mobile app binary analysis:</strong> Static and dynamic analysis of our game binaries to detect insecure data storage, code injection vulnerabilities, and improper cryptography implementation.</li>
+                            <li><strong>Data processing agreement compliance:</strong> Review of our contracts with sub-processors to ensure they meet GDPR Article 28 requirements and include appropriate Technical and Organisational Measures (TOMs).</li>
+                            <li><strong>SDK security review:</strong> Assessment of third-party SDKs integrated in our games to verify their data collection practices match vendor disclosures and do not introduce security risks.</li>
+                        </ul>
+                        <p className="mt-4">
+                            Audit summaries (excluding detailed vulnerability findings) are available upon request by
+                            contacting <a href={`mailto:${CO.privacy}`} className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">{CO.privacy}</a>.
+                            Full audit reports are provided to supervisory authorities upon request.
+                        </p>
+                        <p className="mt-4">
+                            Our next scheduled audit is Q2 2026. Audit findings are tracked via an internal remediation
+                            register, and high-severity issues are escalated to senior management for immediate action.
+                        </p>
                     </section>
 
 
@@ -1213,6 +1304,54 @@ export default function PrivacyPolicyPage() {
                             requirements to the extent they apply to our processing activities. If you have questions
                             about how your local law applies, please contact{" "}
                             <a href={`mailto:${CO.privacy}`} className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">{CO.privacy}</a>.
+                        </p>
+
+                        <H3>14.6B India (DPDPA 2023)</H3>
+                        <p>
+                            For users in India, we comply with the Digital Personal Data Protection Act 2023 (DPDPA)
+                            when its provisions come into force. Our DPDPA compliance commitments include:
+                        </p>
+                        <ul className="list-disc pl-5 space-y-2 mt-3">
+                            <li><strong>Consent notices in local languages:</strong> Privacy disclosures will be made available in Hindi and English (and other regional languages as our user base grows).</li>
+                            <li><strong>Verifiable consent:</strong> Consent for data processing will be obtained through clear, affirmative action (e.g., in-app consent dialogues) that can be withdrawn at any time.</li>
+                            <li><strong>Data Principal rights:</strong> Indian users may exercise rights to access, correction, erasure, and grievance redressal by contacting <a href={`mailto:${CO.privacy}`} className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">{CO.privacy}</a>.</li>
+                            <li><strong>Data Protection Officer (if required):</strong> If our processing volumes exceed statutory thresholds requiring appointment of a Data Protection Officer for India, we will designate one and publish contact details here.</li>
+                            <li><strong>Grievance Officer:</strong> We will appoint a Grievance Officer reachable at <a href={`mailto:${CO.privacy}`} className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">{CO.privacy}</a> (subject line: &ldquo;India DPDPA Grievance&rdquo;) to address complaints within the timeline prescribed by DPDPA rules.</li>
+                            <li><strong>Children&rsquo;s data:</strong> We do not knowingly process data of children under 18 in India without verifiable parental consent, in accordance with DPDPA Section 9.</li>
+                        </ul>
+                        <p className="mt-4">
+                            As DPDPA rules and regulations are finalised by the Data Protection Board of India, we will
+                            update this section with additional compliance measures, including registration requirements
+                            (if applicable) and cross-border data transfer mechanisms.
+                        </p>
+
+                        <H3>14.6C China &amp; South Korea (if applicable)</H3>
+                        <p>
+                            We do not currently offer our games in mainland China or South Korea. If we expand to these
+                            markets in the future, we will implement jurisdiction-specific compliance measures:
+                        </p>
+                        <p className="mt-4">
+                            <strong>China (Personal Information Protection Law — PIPL):</strong>
+                        </p>
+                        <ul className="list-disc pl-5 space-y-2 mt-3">
+                            <li>Obtain separate explicit consent for cross-border data transfers outside China (PIPL Art. 39)</li>
+                            <li>Store Chinese user data within China via local cloud providers (subject to data localization requirements)</li>
+                            <li>Conduct security assessments before cross-border transfers for data processors handling personal information of over 1 million individuals (PIPL Art. 40)</li>
+                            <li>Appoint a representative within China to handle personal information protection matters (PIPL Art. 53)</li>
+                        </ul>
+                        <p className="mt-4">
+                            <strong>South Korea (Personal Information Protection Act — PIPA):</strong>
+                        </p>
+                        <ul className="list-disc pl-5 space-y-2 mt-3">
+                            <li>Designate a Chief Privacy Officer (CPO) reachable at a published contact point</li>
+                            <li>Real-name verification is not required for our games as we do not collect personal identification information (resident registration numbers, passport numbers)</li>
+                            <li>Provide privacy notices in Korean and obtain explicit consent for processing sensitive data or cross-border transfers</li>
+                            <li>Implement mandatory security measures under PIPA enforcement decree (encryption, access logging, annual security audits)</li>
+                        </ul>
+                        <p className="mt-4">
+                            Users in regions not explicitly covered above may contact us at{" "}
+                            <a href={`mailto:${CO.privacy}`} className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">{CO.privacy}</a>{" "}
+                            for jurisdiction-specific information.
                         </p>
                     </section>
 
