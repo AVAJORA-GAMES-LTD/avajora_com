@@ -918,6 +918,15 @@ export default function TermsOfServicePage() {
                             traffic. We do not use bots, click farms, or any automated means to inflate ad
                             impressions or clicks.
                         </p>
+
+                        <H3>12.8 VPN &amp; Proxy Restrictions</H3>
+                        <p>
+                            Our games are not VPN applications and do not provide virtual private network,
+                            proxy server, or similar functionality. In accordance with AppLovin&rsquo;s
+                            Publisher Policies, we do not access or use AppLovin&rsquo;s Services in
+                            connection with apps that provide virtual private networks, proxy servers, or
+                            similar products or services.
+                        </p>
                     </section>
 
                     {/* 13. Data Protection & Privacy */}

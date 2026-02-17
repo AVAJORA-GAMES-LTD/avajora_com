@@ -226,9 +226,17 @@ export default function DoNotSellPage() {
                                 </a>
                             </li>
                             <li>
-                                <strong>AppLovin:</strong>{" "}
-                                <a href="https://www.applovin.com/optout/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">
-                                    https://www.applovin.com/optout/
+                                <strong>AppLovin opt-out &amp; data management:</strong>{" "}
+                                <a href="https://applovin.com/opt-out" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">
+                                    https://applovin.com/opt-out
+                                </a>.
+                                You can also download the <strong>AppLovin Privacy Management App</strong> to
+                                access or delete the data AppLovin has collected from your device:{" "}
+                                <a href="https://apps.apple.com/app/applovin-privacy-management/id1622498498" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">iOS</a>{" | "}
+                                <a href="https://play.google.com/store/apps/details?id=com.applovin.gdpr" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">Android</a>.
+                                AppLovin&rsquo;s full partner list:{" "}
+                                <a href="https://legal.applovin.com/partners/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">
+                                    https://legal.applovin.com/partners/
                                 </a>
                             </li>
                         </ul>

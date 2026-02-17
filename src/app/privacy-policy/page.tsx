@@ -526,6 +526,17 @@ export default function PrivacyPolicyPage() {
                                 of the IAB Open Measurement Working Group to perform ad measurement and related
                                 services.
                                 <br /><br />
+                                <strong>Sensitive data &amp; PHI:</strong> We do not include in the data we
+                                share with AppLovin any sensitive personal data (as defined under applicable
+                                laws, including racial or ethnic origin, political opinions, religious or
+                                philosophical beliefs, health data, sex life or sexual orientation, criminal
+                                convictions, genetic data, biometric data, government-issued identifiers,
+                                financial account information, account log-in credentials, contents of user
+                                communications, or precise geolocation). We do not provide AppLovin with
+                                protected health information (&ldquo;PHI&rdquo;) as defined under applicable
+                                laws, nor do we use any aspect of AppLovin&rsquo;s Services in connection
+                                with PHI.
+                                <br /><br />
                                 <strong>Children:</strong> AppLovin does not knowingly collect personal information
                                 from, or serve advertisements to, children as defined by applicable laws. We do not
                                 initialise or use the AppLovin SDK for any end user identified as a child via our
@@ -533,6 +544,9 @@ export default function PrivacyPolicyPage() {
                                 <br /><br />
                                 Privacy policy:{" "}
                                 <a href="https://legal.applovin.com/privacy/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://legal.applovin.com/privacy/</a>
+                                <br />
+                                Data Sharing Requirements:{" "}
+                                <a href="https://legal.applovin.com/data-sharing-requirements" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://legal.applovin.com/data-sharing-requirements</a>
                             </li>
                             <li>
                                 <strong>Unity Ads</strong> (Unity Technologies Inc.) — Unity Ads displays ads in our
