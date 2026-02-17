@@ -80,7 +80,7 @@ export default function Footer() {
                                 className="inline-block hover:opacity-80 transition"
                             >
                                 <Image
-                                    src="https://res.cloudinary.com/destej60y/image/upload/v1771293818/googleplay.c3b4e2ea_duph9w.webp"
+                                    src="https://res.cloudinary.com/destej60y/image/upload/v1771346830/Store_Google_Play_Type_Dark_Language_English_1_buber3.svg"
                                     alt="Get it on Google Play"
                                     width={135}
                                     height={40}
@@ -89,7 +89,7 @@ export default function Footer() {
                             </a>
                             <div className="inline-block">
                                 <Image
-                                    src="https://res.cloudinary.com/destej60y/image/upload/v1771293841/appstore.58a06803_huebjr.webp"
+                                    src="https://res.cloudinary.com/destej60y/image/upload/v1771346829/Store_App_Store_Type_Dark_Language_English_mqfkz7.svg"
                                     alt="Download on the App Store"
                                     width={135}
                                     height={40}

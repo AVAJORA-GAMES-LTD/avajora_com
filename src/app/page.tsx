@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/navbar";
 import { FeaturesSection } from "@/components/features";
+import { PlayStoreSection } from "@/components/play-store-section";
 import { GridSection } from "@/components/grid-section";
 import Image from "next/image";
 
@@ -31,6 +32,8 @@ export default function Home() {
       </main>
 
       <FeaturesSection />
+
+      <PlayStoreSection />
 
       <GridSection />
     </>
