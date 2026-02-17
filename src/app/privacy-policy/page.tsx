@@ -442,9 +442,96 @@ export default function PrivacyPolicyPage() {
 
                         <ul className="list-disc pl-5 space-y-3 mt-4">
                             <li>
-                                <strong>AppLovin</strong> — We work with AppLovin to deliver ads in our mobile
-                                application and other devices and/or platforms. For more information about
-                                AppLovin&rsquo;s collection and use of your information, visit:{" "}
+                                <strong>AppLovin</strong> (AppLovin Corporation, Palo Alto, USA) — We work with
+                                AppLovin to deliver ads in our mobile application and other devices and/or platforms.
+                                For more information about AppLovin&rsquo;s collection and use of your information,
+                                visit:{" "}
+                                <a href="https://legal.applovin.com/privacy/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://legal.applovin.com/privacy/</a>.
+                                AppLovin may collect the following categories of information through its SDK:
+                                <br /><br />
+                                <strong>Identifiers:</strong> advertising identifiers (IDFA, GAID, Amazon
+                                Advertising ID), Vendor ID (IDFV), App Set ID, and your advertising and tracking
+                                preferences and restrictions (e.g., &ldquo;Limit Ad Tracking&rdquo; or ATT status).
+                                <br />
+                                <strong>Device &amp; hardware data:</strong> device make, model, and hardware
+                                configuration; operating system and version; device properties related to screen,
+                                display, size, orientation, audio, video, battery, memory usage, device settings,
+                                and boot time; device settings related to accessibility features and font size;
+                                carrier information; network connection type and speed.
+                                <br />
+                                <strong>App data:</strong> application name, properties, performance, session
+                                information, and installation information of the app through which you interact
+                                with AppLovin&rsquo;s Services.
+                                <br />
+                                <strong>Location &amp; locale:</strong> IP address (used to derive approximate
+                                geographic location at the country/region level); country, time zone, and locale
+                                settings (country and preferred language).
+                                <br />
+                                <strong>Ad interaction data:</strong> ad events including impression, completion,
+                                click, and skip.
+                                <br />
+                                <strong>Advertiser event data:</strong> advertisers (directly or through a
+                                third-party service provider) may share transactional or other &ldquo;event&rdquo;
+                                data related to your interaction with an application, such as information about
+                                purchases or application installations, with AppLovin for campaign optimisation
+                                and measurement.
+                                <br /><br />
+                                The exact information AppLovin collects depends on choices you have made in the
+                                ad settings on your device, on permissions you give in apps, and in the privacy
+                                controls offered by those services and AppLovin.
+                                <br /><br />
+                                AppLovin uses this data to deliver its Advertising Services, maintain and improve
+                                them &mdash; including its <strong>AI-powered advertising technology (Axon)</strong> &mdash;
+                                and to research and develop new ones; to promote safety, security, and integrity of
+                                its Services; to provide measurement, analytics, and reporting; and to comply with
+                                legal and regulatory obligations. AppLovin may also use AI-powered advertising
+                                technology to serve ads that are more relevant and interesting to you, in ways that
+                                do not produce legal or similarly significant effects on you.
+                                <br /><br />
+                                <strong>How AppLovin shares your data:</strong> AppLovin may share information it
+                                collects with: (a) its <strong>service providers</strong> who support its business
+                                (infrastructure, analytics, customer service, payments); (b) its <strong>affiliates</strong>{" "}
+                                within the AppLovin family of companies (including Adjust, Wurl, and other
+                                subsidiaries) for purposes consistent with its Privacy Policy;
+                                (c) <strong>advertising partners</strong> &mdash; including advertisers, ad networks,
+                                exchanges, demand-side platforms, merchants, and mobile measurement partners
+                                (MMPs) &mdash; to provide advertising services; and (d) as required by law or in
+                                connection with business transfers. Unless otherwise noted on AppLovin&rsquo;s
+                                partner list, each AppLovin advertising partner is an <strong>independent
+                                    controller</strong> of your data. You can view AppLovin&rsquo;s full list of
+                                advertising partners at:{" "}
+                                <a href="https://legal.applovin.com/partners/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://legal.applovin.com/partners/</a>.
+                                <br /><br />
+                                AppLovin acts as an <strong>independent data controller</strong> for the data it
+                                collects through its SDK and Services. AppLovin is certified under the{" "}
+                                <strong>EU-US Data Privacy Framework (DPF)</strong>, the UK Extension to the EU-US
+                                DPF, and the Swiss-US DPF, and is subject to the regulatory enforcement powers
+                                of the U.S. Federal Trade Commission. AppLovin refers unresolved DPF complaints
+                                to TRUSTe, an alternative dispute resolution provider based in the United States.
+                                <br /><br />
+                                AppLovin retains information collected through its Services for limited periods,
+                                typically up to two (2) years from the date of collection, or until you request
+                                deletion, whichever occurs first. To access or delete the data collected by AppLovin
+                                from your device, you may download the <strong>AppLovin Privacy Management
+                                    Application</strong> from the Apple App Store or Google Play Store:{" "}
+                                <a href="https://apps.apple.com/app/applovin-privacy-management/id1622498498" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">iOS</a>{" | "}
+                                <a href="https://play.google.com/store/apps/details?id=com.applovin.gdpr" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">Android</a>.
+                                You may also opt out of interest-based advertising within ads served by AppLovin;
+                                for detailed instructions, see{" "}
+                                <a href="https://applovin.com/opt-out" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">How AppLovin Shows You Ads</a>.
+                                <br /><br />
+                                AppLovin and other ad network partners may use the <strong>IAB Open Measurement
+                                    SDK (OM SDK)</strong> to allow third-party ad measurement companies to verify ad
+                                impressions. Third-party measurement partners may collect and process data as part
+                                of the IAB Open Measurement Working Group to perform ad measurement and related
+                                services.
+                                <br /><br />
+                                <strong>Children:</strong> AppLovin does not knowingly collect personal information
+                                from, or serve advertisements to, children as defined by applicable laws. We do not
+                                initialise or use the AppLovin SDK for any end user identified as a child via our
+                                age-gate. See Section 7 for details.
+                                <br /><br />
+                                Privacy policy:{" "}
                                 <a href="https://legal.applovin.com/privacy/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://legal.applovin.com/privacy/</a>
                             </li>
                             <li>
@@ -552,6 +639,27 @@ export default function PrivacyPolicyPage() {
                             will not conduct behavioural advertising; and CAS.ai will not pass advertising identifiers
                             to downstream networks for targeting.
                         </p>
+                        <p className="mt-4">
+                            <strong>AppLovin SDK &mdash; Child Exclusion.</strong> In accordance with AppLovin&rsquo;s
+                            Publisher Policies and Terms of Use, we do <strong>not</strong> initialise or use the
+                            AppLovin SDK in any way for any end user who qualifies as a &ldquo;child&rdquo; under
+                            applicable laws (including COPPA, UK AADC, GDPR Art.&nbsp;8, and equivalent laws in
+                            other jurisdictions). When our age-gate identifies a user as under the applicable minimum
+                            age, the AppLovin SDK is not loaded for that user session, no data is transmitted to
+                            AppLovin, and no AppLovin ads are served. AppLovin is excluded from the CAS.ai mediation
+                            waterfall and bidding stack for all child-identified sessions. This ensures compliance
+                            with AppLovin&rsquo;s strict prohibition on using their Services in connection with
+                            children.
+                        </p>
+                        <p className="mt-4">
+                            <strong>App Store Age Range APIs.</strong> Where available, we integrate Apple&rsquo;s
+                            and Google&rsquo;s age range APIs (including APIs announced in response to U.S. state
+                            laws such as those in Texas, Utah, and Louisiana) to receive platform-verified age-range
+                            information for end users. This information is used in conjunction with our in-app
+                            age-gate to determine whether an end user qualifies as a &ldquo;child&rdquo; under
+                            applicable laws and to ensure that the AppLovin SDK and other age-restricted services
+                            are not initialised for such users.
+                        </p>
 
                         <H3>5.6 Consent &amp; Opt-Out Mechanisms</H3>
                         <p>
@@ -559,11 +667,18 @@ export default function PrivacyPolicyPage() {
                         </p>
                         <p className="mt-3">
                             For users in the EEA, UK, and applicable US states, consent signals are passed to Unity
-                            Ads, Liftoff, InMobi, and all CAS.ai downstream networks via each SDK&rsquo;s consent API.
+                            Ads, Liftoff, InMobi, <strong>AppLovin</strong>, and all CAS.ai downstream networks via
+                            each SDK&rsquo;s consent API. Specifically, we pass the following signals to the
+                            AppLovin SDK: ATT authorisation status (iOS), IAB TCF 2.2 consent string, &ldquo;Do Not
+                            Sell&rdquo; flag (for CCPA/US state laws), age-restriction flags, and any other
+                            applicable privacy flags required by law or app store policies. These consent signals
+                            govern whether AppLovin serves personalised or contextual ads, and whether your
+                            advertising identifier is used for interest-based advertising or for improving
+                            AppLovin&rsquo;s Services, including its AI-powered technologies.
                             Users who opt out of targeted advertising will receive contextual (non-personalised)
                             ads only. If you opt out of personalised advertising, CAS.ai is instructed not to pass
-                            your advertising identifier to downstream networks, and only contextual (non-targeted) ads
-                            will be displayed.
+                            your advertising identifier to downstream networks (including AppLovin), and only
+                            contextual (non-targeted) ads will be displayed.
                         </p>
                         <ul className="list-disc pl-5 space-y-2 mt-3">
                             <li><strong>EEA/UK users:</strong> Personalised ads are only shown after you give explicit consent via the consent popup presented at first launch.</li>
@@ -572,6 +687,7 @@ export default function PrivacyPolicyPage() {
                             <li><strong>Unity Ads:</strong> Unity Ads displays a Data Privacy icon on ad units through which you can access your data and opt out of future collection.</li>
                             <li><strong>Liftoff opt-out:</strong>{" "}<a href="https://vungle.com/opt-out/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://vungle.com/opt-out/</a></li>
                             <li><strong>InMobi opt-out:</strong>{" "}<a href="https://www.inmobi.com/page/opt-out/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://www.inmobi.com/page/opt-out/</a></li>
+                            <li><strong>AppLovin opt-out &amp; data management:</strong> You may opt out of interest-based advertising by AppLovin, or access and delete the data AppLovin has collected from your device, by downloading the <strong>AppLovin Privacy Management Application</strong>:{" "}<a href="https://apps.apple.com/app/applovin-privacy-management/id1622498498" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">iOS</a>{" | "}<a href="https://play.google.com/store/apps/details?id=com.applovin.gdpr" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">Android</a>. You may also visit:{" "}<a href="https://applovin.com/opt-out" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://applovin.com/opt-out</a></li>
                             <li><strong>iOS:</strong> Settings &gt; Privacy &amp; Security &gt; Tracking — you can prevent all apps from requesting your advertising identifier.</li>
                             <li><strong>Android 12+:</strong> Settings &gt; Google &gt; Ads &gt; Delete Advertising ID — you can permanently delete your advertising ID.</li>
                         </ul>
@@ -774,22 +890,45 @@ export default function PrivacyPolicyPage() {
                             below the applicable minimum age.
                         </p>
                         <p className="mt-4">
+                            <strong>AppLovin SDK &mdash; Not Used for Children.</strong> In accordance with
+                            AppLovin&rsquo;s Terms of Use and Publisher Policies, we do <strong>not</strong> initialise
+                            or use the AppLovin SDK in any way, or otherwise use any aspect of AppLovin&rsquo;s
+                            Services, in connection with any end user who qualifies as a &ldquo;child&rdquo; under
+                            applicable laws. When our age-gate (or platform-provided age range APIs) identifies a
+                            user as under the applicable minimum age, the AppLovin SDK is not loaded for that user
+                            session, no data is transmitted to AppLovin, and no AppLovin-served advertisements are
+                            displayed. This prohibition applies regardless of whether the game is classified as
+                            &ldquo;child-directed&rdquo; or &ldquo;mixed audience.&rdquo;
+                        </p>
+                        <p className="mt-4">
                             <strong>Mixed Audience Games.</strong> For games that may appeal to a broad audience
                             including children (&ldquo;Mixed Audience&rdquo;), we implement an age-gate at first launch.
                             Users identifying as under the age of digital consent (13 in most jurisdictions, 16 in
                             certain EU member states) are automatically served a &ldquo;Non-Personalised&rdquo;
                             experience with the following restrictions: (a) restricted data collection (only essential
                             device and gameplay data required for service delivery); (b) disabled social features
-                            (if applicable); and (c) contextual-only advertising (no behavioural profiling or
-                            cross-app tracking). This treatment applies until the user reaches the applicable minimum
+                            (if applicable); (c) contextual-only advertising (no behavioural profiling or
+                            cross-app tracking); and (d) <strong>complete exclusion of the AppLovin SDK</strong> from
+                            the ad mediation stack for the child-identified session.
+                            This treatment applies until the user reaches the applicable minimum
                             age or until a parent or guardian provides verifiable consent where permitted by law.
+                        </p>
+                        <p className="mt-4">
+                            <strong>App Store Age Range APIs.</strong> Where available, we integrate platform-provided
+                            age range APIs (such as those introduced in response to U.S. state laws in Texas, Utah,
+                            and Louisiana, and similar features offered by Apple and Google) to receive
+                            platform-verified age-range information for end users. This information supplements our
+                            in-app age-gate and is used to determine whether an end user qualifies as a
+                            &ldquo;child&rdquo; under applicable laws and therefore whether the AppLovin SDK and other
+                            age-restricted ad network SDKs should be initialised.
                         </p>
                         <p className="mt-4">
                             We configure game-level settings in Unity, Liftoff, InMobi, and CAS.ai dashboards
                             regarding their COPPA status. For child-directed apps: Unity will not collect cross-app
                             advertising identifiers; Liftoff is instructed not to collect cross-app advertising
-                            identifiers for targeting; InMobi will not conduct behavioural advertising; and CAS.ai
-                            will not pass advertising identifiers to downstream networks for targeting.
+                            identifiers for targeting; InMobi will not conduct behavioural advertising; CAS.ai
+                            will not pass advertising identifiers to downstream networks for targeting; and the
+                            AppLovin SDK will not be initialised at all.
                         </p>
                         <p className="mt-4">
                             <strong>UK Age Appropriate Design Code (AADC).</strong> As a UK-registered company, we
@@ -897,11 +1036,22 @@ export default function PrivacyPolicyPage() {
                         <p className="mt-4">
                             Key international data recipients include: Unity Technologies Inc. (San Francisco, USA),
                             CAS.ai / CLEAR INVEST LTD (Belize), Liftoff Mobile Inc. / LMI Inc. (Palo Alto, USA),
-                            InMobi Pte. Ltd. (Singapore) and InMobi Inc. (USA), AppLovin Corporation (USA), and
-                            Google LLC (USA). Data transfers from EEA/UK users to Unity, Liftoff, and InMobi are
+                            InMobi Pte. Ltd. (Singapore) and InMobi Inc. (USA), AppLovin Corporation (Palo Alto, USA),
+                            and Google LLC (USA). Data transfers from EEA/UK users to Unity, Liftoff, and InMobi are
                             governed by Standard Contractual Clauses as per each company&rsquo;s Data Processing
                             Addendum. InMobi is headquartered in Singapore with operations in the USA; transfers are
                             covered by appropriate safeguards per InMobi&rsquo;s own privacy documentation.
+                        </p>
+                        <p className="mt-4">
+                            <strong>AppLovin Corporation</strong> is certified under the EU-US Data Privacy
+                            Framework (EU-US DPF), the UK Extension to the EU-US DPF, and the Swiss-US Data Privacy
+                            Framework (Swiss-US DPF). For transfers of personal data from the EEA, UK, and
+                            Switzerland to AppLovin, we rely on AppLovin&rsquo;s DPF certification as the primary
+                            transfer mechanism. AppLovin is subject to the regulatory enforcement powers of the
+                            U.S. Federal Trade Commission. AppLovin has appointed Prighter Group as its privacy
+                            representative in the EU and UK. For further details, see AppLovin&rsquo;s Privacy Policy
+                            at{" "}
+                            <a href="https://legal.applovin.com/privacy/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">legal.applovin.com/privacy</a>.
                         </p>
                         <p className="mt-4">
                             Where data is transferred to countries that do not benefit from an adequacy decision
@@ -1265,13 +1415,24 @@ export default function PrivacyPolicyPage() {
 
                         <H3>14.4 Other US States</H3>
                         <p>
-                            Virginia (VCDPA), Colorado (CPA), Connecticut (CTDPA), Utah (UCPA), Texas (TDPSA), and
-                            other states have enacted privacy legislation granting opt-out rights for targeted
-                            advertising. Our unified Settings &gt; Privacy mechanism satisfies all applicable state
-                            requirements. Where technically detected on our website, we treat the Global Privacy
-                            Control (GPC) browser signal as an opt-out request. Because GPC is browser-based, it may
-                            not apply to in-app mobile environments; for mobile gameplay, please use the in-app
-                            privacy controls or contact us directly.
+                            Virginia (VCDPA), Colorado (CPA), Connecticut (CTDPA), Utah (UCPA), Texas (TDPSA),
+                            Oregon (OCPA), Montana (MCDPA), Iowa (ICDPA), Delaware (DPDPA), New Hampshire, New
+                            Jersey, Nebraska, Tennessee, Indiana, Kentucky, Maryland, Minnesota, and other states
+                            have enacted or are enacting comprehensive consumer privacy laws granting opt-out
+                            rights for targeted advertising, the sale or sharing of personal information, and
+                            profiling. We monitor evolving US state privacy legislation and update our compliance
+                            practices accordingly. Our unified Settings &gt; Privacy mechanism is designed to
+                            satisfy all currently applicable and future US state privacy requirements. Where
+                            technically detected on our website, we treat the Global Privacy Control (GPC) browser
+                            signal as an opt-out request under all applicable US state privacy laws. Because GPC
+                            is browser-based, it may not apply to in-app mobile environments; for mobile gameplay,
+                            please use the in-app privacy controls or contact us directly.
+                        </p>
+                        <p className="mt-3">
+                            We correctly set &ldquo;Do Not Sell&rdquo; flag values and similar privacy flags via
+                            the AppLovin SDK and other integrated advertising SDKs, as required by the US Multistate
+                            Data Protection Laws. When you exercise your opt-out right, the signal is passed to
+                            AppLovin and all CAS.ai downstream networks in real time.
                         </p>
 
                         <H3>14.5 Brazil (LGPD)</H3>

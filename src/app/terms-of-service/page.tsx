@@ -865,6 +865,59 @@ export default function TermsOfServicePage() {
                             from a restricted region, you are responsible for ensuring your use complies
                             with applicable local laws.
                         </p>
+
+                        <H3>12.6 Better Ads Standards &amp; Industry Compliance</H3>
+                        <p>
+                            We are committed to providing a high-quality advertising experience. All
+                            advertisements displayed within our Services comply with the{" "}
+                            <a href="https://www.betterads.org/standards/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">Coalition for Better Ads Standards</a>,
+                            including but not limited to limitations on pop-up ads, auto-play video ads with
+                            sound, prestitial countdown ads, and large sticky ads. Rewarded video ads within
+                            our games are always user-initiated (the user chooses to watch in exchange for
+                            an in-game reward) and can be skipped or dismissed after the allotted time.
+                        </p>
+                        <p className="mt-3">
+                            We and our advertising partners use the <strong>IAB Open Measurement SDK
+                                (OM SDK)</strong> to enable independent third-party verification and measurement
+                            of advertising impressions, viewability, and invalid traffic within our Services.
+                            Third-party measurement partners participating in the IAB Open Measurement Working
+                            Group may collect and process data as part of performing ad measurement and
+                            related services.
+                        </p>
+
+                        <H3>12.7 Content Policies</H3>
+                        <p>
+                            All content within our Services, including in-app content, cross-promotional
+                            creatives, and any advertisements served through our ad mediation partners,
+                            must comply with:{" "}
+                        </p>
+                        <ul className="mt-2 space-y-1 list-disc list-inside ml-4">
+                            <li>Apple App Store Guidelines and Google Play Developer Policies;</li>
+                            <li>AppLovin Content Policies, including but not limited to prohibitions on
+                                adult content, excessive violence, deceptive practices, hate speech,
+                                illegal activities, and misleading advertisements;</li>
+                            <li>All applicable laws and regulations in the jurisdictions where our
+                                Services are available;</li>
+                            <li>Industry self-regulatory standards, including the Coalition for Better
+                                Ads Standards and IAB guidelines.</li>
+                        </ul>
+                        <p className="mt-3">
+                            We do not knowingly publish or promote content that is designed to deceive,
+                            mislead, or defraud users, or that contains malware, spyware, or other harmful
+                            software. We do not knowingly serve or allow advertisements that promote
+                            illegal products or services, contain adult or sexually explicit material
+                            (except as permitted by applicable law and platform policy), employ deceptive
+                            &ldquo;bait-and-switch&rdquo; tactics, or auto-redirect users to external
+                            websites without their consent.
+                        </p>
+                        <p className="mt-3">
+                            <strong>Invalid Traffic &amp; Ad Fraud.</strong> We take all reasonable measures
+                            to prevent invalid traffic (IVT), including click fraud, impression fraud, and
+                            other forms of ad fraud, within our Services. We cooperate with our advertising
+                            partners&rsquo; anti-fraud systems and promptly investigate any suspected invalid
+                            traffic. We do not use bots, click farms, or any automated means to inflate ad
+                            impressions or clicks.
+                        </p>
                     </section>
 
                     {/* 13. Data Protection & Privacy */}

@@ -121,8 +121,15 @@ export default function PrivacyForParentsPage() {
                                     our games. If our age-gate identifies a user as under the applicable age
                                     threshold, we disable interest-based advertising and enable
                                     COPPA-compliant, child-directed treatment via our ad mediation platform
-                                    (CAS.ai). They will still see ads, but only contextual ones — not based
+                                    (CAS.ai). They will still see ads, but only contextual ones &mdash; not based
                                     on any profile.
+                                </p>
+                                <p className="mt-2">
+                                    <strong>Important:</strong> The <strong>AppLovin advertising SDK is not
+                                        loaded at all</strong> for children. When our age-gate identifies a user as
+                                    under the applicable minimum age, the AppLovin SDK is completely excluded
+                                    from the advertising stack &mdash; no data is sent to AppLovin, and no
+                                    AppLovin ads are shown.
                                 </p>
                             </QA>
 
@@ -157,13 +164,16 @@ export default function PrivacyForParentsPage() {
                                     In child-directed mode, data is shared only with:
                                 </p>
                                 <ul className="list-disc pl-4 space-y-1 mt-2">
-                                    <li><strong>Unity Analytics</strong> — gameplay analytics (device-bound ID only)</li>
-                                    <li><strong>CAS.ai</strong> — ad mediation (contextual ads only, no tracking)</li>
-                                    <li><strong>Google Cloud</strong> — infrastructure hosting (EU servers)</li>
+                                    <li><strong>Unity Analytics</strong> &mdash; gameplay analytics (device-bound ID only)</li>
+                                    <li><strong>CAS.ai</strong> &mdash; ad mediation (contextual ads only, no tracking)</li>
+                                    <li><strong>Google Cloud</strong> &mdash; infrastructure hosting (EU servers)</li>
                                 </ul>
                                 <p className="mt-2">
                                     No advertising identifiers are transmitted to ad networks when
-                                    child-directed treatment is active.
+                                    child-directed treatment is active. <strong>AppLovin, Google AdMob,
+                                        and other interest-based advertising SDKs are completely excluded</strong>{" "}
+                                    from child sessions &mdash; they are not initialised at all, so no data
+                                    from your child reaches these services.
                                 </p>
                             </QA>
                         </div>

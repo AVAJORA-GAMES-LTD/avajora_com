@@ -52,12 +52,12 @@ const partners = [
     },
     {
         name: "AppLovin",
-        how: "Via CAS.ai mediation (bidder in the mediation stack)",
-        data: "IDFA/GAID, IP address, device info, ad events",
+        how: "Via CAS.ai mediation (bidder in the mediation stack). AppLovin uses AI-powered advertising technology (Axon) to serve relevant ads. NOT initialised for child-identified users.",
+        data: "Advertising IDs (IDFA/GAID/Amazon Ad ID), IDFV, App Set ID, ad tracking preferences & restrictions, IP address (country/region-level location), country/timezone/locale (language), device make/model/hardware/OS, screen/display/orientation/audio/video/battery/memory/boot-time properties, accessibility & font-size settings, carrier, network type & speed, app name/properties/performance/session/install info, ad events (impression, completion, click, skip). Advertisers may share event data (e.g. install, purchase) for campaign optimisation. AppLovin may share data with its affiliates (Adjust, Wurl, etc.) and its own advertising partners (see applovin.com/partners).",
         url: "https://legal.applovin.com/privacy/",
         urlLabel: "legal.applovin.com/privacy",
-        role: "Independent controller",
-        retention: "Up to 36 months (ad data); aggregated data may be kept longer",
+        role: "Independent controller (DPF certified: EU-US, UK Extension, Swiss-US)",
+        retention: "Up to 2 years from collection; aggregated data may be kept longer",
     },
     {
         name: "Google AdMob",
@@ -251,8 +251,14 @@ export default function AdvertisingPartnersPage() {
                             <a href="https://www.inmobi.com/page/opt-out/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://www.inmobi.com/page/opt-out/</a>
                         </li>
                         <li>
-                            <strong>AppLovin opt-out:</strong>{" "}
-                            <a href="https://www.applovin.com/optout/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://www.applovin.com/optout/</a>
+                            <strong>AppLovin opt-out &amp; data management:</strong>{" "}
+                            <a href="https://applovin.com/opt-out" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://applovin.com/opt-out</a>.
+                            You can also download the <strong>AppLovin Privacy Management App</strong> to access
+                            or delete data collected from your device:{" "}
+                            <a href="https://apps.apple.com/app/applovin-privacy-management/id1622498498" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">iOS</a>{" | "}
+                            <a href="https://play.google.com/store/apps/details?id=com.applovin.gdpr" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">Android</a>.
+                            AppLovin&rsquo;s full partner list:{" "}
+                            <a href="https://legal.applovin.com/partners/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://legal.applovin.com/partners/</a>
                         </li>
                         <li>
                             <strong>iOS:</strong> Settings &gt; Privacy &amp; Security &gt; Tracking &mdash; prevent
