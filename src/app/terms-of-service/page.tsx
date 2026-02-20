@@ -758,6 +758,7 @@ export default function TermsOfServicePage() {
                             <li>InMobi (direct SDK + via CAS.ai)</li>
                             <li>AppLovin (via CAS.ai)</li>
                             <li>Google AdMob (via CAS.ai)</li>
+                            <li>Google Firebase Analytics (gameplay analytics &amp; engagement metrics)</li>
                         </ul>
                         <p className="mt-3 text-sm text-neutral-600">
                             For full details — including privacy policy links, opt-out mechanisms, and
@@ -951,8 +952,16 @@ export default function TermsOfServicePage() {
                             (COPPA), and other applicable privacy laws.
                         </p>
                         <p className="mt-3">
-                            We use <strong>Unity Analytics</strong> (Unity Technologies Inc.) to collect anonymised
-                            gameplay usage data to improve our Services. We use <strong>CAS.ai</strong> (CLEAR INVEST
+                            We use <strong>Unity Analytics</strong> (Unity Technologies Inc.) and{" "}
+                            <strong>Google Firebase Analytics</strong> (Google LLC) to collect anonymised
+                            gameplay usage data to improve our Services. Firebase Analytics collects
+                            device information, app-instance identifiers, Android Advertising ID (GAID),
+                            and gameplay event data; it is governed by the{" "}
+                            <a href="https://firebase.google.com/terms" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">Firebase Terms of Service</a>{" "}
+                            and{" "}
+                            <a href="https://cloud.google.com/terms/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">Google Cloud Terms of Service</a>.
+                            Firebase Analytics is disabled for child-identified sessions.
+                            We use <strong>CAS.ai</strong> (CLEAR INVEST
                             LTD) as our ad mediation platform, which may route data to multiple advertising networks
                             including AppLovin, Google AdMob, ironSource, Meta, Vungle/Liftoff, InMobi, and others.
                             We never sell your personal data for monetary consideration. The sharing of
@@ -1531,7 +1540,7 @@ export default function TermsOfServicePage() {
                             <strong>Third-party dependencies.</strong> Our Services rely on third-party
                             platforms and infrastructure providers, including but not limited to: Apple
                             App Store, Google Play Store, Unity Technologies (game engine &amp; analytics),
-                            CAS.ai (ad mediation), Google Cloud Platform (hosting), Vercel (website hosting),
+                            Google LLC (Firebase Analytics), CAS.ai (ad mediation), Google Cloud Platform (hosting), Vercel (website hosting),
                             and various advertising SDK providers. If any of these third parties experience
                             outages, policy changes, service terminations, or force majeure events, we are
                             not liable for resulting interruptions to the Services. We will use reasonable

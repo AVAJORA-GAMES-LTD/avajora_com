@@ -159,6 +159,7 @@ export default function PrivacySummaryPage() {
                                     <li><strong>CAS.ai</strong> — our ad mediation platform</li>
                                     <li><strong>Multiple ad networks</strong> — compete to show you ads</li>
                                     <li><strong>Unity Analytics</strong> — gameplay analytics</li>
+                                    <li><strong>Google Firebase Analytics</strong> — gameplay analytics &amp; engagement metrics</li>
                                     <li><strong>Google Cloud</strong> — hosts our servers (EU region)</li>
                                 </ul>
                                 <p className="mt-2">
@@ -247,6 +248,10 @@ export default function PrivacySummaryPage() {
                                     <tr className="border-b border-neutral-100">
                                         <td className="py-2 pr-4">Gameplay &amp; account data</td>
                                         <td className="py-2">While active + 2 years</td>
+                                    </tr>
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4">Firebase Analytics event data</td>
+                                        <td className="py-2">Up to 14 months</td>
                                     </tr>
                                     <tr className="border-b border-neutral-100">
                                         <td className="py-2 pr-4">Ad impression/click logs</td>

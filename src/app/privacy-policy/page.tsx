@@ -201,7 +201,7 @@ export default function PrivacyPolicyPage() {
                             <li><strong>Device Identifiers.</strong> Apple Identifier for Advertisers (IDFA) on iOS; Google Advertising ID (GAID) on Android. These are non-permanent, resettable identifiers that enable ad personalisation, frequency capping, and attribution. You can reset or limit them in your device settings (iOS: Settings &gt; Privacy &amp; Security &gt; Tracking; Android 12+: Settings &gt; Google &gt; Ads &gt; Delete Advertising ID). We also collect the Identifier for Vendor (IDFV) or Android ID for analytics purposes; these do not follow you across apps. <strong>Zero-State Handling:</strong> If you have disabled ad tracking (iOS &ldquo;Limit Ad Tracking&rdquo; or declined ATT prompt) or deleted your advertising ID (Android 12+), we will serve only contextual (non-personalised) ads and use device-bound identifiers (IDFV/Android ID) for analytics only. This does not affect core gameplay functionality.</li>
                             <li><strong>IP Address.</strong> Collected automatically. We use your IP address to derive broad geographic location (country and city). Raw IP addresses are retained for a maximum of <strong>14 days</strong> for security, fraud prevention, and operational logging, after which they are deleted or truncated. The IP-derived geolocation (country/city only) may be retained as part of aggregated session data for the durations specified in Section 10.</li>
                             <li><strong>Device &amp; OS Information.</strong> Manufacturer, model, screen resolution, operating system and version, system language and locale, network type (Wi-Fi or mobile data), and basic hardware specifications (CPU, RAM, available storage). Used for game compatibility, performance optimisation, and detecting low-end devices.</li>
-                            <li><strong>Gameplay / Session Data.</strong> Level reached, scores, session start and end times, features used, items purchased, achievements unlocked. This is core analytics data processed via Unity Analytics.</li>
+                            <li><strong>Gameplay / Session Data.</strong> Level reached, scores, session start and end times, features used, items purchased, achievements unlocked. This is core analytics data processed via Unity Analytics and Google Firebase Analytics.</li>
                             <li><strong>Ad Interaction Data.</strong> Which ads were shown, viewed, clicked, or resulted in installs. Used for ad measurement, fraud detection, and campaign optimisation.</li>
                             <li><strong>Anti-Cheat &amp; Integrity Data.</strong> We employ automated detection systems to identify modified game clients (modded APKs, jailbreak tweaks), emulator or virtualisation usage, abnormal progression patterns (impossible score changes, timing anomalies), and payment fraud indicators (chargebacks, refund abuse patterns). Detection methods include device fingerprinting (hardware identifiers, screen properties, sensor data), behavioral analytics (gameplay velocity, input patterns), code integrity checks (binary signature verification, runtime tampering detection), and transaction anomaly scoring. This processing is necessary to maintain fair gameplay, prevent economic harm to legitimate players, protect our revenue from fraud, and comply with anti-money laundering obligations. Legal basis: Legitimate interests (GDPR Art. 6(1)(f)) — our legitimate interest in preventing fraud and ensuring service integrity outweighs any minimal privacy impact, as the data collected is technical and non-sensitive. Violators may be permanently banned without refund and may have their device identifiers blocklisted from future access.</li>
                             <li><strong>Crash &amp; Error Logs.</strong> Stack traces, error codes, and device state at the time of a crash. These logs do not ordinarily contain personal identity information.</li>
@@ -281,8 +281,8 @@ export default function PrivacyPolicyPage() {
                                         <td className="py-2">Art. 6(1)(a) — Consent</td>
                                     </tr>
                                     <tr className="border-b border-neutral-100">
-                                        <td className="py-2 pr-4">Analytics, crash reporting, contextual ads, cross-promotion, fraud detection</td>
-                                        <td className="py-2 pr-4">Device info, gameplay data, crash logs, IDFV/Android ID</td>
+                                        <td className="py-2 pr-4">Analytics (Unity Analytics, Firebase Analytics), crash reporting, contextual ads, cross-promotion, fraud detection</td>
+                                        <td className="py-2 pr-4">Device info, gameplay data, crash logs, IDFV/Android ID, app-instance ID</td>
                                         <td className="py-2">Art. 6(1)(f) — Legitimate interests</td>
                                     </tr>
                                     <tr className="border-b border-neutral-100">
@@ -737,38 +737,101 @@ export default function PrivacyPolicyPage() {
                             what is already collected for the current game session.
                         </p>
 
-                        <H3>5.8 Analytics (Unity Analytics)</H3>
+                        <H3>5.8 Analytics (Unity Analytics &amp; Google Firebase Analytics)</H3>
                         <p>
-                            We use Unity Analytics (a product of Unity Technologies Inc.) to collect gameplay analytics
-                            and operational metrics. This SDK collects device session data, event data we define (e.g.
+                            We use <strong>Unity Analytics</strong> (a product of Unity Technologies Inc.) and{" "}
+                            <strong>Google Firebase Analytics</strong> (a product of Google LLC) to collect gameplay
+                            analytics and operational metrics across all of our games.
+                        </p>
+
+                        <p className="mt-4">
+                            <strong>Unity Analytics</strong> collects device session data, event data we define (e.g.
                             level complete, session start, tutorial steps), device type and OS version, app version, and
                             a device-bound identifier (not the advertising ID) to identify unique devices.
                         </p>
+
                         <p className="mt-4">
-                            <strong>Purpose:</strong> Unity Analytics is used to understand how players interact with
-                            our games, measure user engagement metrics (daily active users, session length, retention
-                            rates D1/D7/D30), identify gameplay issues, and inform future game design decisions.{" "}
+                            <strong>Google Firebase Analytics</strong> is integrated into all of our games via the
+                            Firebase SDK for Unity (Unity SDK 13.8.0). Firebase Analytics automatically collects the
+                            following data without any additional code:
+                        </p>
+                        <ul className="list-disc pl-5 space-y-2 mt-3">
+                            <li><strong>Device &amp; system information:</strong> Device model, brand, category (mobile/tablet), operating system and version, app version, app store source, device language, and screen resolution.</li>
+                            <li><strong>Approximate location (from IP):</strong> Country, region/state, city, and continent — derived from your device&rsquo;s IP address at the time of the request. Firebase does <strong>not</strong> use GPS. The IP address itself is not stored by Google after the geo-lookup is performed.</li>
+                            <li><strong>Usage &amp; engagement:</strong> Number of sessions, session duration, first launch timestamp, app opens, and app update events.</li>
+                            <li><strong>Identifiers:</strong> An <strong>app-instance ID</strong> (unique per app install; reset when the app is uninstalled and reinstalled) used to count unique users, and the <strong>Android Advertising ID (GAID)</strong> which is collected by the Firebase SDK by default on Android. The Android Advertising ID is a resettable, user-controlled identifier &mdash; you can reset or opt out of personalisation in your device&rsquo;s settings under <strong>Settings &rarr; Privacy &rarr; Ads</strong>.</li>
+                            <li><strong>Automatically collected events:</strong> <code className="text-xs bg-neutral-100 px-1 py-0.5 rounded">first_open</code>, <code className="text-xs bg-neutral-100 px-1 py-0.5 rounded">session_start</code>, <code className="text-xs bg-neutral-100 px-1 py-0.5 rounded">app_update</code>, <code className="text-xs bg-neutral-100 px-1 py-0.5 rounded">os_update</code>, <code className="text-xs bg-neutral-100 px-1 py-0.5 rounded">screen_view</code>, and <code className="text-xs bg-neutral-100 px-1 py-0.5 rounded">user_engagement</code>.</li>
+                        </ul>
+
+                        <p className="mt-4">
+                            In addition to Firebase&rsquo;s automatic collection, our games send <strong>custom gameplay events</strong> to
+                            Firebase Analytics — such as level starts, score milestones, attempt completions, and session
+                            counts. These custom events contain only <strong>numerical gameplay statistics</strong> (level number,
+                            scores, durations, percentages) and do not include names, email addresses, or any other
+                            personally identifying information.
+                        </p>
+
+                        <p className="mt-4">
+                            <strong>Purpose:</strong> Both Unity Analytics and Firebase Analytics are used to understand how
+                            players interact with our games, measure user engagement metrics (daily active users, session
+                            length, retention rates D1/D7/D30), identify gameplay issues, score distribution patterns,
+                            and inform future game design decisions.{" "}
                             <strong>Legal basis:</strong> Legitimate interests (Art. 6(1)(f) GDPR).
                         </p>
+
                         <p className="mt-4">
                             Analytics data is aggregated and used at the cohort level for business reporting. We do not
                             use analytics data to build individual user profiles for advertising. Individual-level event
                             data is retained by Unity for a defined period per Unity&rsquo;s own data retention policy.
-                            Unity Analytics is configured with the same consent signals as Unity Ads — users who opt
-                            out of data collection will have analytics disabled or anonymised to the extent permitted by
-                            the SDK.
+                            Firebase Analytics event data is retained for up to <strong>14 months</strong>, after which it is
+                            automatically deleted by Google. Unity Analytics is configured with the same consent signals
+                            as Unity Ads — users who opt out of data collection will have analytics disabled or
+                            anonymised to the extent permitted by the SDK.
                         </p>
+
                         <p className="mt-4">
-                            Privacy policy:{" "}
-                            <a href="https://unity.com/legal/developer-privacy-policy" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://unity.com/legal/developer-privacy-policy</a>
+                            <strong>Firebase Analytics data sharing:</strong> Firebase Analytics data is processed
+                            by <strong>Google LLC</strong> (and its subsidiaries) under the{" "}
+                            <a href="https://firebase.google.com/terms/data-processing-terms" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">Firebase Data Processing and Security Terms</a>.
+                            Google may use aggregated, anonymised analytics data for its own product improvement
+                            purposes. Google does <strong>not</strong> sell your end-users&rsquo; data to third parties.
+                            No Firebase Analytics data is shared with any party other than Google.
+                            International transfers: Google complies with the <strong>EU&ndash;U.S. Data Privacy
+                                Framework (DPF)</strong> and <strong>Swiss&ndash;U.S. DPF</strong> for transfers of personal
+                            data from the EEA, Switzerland, and the UK.
+                        </p>
+
+                        <p className="mt-4">
+                            <strong>How to opt out of Firebase Analytics:</strong> You can contact us at{" "}
+                            <a href={`mailto:${CO.privacy}`} className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">{CO.privacy}</a>{" "}
+                            to request that Firebase Analytics collection be disabled for your device. You can also
+                            reset your Android Advertising ID in your device settings. Upon request, we will remove
+                            any identifiable data associated with your app-instance ID using the{" "}
+                            <a href="https://developers.google.com/analytics/devguides/config/userdeletion/v3" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">Google Analytics User Deletion API</a>.
+                        </p>
+
+                        <p className="mt-4">
+                            Firebase Analytics is governed by the{" "}
+                            <a href="https://firebase.google.com/terms" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">Firebase Terms of Service</a>,{" "}
+                            <a href="https://firebase.google.com/terms/data-processing-terms" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">Firebase Data Processing and Security Terms</a>,{" "}
+                            and the{" "}
+                            <a href="https://cloud.google.com/terms/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">Google Cloud Terms of Service</a>.
+                        </p>
+
+                        <p className="mt-4">
+                            Privacy policies:{" "}
+                            <a href="https://unity.com/legal/developer-privacy-policy" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">Unity — unity.com/legal/developer-privacy-policy</a>{" | "}
+                            <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">Firebase — firebase.google.com/support/privacy</a>{" | "}
+                            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">Google — policies.google.com/privacy</a>
                         </p>
 
                         <H3>5.9 Crash Reporting &amp; Performance Monitoring</H3>
                         <p>
-                            As of the date of this policy, we do <strong>not</strong> use Firebase Crashlytics,
-                            Google Firebase Analytics, or any standalone crash-reporting SDK. Crash and performance
-                            data is collected only through Unity&rsquo;s built-in crash-reporting facilities as
-                            part of the Unity SDK already disclosed above.
+                            As of the date of this policy, we do <strong>not</strong> use Firebase Crashlytics
+                            or any standalone crash-reporting SDK. Crash and performance data is collected only
+                            through Unity&rsquo;s built-in crash-reporting facilities as part of the Unity SDK
+                            already disclosed above. Google Firebase Analytics (disclosed in Section 5.8) is used
+                            for gameplay analytics only and is separate from crash reporting.
                         </p>
                         <p className="mt-4">
                             If we integrate a dedicated crash-reporting or performance-monitoring service
@@ -818,6 +881,12 @@ export default function PrivacyPolicyPage() {
                                         <td className="py-2">SCCs + DPA</td>
                                     </tr>
                                     <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4 font-medium text-neutral-900">Google Firebase Analytics</td>
+                                        <td className="py-2 pr-4">Gameplay analytics &amp; engagement metrics</td>
+                                        <td className="py-2 pr-4">USA</td>
+                                        <td className="py-2">DPF certified (EU-US, UK Extension, Swiss-US)</td>
+                                    </tr>
+                                    <tr className="border-b border-neutral-100">
                                         <td className="py-2 pr-4 font-medium text-neutral-900">CAS.ai (CLEAR INVEST LTD)</td>
                                         <td className="py-2 pr-4">Ad mediation &amp; consent management</td>
                                         <td className="py-2 pr-4">Belize</td>
@@ -848,6 +917,7 @@ export default function PrivacyPolicyPage() {
                         <ul className="list-disc pl-5 space-y-2">
                             <li><strong>Cloud &amp; Hosting:</strong> Google Cloud Platform — <a href="https://cloud.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">cloud.google.com/privacy</a>. Data is stored in the EU (europe-west) region.</li>
                             <li><strong>Analytics:</strong> Unity Analytics (Unity Technologies Inc.) — <a href="https://unity.com/legal/developer-privacy-policy" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">unity.com/legal/developer-privacy-policy</a>. Receives device identifiers, gameplay events, and session data for product analytics. Uses a device-bound identifier (not the advertising ID).</li>
+                            <li><strong>Analytics:</strong> Google Firebase Analytics (Google LLC) — <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">firebase.google.com/support/privacy</a>. Receives device information, approximate location (IP-derived), app-instance ID, Android Advertising ID, session data, and custom gameplay events. Governed by the <a href="https://firebase.google.com/terms" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">Firebase Terms of Service</a>, <a href="https://firebase.google.com/terms/data-processing-terms" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">Firebase Data Processing and Security Terms</a>, and <a href="https://cloud.google.com/terms/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">Google Cloud Terms of Service</a>.</li>
                             <li><strong>Ad Mediation:</strong> CAS.ai (CLEAR INVEST LTD) — <a href="https://cas.ai/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">cas.ai/privacy-policy</a>. Manages real-time ad auctions and routes requests to downstream ad networks. Receives advertising IDs, IP address, device info, and ad interaction data.</li>
                             <li><strong>Consent Management:</strong> CAS.ai CMP — manages user consent via the IAB TCF 2.2 framework and passes consent signals to ad networks.</li>
                         </ul>
@@ -922,8 +992,11 @@ export default function PrivacyPolicyPage() {
                             experience with the following restrictions: (a) restricted data collection (only essential
                             device and gameplay data required for service delivery); (b) disabled social features
                             (if applicable); (c) contextual-only advertising (no behavioural profiling or
-                            cross-app tracking); and (d) <strong>complete exclusion of the AppLovin SDK</strong> from
-                            the ad mediation stack for the child-identified session.
+                            cross-app tracking); (d) <strong>complete exclusion of the AppLovin SDK</strong> from
+                            the ad mediation stack for the child-identified session; and
+                            (e) <strong>Firebase Analytics collection is disabled</strong> for the child-identified
+                            session via <code className="text-xs bg-neutral-100 px-1 py-0.5 rounded">FirebaseAnalytics.SetAnalyticsCollectionEnabled(false)</code>,
+                            ensuring no data is transmitted to Google from child users.
                             This treatment applies until the user reaches the applicable minimum
                             age or until a parent or guardian provides verifiable consent where permitted by law.
                         </p>
@@ -1049,12 +1122,15 @@ export default function PrivacyPolicyPage() {
                         </p>
                         <p className="mt-4">
                             Key international data recipients include: Unity Technologies Inc. (San Francisco, USA),
+                            Google LLC (USA) (for Firebase Analytics, Google AdMob, and Google Cloud Platform),
                             CAS.ai / CLEAR INVEST LTD (Belize), Liftoff Mobile Inc. / LMI Inc. (Palo Alto, USA),
-                            InMobi Pte. Ltd. (Singapore) and InMobi Inc. (USA), AppLovin Corporation (Palo Alto, USA),
-                            and Google LLC (USA). Data transfers from EEA/UK users to Unity, Liftoff, and InMobi are
-                            governed by Standard Contractual Clauses as per each company&rsquo;s Data Processing
-                            Addendum. InMobi is headquartered in Singapore with operations in the USA; transfers are
-                            covered by appropriate safeguards per InMobi&rsquo;s own privacy documentation.
+                            InMobi Pte. Ltd. (Singapore) and InMobi Inc. (USA), and AppLovin Corporation (Palo Alto,
+                            USA). For Firebase Analytics, Google LLC is certified under the EU-US Data Privacy Framework
+                            and processes data under the Firebase Data Processing and Security Terms. Data transfers
+                            from EEA/UK users to Unity, Liftoff, and InMobi are governed by Standard Contractual
+                            Clauses as per each company&rsquo;s Data Processing Addendum. InMobi is headquartered in
+                            Singapore with operations in the USA; transfers are covered by appropriate safeguards per
+                            InMobi&rsquo;s own privacy documentation.
                         </p>
                         <p className="mt-4">
                             <strong>AppLovin Corporation</strong> is certified under the EU-US Data Privacy
@@ -1116,8 +1192,12 @@ export default function PrivacyPolicyPage() {
                                         <td className="py-2">13 months (IAB standard)</td>
                                     </tr>
                                     <tr className="border-b border-neutral-100">
-                                        <td className="py-2 pr-4">Analytics session data</td>
+                                        <td className="py-2 pr-4">Analytics session data (Unity Analytics)</td>
                                         <td className="py-2">12 months from collection (Unity Analytics default retention)</td>
+                                    </tr>
+                                    <tr className="border-b border-neutral-100">
+                                        <td className="py-2 pr-4">Analytics event data (Firebase Analytics)</td>
+                                        <td className="py-2">Up to 14 months (configurable in Firebase Console; automatically deleted by Google thereafter)</td>
                                     </tr>
                                     <tr className="border-b border-neutral-100">
                                         <td className="py-2 pr-4">Customer support communications</td>
@@ -1283,8 +1363,9 @@ export default function PrivacyPolicyPage() {
                         <p className="mt-4">
                             <strong>In our mobile apps:</strong> SDKs, local storage, device fingerprinting, and
                             advertising identifiers function as the equivalent of cookies. These are disclosed in
-                            Sections 2 and 5 of this policy. Analytics SDKs (Unity Analytics) and advertising
-                            SDKs (CAS.ai mediation, Unity Ads, Liftoff, InMobi) collect data via these mechanisms.
+                            Sections 2 and 5 of this policy. Analytics SDKs (Unity Analytics, Google Firebase Analytics)
+                            and advertising SDKs (CAS.ai mediation, Unity Ads, Liftoff, InMobi) collect data via
+                            these mechanisms.
                         </p>
 
                         <p className="mt-4">
@@ -1390,7 +1471,7 @@ export default function PrivacyPolicyPage() {
                                         <td className="py-2 pr-4">Gameplay data, session times, ad impressions/clicks</td>
                                         <td className="py-2 pr-4">Your device (automatic)</td>
                                         <td className="py-2 pr-4">Analytics, game improvement, ad measurement</td>
-                                        <td className="py-2">Unity Analytics, CAS.ai</td>
+                                        <td className="py-2">Unity Analytics, Google Firebase Analytics, CAS.ai</td>
                                     </tr>
                                     <tr className="border-b border-neutral-100">
                                         <td className="py-2 pr-4 font-medium text-neutral-900">Geolocation</td>

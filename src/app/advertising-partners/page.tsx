@@ -274,10 +274,38 @@ export default function AdvertisingPartnersPage() {
                         Analytics
                     </h2>
                     <p>
-                        In addition to advertising networks, we use <strong>Unity Analytics</strong> (Unity
-                        Technologies Inc.) to collect gameplay analytics. Unity Analytics uses a device-bound
-                        identifier (not the advertising ID) for session and engagement tracking. For details,
-                        see Section 5.8 of our{" "}
+                        In addition to advertising networks, we use the following analytics services
+                        in our mobile games:
+                    </p>
+                    <ul className="list-disc pl-5 space-y-3 mt-3">
+                        <li>
+                            <strong>Unity Analytics</strong> (Unity Technologies Inc.) &mdash; collects
+                            gameplay session data using a device-bound identifier (not the advertising ID).
+                        </li>
+                        <li>
+                            <strong>Google Firebase Analytics</strong> (Google LLC) &mdash; collects device
+                            information (model, OS, screen size), approximate location derived from IP address,
+                            app-instance ID, Android Advertising ID (GAID), session and engagement metrics,
+                            and custom gameplay events (level, score, duration &mdash; numerical values only,
+                            no free-text or PII). Event data is retained for up to 14&nbsp;months. Firebase
+                            Analytics is disabled for child-identified sessions. Google acts as data processor
+                            under the{" "}
+                            <a href="https://firebase.google.com/terms/data-processing-terms" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">
+                                Firebase Data Processing and Security Terms
+                            </a>. Privacy information:{" "}
+                            <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">
+                                Firebase Privacy
+                            </a>{" | "}
+                            <a href="https://firebase.google.com/terms" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">
+                                Firebase ToS
+                            </a>{" | "}
+                            <a href="https://cloud.google.com/terms/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">
+                                Google Cloud ToS
+                            </a>.
+                        </li>
+                    </ul>
+                    <p className="mt-3">
+                        For full details, see Section&nbsp;5.8 of our{" "}
                         <Link href="/privacy-policy#advertising" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">
                             Privacy Policy
                         </Link>.

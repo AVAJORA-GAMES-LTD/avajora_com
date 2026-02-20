@@ -309,8 +309,10 @@ export default function TransparencyReportPage() {
                             </div>
                             <div className="border-l-4 border-neutral-300 bg-neutral-50 px-4 py-3 rounded-r-md">
                                 <p className="text-sm text-neutral-700">
-                                    <strong>2026-01-15:</strong> Initial SDK integration: Unity Analytics v5.2.0, CAS.ai v3.7.5,
+                                    <strong>2026-01-15:</strong> Initial SDK integration: Unity Analytics v5.2.0,
+                                    Google Firebase Analytics (Unity SDK 13.8.0), CAS.ai v3.7.5,
                                     Liftoff SDK v7.1.0, InMobi SDK v10.7.0. All SDKs configured with COPPA-compliant defaults.
+                                    Firebase Analytics collection is disabled for child-identified sessions.
                                 </p>
                             </div>
                         </div>
@@ -342,7 +344,9 @@ export default function TransparencyReportPage() {
                                 <strong>Data Protection Impact Assessments:</strong> We conduct DPIAs for
                                 any new processing activity that is likely to result in a high risk to
                                 individuals. A DPIA was completed for our advertising mediation stack
-                                (CAS.ai + downstream networks).
+                                (CAS.ai + downstream networks) and for Google Firebase Analytics
+                                integration (covering app-instance identifiers, GAID collection, and
+                                international data transfers to Google LLC in the USA).
                             </li>
                             <li>
                                 <strong>Sub-processor monitoring:</strong> We review our sub-processor list

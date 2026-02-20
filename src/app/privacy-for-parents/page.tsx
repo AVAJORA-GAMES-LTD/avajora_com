@@ -169,6 +169,12 @@ export default function PrivacyForParentsPage() {
                                     <li><strong>Google Cloud</strong> &mdash; infrastructure hosting (EU servers)</li>
                                 </ul>
                                 <p className="mt-2">
+                                    <strong>Google Firebase Analytics is completely disabled</strong> for
+                                    child-identified sessions. When our age-gate identifies a user as under the
+                                    applicable minimum age, Firebase Analytics collection is turned off before
+                                    any data is sent to Google.
+                                </p>
+                                <p className="mt-2">
                                     No advertising identifiers are transmitted to ad networks when
                                     child-directed treatment is active. <strong>AppLovin, Google AdMob,
                                         and other interest-based advertising SDKs are completely excluded</strong>{" "}
