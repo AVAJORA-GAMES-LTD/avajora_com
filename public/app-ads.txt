@@ -2,6 +2,7 @@
 OwnerDomain=avajora.com
 cas.ai, 922e6092, DIRECT
 #=== GoogleAds Jul 25, 2025
+google.com, pub-5713815282665334, DIRECT, f08c47fec0942fa0
 google.com, pub-1022958838828668, DIRECT, f08c47fec0942fa0
 google.com, pub-2418115348772836, DIRECT, f08c47fec0942fa0
 google.com, pub-2532668741646097, DIRECT, f08c47fec0942fa0
