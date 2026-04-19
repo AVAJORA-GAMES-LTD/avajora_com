@@ -31,25 +31,6 @@ const valueCards: ValueCard[] = [
     },
 ];
 
-const founders = [
-    {
-        name: "Khader — Co-Founder",
-        image:
-            "https://res.cloudinary.com/destej60y/image/upload/v1770943950/Gemini_Generated_Image_m3ra2em3ra2em3ra_stwj9a.png",
-        bio: "Engineering + Product. Focused on systems, shipping, and building smooth player experiences — from gameplay loops to release pipelines.",
-        email: "khader@avajora.com",
-        frameBgClass: "bg-[#e0b68d]",
-    },
-    {
-        name: "Amro — Co-Founder",
-        image:
-            "https://res.cloudinary.com/destej60y/image/upload/v1770944061/Gemini_Generated_Image_rwsa17rwsa17rwsa3_kdlbnk.png",
-        bio: "Game design + production. Focused on gameplay feel, visuals, and turning concepts into fun, replayable mobile experiences.",
-        email: "amro@avajora.com",
-        frameBgClass: "bg-[#e4bb90]",
-    },
-];
-
 export default function AboutUsPage() {
     return (
         <>
@@ -94,56 +75,9 @@ export default function AboutUsPage() {
                         </div>
                     </section>
 
-                    <section>
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl text-center text-black mb-6 sm:mb-8">Founders</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-                            {founders.map((founder) => (
-                                <article
-                                    key={founder.name}
-                                    className="rounded-2xl sm:rounded-3xl bg-black/90 text-white p-5 sm:p-6 md:p-8 backdrop-blur-sm shadow-2xl"
-                                >
-                                    <div className={`relative h-60 sm:h-72 w-full overflow-hidden rounded-xl sm:rounded-2xl mb-5 sm:mb-6 ${founder.frameBgClass}`}>
-                                        <Image
-                                            src={founder.image}
-                                            alt={founder.name}
-                                            fill
-                                            className="object-contain object-center"
-                                        />
-                                    </div>
-                                    <h3 className="text-xl sm:text-2xl mb-2 sm:mb-3">{founder.name}</h3>
-                                    <p className="text-sm sm:text-base text-white/85 leading-relaxed mb-3 sm:mb-4">{founder.bio}</p>
-                                    <a
-                                        href={`mailto:${founder.email}`}
-                                        className="inline-flex rounded-full bg-white px-4 sm:px-5 py-2 text-sm sm:text-base text-black hover:bg-[#08fe8a] transition-colors touch-manipulation"
-                                    >
-                                        {founder.email}
-                                    </a>
-                                </article>
-                            ))}
-                        </div>
-                    </section>
 
-                    <section className="bg-[#00071e]/95 text-white rounded-3xl p-8 md:p-10 shadow-2xl text-center space-y-5">
-                        <p className="text-lg md:text-xl leading-relaxed">
-                            We’re building a casual-first studio where quality is a habit: ship → learn → improve. Over time, we aim to release multiple titles and grow a recognizable standard of “Avajora Games”.
-                        </p>
-                        <h2 className="text-3xl md:text-4xl">Let’s talk</h2>
-                        <p className="text-white/85">For business inquiries, partnerships, or feedback:</p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                            <a
-                                href="mailto:khader@avajora.com"
-                                className="inline-flex rounded-full bg-white px-6 py-3 text-black hover:bg-[#08fe8a] transition-colors"
-                            >
-                                Khader: khader@avajora.com
-                            </a>
-                            <a
-                                href="mailto:amro@avajora.com"
-                                className="inline-flex rounded-full bg-white px-6 py-3 text-black hover:bg-[#08fe8a] transition-colors"
-                            >
-                                Amro: amro@avajora.com
-                            </a>
-                        </div>
-                    </section>
+
+
                 </div>
             </main>
         </>
