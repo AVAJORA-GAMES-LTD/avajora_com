@@ -5,7 +5,7 @@ import { COMPANY as CO } from "@/lib/company";
 import { LEGAL_VERSIONS } from "@/lib/legal-versions";
 
 export const metadata: Metadata = {
-    title: "Do Not Sell or Share My Personal Information — AVAJORA GAMES LTD",
+    title: "Do Not Sell or Share My Personal Information — AVAJORA",
     description:
         "Exercise your right to opt out of the sale or sharing of your personal information under the CCPA/CPRA and other US state privacy laws.",
 };
@@ -16,7 +16,7 @@ const jsonLd = {
     "@context": "https://schema.org",
     "@type": ["WebPage", "Article"],
     name: "Do Not Sell or Share My Personal Information",
-    headline: "Do Not Sell or Share My Personal Information — AVAJORA GAMES LTD",
+    headline: "Do Not Sell or Share My Personal Information — AVAJORA",
     description:
         "Exercise your right to opt out of the sale or sharing of your personal information under the CCPA/CPRA and other US state privacy laws.",
     publisher: {
@@ -82,7 +82,7 @@ export default function DoNotSellPage() {
                         </p>
                         <p className="mt-4">
                             However, our free-to-play mobile games display advertisements via our mediation
-                            partner <strong>CAS.ai</strong> (CLEAR INVEST LTD). In order to serve you ads,
+                            partner <strong>CAS.ai</strong> (CLEAR INVEST). In order to serve you ads,
                             device-level identifiers (such as your Apple IDFA or Google Advertising&nbsp;ID),
                             IP-derived location, and ad interaction data may be transmitted to our advertising
                             network partners. Under the CCPA&rsquo;s broad definition, this may qualify as

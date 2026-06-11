@@ -5,7 +5,7 @@ import { COMPANY as CO } from "@/lib/company";
 import { LEGAL_VERSIONS } from "@/lib/legal-versions";
 
 export const metadata: Metadata = {
-    title: "Transparency Report — AVAJORA GAMES LTD",
+    title: "Transparency Report — AVAJORA",
     description:
         "Annual transparency report covering data subject requests, data breaches, law enforcement requests, and privacy programme updates.",
 };
@@ -16,7 +16,7 @@ const jsonLd = {
     "@context": "https://schema.org",
     "@type": ["WebPage", "Article"],
     name: "Transparency Report",
-    headline: "Transparency Report — AVAJORA GAMES LTD",
+    headline: "Transparency Report — AVAJORA",
     description:
         "Annual transparency report covering data subject requests, data breaches, and privacy programme updates.",
     publisher: {
@@ -30,7 +30,7 @@ const jsonLd = {
     inLanguage: "en",
     mainEntity: {
         "@type": "Report",
-        name: "AVAJORA GAMES LTD — Annual Transparency Report",
+        name: "AVAJORA — Annual Transparency Report",
         reportNumber: "2026-Q1",
     },
     isPartOf: {
@@ -78,7 +78,7 @@ export default function TransparencyReportPage() {
                         </p>
                         <p className="mt-4">
                             This report covers the period from <strong>1 January {currentYear}</strong> to
-                            the date shown above. As a newly established company, some metrics may show
+                            the date shown above. As a newly established project, some metrics may show
                             zero or low volumes — this is expected and will grow as our game portfolio
                             expands.
                         </p>
@@ -90,7 +90,7 @@ export default function TransparencyReportPage() {
                             Data Subject Requests (DSARs)
                         </h2>
                         <p>
-                            Under GDPR, UK GDPR, CCPA/CPRA, and other applicable privacy laws, individuals
+                            Under GDPR, GDPR, CCPA/CPRA, and other applicable privacy laws, individuals
                             have the right to make data subject access requests. The table below summarises
                             requests received and our response.
                         </p>
@@ -304,7 +304,7 @@ export default function TransparencyReportPage() {
                             <div className="border-l-4 border-blue-400 bg-blue-50 px-4 py-3 rounded-r-md">
                                 <p className="text-sm text-blue-900">
                                     <strong>2026-02-01:</strong> Updated CAS.ai SDK to v3.8.1 (improved consent signal propagation).
-                                    Privacy impact: Positive — better consent enforcement for EEA/UK users.
+                                    Privacy impact: Positive — better consent enforcement for EEA/users.
                                 </p>
                             </div>
                             <div className="border-l-4 border-neutral-300 bg-neutral-50 px-4 py-3 rounded-r-md">
@@ -338,7 +338,7 @@ export default function TransparencyReportPage() {
                             <li>
                                 <strong>Consent management:</strong> We use Klaro (self-hosted, open-source)
                                 for website cookie consent and CAS.ai&rsquo;s built-in CMP for in-app consent
-                                (TCF 2.2 compliant for EEA/UK users).
+                                (TCF 2.2 compliant for EEA/users).
                             </li>
                             <li>
                                 <strong>Data Protection Impact Assessments:</strong> We conduct DPIAs for
@@ -398,7 +398,7 @@ export default function TransparencyReportPage() {
                             >
                                 Information Commissioner&rsquo;s Office (ICO)
                             </a>{" "}
-                            in the United Kingdom.
+                            in the applicable region.
                         </p>
                     </section>
 

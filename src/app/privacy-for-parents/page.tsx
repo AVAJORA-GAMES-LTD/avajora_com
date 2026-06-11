@@ -5,9 +5,9 @@ import { COMPANY as CO } from "@/lib/company";
 import { LEGAL_VERSIONS } from "@/lib/legal-versions";
 
 export const metadata: Metadata = {
-    title: "Privacy for Parents & Guardians — AVAJORA GAMES LTD",
+    title: "Privacy for Parents & Guardians — AVAJORA",
     description:
-        "A plain-language guide for parents and guardians explaining how AVAJORA GAMES LTD handles children's data, COPPA compliance, and parental controls.",
+        "A plain-language guide for parents and guardians explaining how AVAJORA handles children's data, COPPA compliance, and parental controls.",
 };
 
 const { version: V, updated: UPDATED } = LEGAL_VERSIONS.privacyForParents;
@@ -16,9 +16,9 @@ const jsonLd = {
     "@context": "https://schema.org",
     "@type": ["WebPage", "Article"],
     name: "Privacy for Parents & Guardians",
-    headline: "Privacy for Parents & Guardians — AVAJORA GAMES LTD",
+    headline: "Privacy for Parents & Guardians — AVAJORA",
     description:
-        "A plain-language guide for parents and guardians explaining how AVAJORA GAMES LTD handles children's data.",
+        "A plain-language guide for parents and guardians explaining how AVAJORA handles children's data.",
     publisher: {
         "@type": "Organization",
         name: CO.name,
@@ -86,7 +86,7 @@ export default function PrivacyForParentsPage() {
                             We Take Children&rsquo;s Privacy Seriously
                         </h2>
                         <p>
-                            {CO.name} (trading as {CO.trade}) publishes free-to-play casual mobile games.
+                            {CO.name} publishes free-to-play casual mobile games.
                             We understand that if your child plays our games, you want to know exactly what
                             data is collected, who sees it, and how to control it. This page answers those
                             questions in plain language.
@@ -247,11 +247,6 @@ export default function PrivacyForParentsPage() {
                                         <td className="py-2 pr-4 font-medium">COPPA</td>
                                         <td className="py-2 pr-4">United States</td>
                                         <td className="py-2">Requires verifiable parental consent before collecting data from children under 13.</td>
-                                    </tr>
-                                    <tr className="border-b border-neutral-100">
-                                        <td className="py-2 pr-4 font-medium">UK AADC</td>
-                                        <td className="py-2 pr-4">United Kingdom</td>
-                                        <td className="py-2">Age Appropriate Design Code — requires &ldquo;best interests of the child&rdquo; as primary consideration; defaults to highest privacy settings.</td>
                                     </tr>
                                     <tr className="border-b border-neutral-100">
                                         <td className="py-2 pr-4 font-medium">GDPR Art. 8</td>

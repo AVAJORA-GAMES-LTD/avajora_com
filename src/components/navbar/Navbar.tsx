@@ -49,14 +49,14 @@ export default function Navbar() {
                         <Link href="/" className="flex items-center space-x-2 sm:space-x-3">
                             <Image
                                 src="https://res.cloudinary.com/destej60y/image/upload/v1770936289/avajora-logo-n1_llpci8.png"
-                                alt="Avajora Games Logo"
+                                alt="AVAJORA Logo"
                                 width={40}
                                 height={40}
                                 className="object-contain sm:w-12 sm:h-12"
                                 priority
                             />
                             <span className="text-base sm:text-xl md:text-2xl text-black font-bold whitespace-nowrap">
-                                Avajora Games LTD
+                                AVAJORA
                             </span>
                         </Link>
                     </div>

@@ -11,8 +11,8 @@ const lilitaOne = Lilita_One({
 });
 
 export const metadata: Metadata = {
-  title: "AVAJORA GAMES LTD",
-  description: "AVAJORA GAMES LTD - Official Website",
+  title: "AVAJORA",
+  description: "AVAJORA - Official Website",
 };
 
 export const viewport: Viewport = {

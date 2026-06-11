@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/navbar";
-import { FeaturesSection } from "@/components/features";
-import { PlayStoreSection } from "@/components/play-store-section";
-import { GridSection } from "@/components/grid-section";
+// import { FeaturesSection } from "@/components/features";
+// import { PlayStoreSection } from "@/components/play-store-section";
+// import { GridSection } from "@/components/grid-section";
 import Image from "next/image";
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
         }}
       >
         <h1 className="text-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-sans text-center max-w-5xl leading-tight">
-          Games, Just One More.
+          AVAJORA
         </h1>
 
         <div className="absolute bottom-6 sm:bottom-8 md:bottom-10 flex items-center justify-center">
@@ -31,11 +31,11 @@ export default function Home() {
         </div>
       </main>
 
-      <FeaturesSection />
+      {/* <FeaturesSection />
 
       <PlayStoreSection />
 
-      <GridSection />
+      <GridSection /> */}
     </>
   );
 }

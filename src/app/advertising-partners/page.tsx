@@ -5,9 +5,9 @@ import { COMPANY as CO } from "@/lib/company";
 import { LEGAL_VERSIONS } from "@/lib/legal-versions";
 
 export const metadata: Metadata = {
-    title: "Advertising Partners — AVAJORA GAMES LTD",
+    title: "Advertising Partners — AVAJORA",
     description:
-        "Current principal advertising networks and data partners used in AVAJORA GAMES LTD mobile games.",
+        "Current principal advertising networks and data partners used in AVAJORA mobile games.",
 };
 
 const { version: V, updated: UPDATED } = LEGAL_VERSIONS.advertisingPartners;
@@ -16,12 +16,12 @@ const jsonLd = {
     "@context": "https://schema.org",
     "@type": ["WebPage", "Article"],
     name: "Advertising Partners",
-    headline: "Advertising Partners — AVAJORA GAMES LTD",
+    headline: "Advertising Partners — AVAJORA",
     description:
-        "Current principal advertising networks and data partners used in AVAJORA GAMES LTD mobile games.",
+        "Current principal advertising networks and data partners used in AVAJORA mobile games.",
     publisher: {
         "@type": "Organization",
-        name: "AVAJORA GAMES LTD",
+        name: "AVAJORA",
         url: "https://avajora.com",
     },
     datePublished: "2026-02-17",
@@ -31,12 +31,12 @@ const jsonLd = {
     mainEntity: {
         "@type": "WebPage",
         name: "Advertising Partners",
-        description: "List of advertising networks and data partners used in AVAJORA GAMES LTD mobile games.",
+        description: "List of advertising networks and data partners used in AVAJORA mobile games.",
     },
     isPartOf: {
         "@type": "WebSite",
         url: "https://avajora.com",
-        name: "AVAJORA GAMES LTD",
+        name: "AVAJORA",
     },
 };
 
@@ -166,7 +166,7 @@ export default function AdvertisingPartnersPage() {
 
                     <p>
                         Our mobile games are free to play and are funded by in-app advertising. We use{" "}
-                        <strong>CAS.ai</strong> (Clever Ads Solutions, operated by CLEAR INVEST LTD) as our
+                        <strong>CAS.ai</strong> (Clever Ads Solutions) as our
                         advertising mediation platform. CAS.ai manages ad requests by running real-time auctions
                         among multiple advertising networks simultaneously to identify the highest-paying
                         advertiser for each ad placement.

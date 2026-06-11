@@ -6,9 +6,9 @@ import { COMPANY as CO } from "@/lib/company";
 import { LEGAL_VERSIONS } from "@/lib/legal-versions";
 
 export const metadata: Metadata = {
-    title: "Privacy Policy — AVAJORA GAMES LTD",
+    title: "Privacy Policy — AVAJORA",
     description:
-        "Privacy Policy for AVAJORA GAMES LTD mobile games, website, and related services.",
+        "Privacy Policy for AVAJORA mobile games, website, and related services.",
 };
 
 const jsonLd = {
@@ -16,10 +16,10 @@ const jsonLd = {
     "@type": ["WebPage", "Article"],
     name: "Privacy Policy",
     headline: "Privacy Policy",
-    description: "Privacy Policy for AVAJORA GAMES LTD mobile games, website, and related services.",
+    description: "Privacy Policy for AVAJORA mobile games, website, and related services.",
     publisher: {
         "@type": "Organization",
-        name: "AVAJORA GAMES LTD",
+        name: "AVAJORA",
         url: "https://avajora.com",
     },
     datePublished: "2026-02-17",
@@ -34,7 +34,7 @@ const jsonLd = {
     isPartOf: {
         "@type": "WebSite",
         url: "https://avajora.com",
-        name: "AVAJORA GAMES LTD",
+        name: "AVAJORA",
     },
 };
 
@@ -140,20 +140,10 @@ export default function PrivacyPolicyPage() {
 
                         <table className="w-full text-sm border-collapse mb-6">
                             <tbody>
-                                {([
-                                    ["Legal Entity", CO.name, true],
-                                    ["Entity Type", CO.type],
-                                    ["Company Number", CO.reg],
-                                    ["Registered Office", CO.addr],
-                                    ["Incorporated In", CO.country],
-                                    ["Trading As", CO.trade],
-                                    ["D-U-N-S\u00A9 Number", CO.duns],
-                                ] as [string, string, boolean?][]).map(([label, value, bold]) => (
-                                    <tr key={label} className="border-b border-neutral-100">
-                                        <td className="py-2 pr-4 text-neutral-500 align-top whitespace-nowrap w-40">{label}</td>
-                                        <td className={`py-2${bold ? " text-neutral-900 font-medium" : ""}`}>{value}</td>
-                                    </tr>
-                                ))}
+                                <tr className="border-b border-neutral-100">
+                                    <td className="py-2 pr-4 text-neutral-500 align-top whitespace-nowrap w-40">Name</td>
+                                    <td className="py-2 text-neutral-900 font-medium">{CO.name}</td>
+                                </tr>
                                 <tr className="border-b border-neutral-100">
                                     <td className="py-2 pr-4 text-neutral-500 align-top whitespace-nowrap">Contact</td>
                                     <td className="py-2"><a href={`mailto:${CO.legal}`} className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">{CO.legal}</a></td>
@@ -169,7 +159,7 @@ export default function PrivacyPolicyPage() {
                             {CO.name} is the data controller for the personal data collected through our Services.
                             As data controller, we determine the purposes and means of processing your personal data
                             and are responsible for compliance with applicable data protection legislation, including
-                            the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.
+                            the UK General Data Protection Regulation (GDPR) and the Data Protection Act 2018.
                         </p>
                         <p className="mt-4">
                             We may engage trusted third-party service providers (&ldquo;data processors&rdquo;) to
@@ -256,7 +246,7 @@ export default function PrivacyPolicyPage() {
                     <section id="legal-basis" className="mt-14">
                         <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4">4. Legal Basis for Processing</h2>
                         <p>
-                            Under Article 6 of the UK GDPR and EU GDPR, we must have a lawful basis for every
+                            Under Article 6 of the GDPR and EU GDPR, we must have a lawful basis for every
                             processing activity. The following table maps each purpose to its legal basis.
                         </p>
 
@@ -398,7 +388,7 @@ export default function PrivacyPolicyPage() {
                         <p>
                             <strong>Interest-based (personalised) advertising</strong> means ads selected based on
                             your past behaviour, preferences, and demographics across apps. This requires your explicit
-                            consent for EEA and UK users.
+                            consent for EEA and users.
                         </p>
                         <p className="mt-3">
                             <strong>Contextual advertising</strong> means ads relevant to the content of the current
@@ -417,7 +407,7 @@ export default function PrivacyPolicyPage() {
                             explains what is collected, by whom, for what purpose, and how you can control it.
                         </p>
                         <p className="mt-4">
-                            We use <strong>CAS.ai</strong> (Clever Ads Solutions, operated by CLEAR INVEST LTD) as
+                            We use <strong>CAS.ai</strong> (Clever Ads Solutions) as
                             our advertising mediation platform. CAS.ai manages in-game advertising by conducting
                             real-time auctions among multiple advertising networks simultaneously. When an advertising
                             slot becomes available in the game, CAS.ai sends a request to multiple advertising companies
@@ -559,7 +549,7 @@ export default function PrivacyPolicyPage() {
                                 <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://unity.com/legal/game-player-and-app-user-privacy-policy</a>
                             </li>
                             <li>
-                                <strong>Liftoff Monetize</strong> (Liftoff Mobile Inc. / LMI Inc., formerly Vungle) —
+                                <strong>Liftoff Monetize</strong> (Liftoff Mobile Inc. / LMI, formerly Vungle) —
                                 Liftoff and its demand partners use tracking technologies to collect Ad Data including
                                 your device advertising identifier (IDFA/GAID), IP address (used for approximate
                                 geolocation), device model and OS, app identifier, and ad interaction data (impression,
@@ -574,7 +564,7 @@ export default function PrivacyPolicyPage() {
                                 <a href="https://vungle.com/privacy/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://vungle.com/privacy/</a>
                             </li>
                             <li>
-                                <strong>InMobi</strong> (InMobi Pte. Ltd., Singapore / InMobi Inc., USA) — InMobi
+                                <strong>InMobi</strong> (InMobi, Singapore / InMobi Inc., USA) — InMobi
                                 provides advertising services in our games, including <em>retargeting advertising</em> —
                                 ads may be shown to you based on your prior interactions with apps or sites that use
                                 InMobi. InMobi may collect your device advertising identifier (IDFA/GAID), IP address
@@ -589,7 +579,7 @@ export default function PrivacyPolicyPage() {
                                 consent signals to InMobi via the SDK. A copy of the joint controller arrangement is
                                 available on request by contacting{" "}
                                 <a href={`mailto:${CO.privacy}`} className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">{CO.privacy}</a>. For EEA and
-                                UK users, InMobi requires consent via the IAB TCF 2.2 framework (IAB Vendor ID 333)
+                                users, InMobi requires consent via the IAB TCF 2.2 framework (IAB Vendor ID 333)
                                 before serving personalised ads. Users can opt out of InMobi&rsquo;s interest-based
                                 advertising at any time by visiting:{" "}
                                 <a href="https://www.inmobi.com/page/opt-out/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">https://www.inmobi.com/page/opt-out/</a>.
@@ -657,7 +647,7 @@ export default function PrivacyPolicyPage() {
                             <strong>AppLovin SDK &mdash; Child Exclusion.</strong> In accordance with AppLovin&rsquo;s
                             Publisher Policies and Terms of Use, we do <strong>not</strong> initialise or use the
                             AppLovin SDK in any way for any end user who qualifies as a &ldquo;child&rdquo; under
-                            applicable laws (including COPPA, UK AADC, GDPR Art.&nbsp;8, and equivalent laws in
+                            applicable laws (including COPPA, AADC, GDPR Art.&nbsp;8, and equivalent laws in
                             other jurisdictions). When our age-gate identifies a user as under the applicable minimum
                             age, the AppLovin SDK is not loaded for that user session, no data is transmitted to
                             AppLovin, and no AppLovin ads are served. AppLovin is excluded from the CAS.ai mediation
@@ -677,7 +667,7 @@ export default function PrivacyPolicyPage() {
 
                         <H3>5.6 Consent &amp; Opt-Out Mechanisms</H3>
                         <p>
-                            <strong>Consent flow sequence.</strong> On iOS 14.5+, Apple&rsquo;s App Tracking Transparency (ATT) prompt is displayed <strong>first</strong>, before any other consent dialogue. If you decline tracking via ATT, personalised advertising is disabled immediately regardless of any subsequent CMP selection — the CMP will not be shown for personalised ads in this case. If you allow tracking via ATT (or on Android / pre-iOS 14.5), the CAS.ai Consent Management Platform (CMP) is presented next, requesting your consent for personalised advertising under the IAB Transparency &amp; Consent Framework (TCF 2.2). For EEA and UK users, personalised advertising via CAS.ai mediation is only displayed after you provide explicit consent through this CMP popup. You may update your preferences at any time via Settings &gt; Privacy within the game.
+                            <strong>Consent flow sequence.</strong> On iOS 14.5+, Apple&rsquo;s App Tracking Transparency (ATT) prompt is displayed <strong>first</strong>, before any other consent dialogue. If you decline tracking via ATT, personalised advertising is disabled immediately regardless of any subsequent CMP selection — the CMP will not be shown for personalised ads in this case. If you allow tracking via ATT (or on Android / pre-iOS 14.5), the CAS.ai Consent Management Platform (CMP) is presented next, requesting your consent for personalised advertising under the IAB Transparency &amp; Consent Framework (TCF 2.2). For EEA and users, personalised advertising via CAS.ai mediation is only displayed after you provide explicit consent through this CMP popup. You may update your preferences at any time via Settings &gt; Privacy within the game.
                         </p>
                         <p className="mt-3">
                             For users in the EEA, UK, and applicable US states, consent signals are passed to Unity
@@ -695,7 +685,7 @@ export default function PrivacyPolicyPage() {
                             contextual (non-targeted) ads will be displayed.
                         </p>
                         <ul className="list-disc pl-5 space-y-2 mt-3">
-                            <li><strong>EEA/UK users:</strong> Personalised ads are only shown after you give explicit consent via the consent popup presented at first launch.</li>
+                            <li><strong>EEA/users:</strong> Personalised ads are only shown after you give explicit consent via the consent popup presented at first launch.</li>
                             <li><strong>US users:</strong> You may opt out of the &ldquo;sale&rdquo; or &ldquo;sharing&rdquo; of your personal information via Settings &gt; Privacy &gt; Advertising Preferences within the game, or via our <Link href="/do-not-sell" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">Do Not Sell or Share</Link> page.</li>
                             <li><strong>To withdraw consent:</strong> Navigate to Settings &gt; Privacy &gt; Advertising Preferences within the game at any time. Withdrawal takes effect immediately.</li>
                             <li><strong>Unity Ads:</strong> Unity Ads displays a Data Privacy icon on ad units through which you can access your data and opt out of future collection.</li>
@@ -887,7 +877,7 @@ export default function PrivacyPolicyPage() {
                                         <td className="py-2">DPF certified (EU-US, UK Extension, Swiss-US)</td>
                                     </tr>
                                     <tr className="border-b border-neutral-100">
-                                        <td className="py-2 pr-4 font-medium text-neutral-900">CAS.ai (CLEAR INVEST LTD)</td>
+                                        <td className="py-2 pr-4 font-medium text-neutral-900">CAS.ai (CLEAR INVEST)</td>
                                         <td className="py-2 pr-4">Ad mediation &amp; consent management</td>
                                         <td className="py-2 pr-4">Belize</td>
                                         <td className="py-2">SCCs + TIA + supplementary measures</td>
@@ -905,7 +895,7 @@ export default function PrivacyPolicyPage() {
                                         <td className="py-2">DPF certified + SCCs</td>
                                     </tr>
                                     <tr>
-                                        <td className="py-2 pr-4 font-medium text-neutral-900">Cloudinary Ltd.</td>
+                                        <td className="py-2 pr-4 font-medium text-neutral-900">Cloudinary</td>
                                         <td className="py-2 pr-4">Image CDN (website assets)</td>
                                         <td className="py-2 pr-4">USA / Israel</td>
                                         <td className="py-2">SCCs</td>
@@ -918,7 +908,7 @@ export default function PrivacyPolicyPage() {
                             <li><strong>Cloud &amp; Hosting:</strong> Google Cloud Platform — <a href="https://cloud.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">cloud.google.com/privacy</a>. Data is stored in the EU (europe-west) region.</li>
                             <li><strong>Analytics:</strong> Unity Analytics (Unity Technologies Inc.) — <a href="https://unity.com/legal/developer-privacy-policy" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">unity.com/legal/developer-privacy-policy</a>. Receives device identifiers, gameplay events, and session data for product analytics. Uses a device-bound identifier (not the advertising ID).</li>
                             <li><strong>Analytics:</strong> Google Firebase Analytics (Google LLC) — <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">firebase.google.com/support/privacy</a>. Receives device information, approximate location (IP-derived), app-instance ID, Android Advertising ID, session data, and custom gameplay events. Governed by the <a href="https://firebase.google.com/terms" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">Firebase Terms of Service</a>, <a href="https://firebase.google.com/terms/data-processing-terms" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">Firebase Data Processing and Security Terms</a>, and <a href="https://cloud.google.com/terms/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">Google Cloud Terms of Service</a>.</li>
-                            <li><strong>Ad Mediation:</strong> CAS.ai (CLEAR INVEST LTD) — <a href="https://cas.ai/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">cas.ai/privacy-policy</a>. Manages real-time ad auctions and routes requests to downstream ad networks. Receives advertising IDs, IP address, device info, and ad interaction data.</li>
+                            <li><strong>Ad Mediation:</strong> CAS.ai (CLEAR INVEST) — <a href="https://cas.ai/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600 break-all">cas.ai/privacy-policy</a>. Manages real-time ad auctions and routes requests to downstream ad networks. Receives advertising IDs, IP address, device info, and ad interaction data.</li>
                             <li><strong>Consent Management:</strong> CAS.ai CMP — manages user consent via the IAB TCF 2.2 framework and passes consent signals to ad networks.</li>
                         </ul>
 
@@ -964,7 +954,7 @@ export default function PrivacyPolicyPage() {
                             applicable in your jurisdiction — for example, 16 in Germany and the Netherlands, 15 in
                             France, 14 in Italy and Spain). GDPR Article 8 sets the default age of consent for data
                             processing at 16 in the EU but allows member states to lower it to no less than 13.
-                            UK GDPR sets the threshold at 13.
+                            GDPR sets the threshold at 13.
                         </p>
                         <p className="mt-4">
                             We do not knowingly collect personal data from children under the applicable minimum age.
@@ -1018,7 +1008,7 @@ export default function PrivacyPolicyPage() {
                             AppLovin SDK will not be initialised at all.
                         </p>
                         <p className="mt-4">
-                            <strong>UK Age Appropriate Design Code (AADC).</strong> As a UK-registered company, we
+                            <strong>Age Appropriate Design Code (AADC).</strong> We
                             are aware of the Age Appropriate Design Code (also known as the Children&rsquo;s Code),
                             which has been enforceable since September 2021. We have implemented age-appropriate
                             defaults: behavioural profiling and targeted advertising are disabled by default for
@@ -1055,8 +1045,8 @@ export default function PrivacyPolicyPage() {
                     <section id="rights" className="mt-14">
                         <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4">8. Your Rights</h2>
 
-                        <H3>8.1 GDPR / UK GDPR Rights</H3>
-                        <p>If you are in the EEA or the United Kingdom, you have the following rights:</p>
+                        <H3>8.1 GDPR / GDPR Rights</H3>
+                        <p>If you are in the EEA or the applicable region, you have the following rights:</p>
                         <ul className="list-disc pl-5 space-y-2 mt-3">
                             <li><strong>Right to Access (Art. 15).</strong> You may obtain confirmation of whether we process your personal data, a copy of that data, and supplementary information (purposes, recipients, retention periods, source). We will respond within 30 days at no charge.</li>
                             <li><strong>Right to Rectification (Art. 16).</strong> You may have inaccurate personal data corrected without undue delay.</li>
@@ -1065,7 +1055,7 @@ export default function PrivacyPolicyPage() {
                             <li><strong>Right to Data Portability (Art. 20).</strong> You may receive your data in a structured, commonly used, machine-readable format (JSON or CSV) and transmit it to another controller. Applies to data processed by consent or contract.</li>
                             <li><strong>Right to Object (Art. 21).</strong> You may object to processing based on legitimate interests or for direct marketing purposes. If you object to direct marketing, we will stop immediately.</li>
                             <li><strong>Right to Withdraw Consent (Art. 7).</strong> You may withdraw consent at any time without affecting the lawfulness of processing before withdrawal. The withdrawal mechanism is as easy as granting consent.</li>
-                            <li><strong>Right to Lodge a Complaint (Art. 77).</strong> You may lodge a complaint with the supervisory authority in your country of residence. For UK users, this is the Information Commissioner&rsquo;s Office at <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">ico.org.uk</a>.</li>
+                            <li><strong>Right to Lodge a Complaint (Art. 77).</strong> You may lodge a complaint with the supervisory authority in your country of residence. You may contact your supervisory authority, including <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">ico.org.uk</a>.</li>
                         </ul>
 
                         <H3>8.2 US State Privacy Rights</H3>
@@ -1116,25 +1106,25 @@ export default function PrivacyPolicyPage() {
                             certified under the EU-US Data Privacy Framework (DPF), we rely on that certification.
                         </p>
                         <p className="mt-4">
-                            For transfers from the United Kingdom to third countries, we rely on the UK International
+                            For transfers from the applicable region to third countries, we rely on the international
                             Data Transfer Agreement (UK IDTA) approved by the ICO. For transfers to DPF-certified US
-                            companies, we may also rely on the UK-US Data Bridge (approved October 2023).
+                            companies, we may also rely on the Data Privacy Data Bridge (approved October 2023).
                         </p>
                         <p className="mt-4">
                             Key international data recipients include: Unity Technologies Inc. (San Francisco, USA),
                             Google LLC (USA) (for Firebase Analytics, Google AdMob, and Google Cloud Platform),
-                            CAS.ai / CLEAR INVEST LTD (Belize), Liftoff Mobile Inc. / LMI Inc. (Palo Alto, USA),
-                            InMobi Pte. Ltd. (Singapore) and InMobi Inc. (USA), and AppLovin Corporation (Palo Alto,
+                            CAS.ai (Belize), Liftoff Mobile Inc. / LMI (Palo Alto, USA),
+                            InMobi (Singapore) and InMobi Inc. (USA), and AppLovin Corporation (Palo Alto,
                             USA). For Firebase Analytics, Google LLC is certified under the EU-US Data Privacy Framework
                             and processes data under the Firebase Data Processing and Security Terms. Data transfers
-                            from EEA/UK users to Unity, Liftoff, and InMobi are governed by Standard Contractual
+                            from EEA/users to Unity, Liftoff, and InMobi are governed by Standard Contractual
                             Clauses as per each company&rsquo;s Data Processing Addendum. InMobi is headquartered in
                             Singapore with operations in the USA; transfers are covered by appropriate safeguards per
                             InMobi&rsquo;s own privacy documentation.
                         </p>
                         <p className="mt-4">
                             <strong>AppLovin Corporation</strong> is certified under the EU-US Data Privacy
-                            Framework (EU-US DPF), the UK Extension to the EU-US DPF, and the Swiss-US Data Privacy
+                            Framework (EU-US DPF), the applicable DPF extension, and the Swiss-US Data Privacy
                             Framework (Swiss-US DPF). For transfers of personal data from the EEA, UK, and
                             Switzerland to AppLovin, we rely on AppLovin&rsquo;s DPF certification as the primary
                             transfer mechanism. AppLovin is subject to the regulatory enforcement powers of the
@@ -1145,10 +1135,10 @@ export default function PrivacyPolicyPage() {
                         </p>
                         <p className="mt-4">
                             Where data is transferred to countries that do not benefit from an adequacy decision
-                            (including Belize, where CAS.ai&rsquo;s operator CLEAR INVEST LTD is incorporated), we
+                            (including Belize, where CAS.ai&rsquo;s operator CLEAR INVEST is incorporated), we
                             conduct Transfer Impact Assessments (TIAs) and apply supplementary technical measures.
                             Belize does not currently have comprehensive data protection legislation. For transfers
-                            to CAS.ai/CLEAR INVEST LTD, the following supplementary measures are in place:
+                            to CAS.ai, the following supplementary measures are in place:
                         </p>
                         <ul className="list-disc pl-5 space-y-2 mt-3">
                             <li>All data transmitted to CAS.ai is encrypted in transit (TLS 1.2+) and at rest.</li>
@@ -1433,13 +1423,13 @@ export default function PrivacyPolicyPage() {
                             users are described in Section 9.
                         </p>
 
-                        <H3>14.2 United Kingdom</H3>
+                        <H3>14.2 applicable region</H3>
                         <p>
-                            This subsection applies to users in the United Kingdom and supplements the main policy.
-                            UK GDPR is a separate legal framework from EU GDPR, though largely mirroring it. UK users
+                            This subsection applies to users in the applicable region and supplements the main policy.
+                            GDPR is a separate legal framework from EU GDPR, though largely mirroring it. users
                             may lodge a complaint with the Information Commissioner&rsquo;s Office (ICO) at{" "}
                             <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">ico.org.uk</a>{" "}
-                            or by calling 0303 123 1113. Transfer mechanisms for UK users are described in Section 9.
+                            or by calling 0303 123 1113. Transfer mechanisms for users are described in Section 9.
                         </p>
 
                         <H3>14.3 California (CCPA / CPRA)</H3>
@@ -1628,15 +1618,11 @@ export default function PrivacyPolicyPage() {
                                     <td className="py-2"><a href={`mailto:${CO.support}`} className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">{CO.support}</a></td>
                                 </tr>
                                 <tr className="border-b border-neutral-100">
-                                    <td className="py-2 pr-4 text-neutral-500 align-top whitespace-nowrap">Postal Address</td>
-                                    <td className="py-2">{CO.addr}</td>
-                                </tr>
-                                <tr className="border-b border-neutral-100">
                                     <td className="py-2 pr-4 text-neutral-500 align-top whitespace-nowrap">In-App</td>
                                     <td className="py-2">Settings &gt; Privacy &gt; Contact Us</td>
                                 </tr>
                                 <tr className="border-b border-neutral-100">
-                                    <td className="py-2 pr-4 text-neutral-500 align-top whitespace-nowrap">ICO (UK)</td>
+                                    <td className="py-2 pr-4 text-neutral-500 align-top whitespace-nowrap">Supervisory Authority</td>
                                     <td className="py-2"><a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">ico.org.uk</a> &nbsp;/&nbsp; 0303 123 1113</td>
                                 </tr>
                                 <tr>
@@ -1763,7 +1749,7 @@ export default function PrivacyPolicyPage() {
                             <li><strong>No Sale of Personal Data for Monetary Consideration.</strong> We do not sell your personal data for direct monetary consideration. Note that under the CCPA&rsquo;s broader definitions, sharing advertising identifiers with ad networks for cross-context behavioural advertising may qualify as a &ldquo;sale&rdquo; or &ldquo;sharing&rdquo; &mdash; see Section 14.3 and our <Link href="/do-not-sell" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">Do Not Sell or Share</Link> page.</li>
                             <li><strong>Aggregated &amp; Anonymised Data.</strong> We may use aggregated and anonymised data — which cannot identify you individually — for research, benchmarking, industry reports, and business analysis. Such data is not subject to this policy.</li>
                             <li><strong>Severability.</strong> If any provision of this Privacy Policy is found to be unenforceable, the remaining provisions will continue in full force and effect.</li>
-                            <li><strong>Governing Law.</strong> This policy is governed by the laws of England and Wales.</li>
+                            <li><strong>Governing Law.</strong> This policy is governed by the laws of the applicable jurisdiction.</li>
                             <li><strong>Language.</strong> In the event of any conflict between the English version of this policy and any translated version, the English version shall prevail.</li>
                             <li><strong>Accessibility.</strong> This privacy policy is available in an accessible format on request (e.g. large print, screen-reader compatible). We aim to conform to WCAG 2.1 Level AA for the web-hosted version.</li>
                         </ul>

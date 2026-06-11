@@ -1,4 +1,4 @@
-﻿import { Metadata } from "next";
+import { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import { LegalH3 as H3 } from "@/components/legal";
 import Link from "next/link";
@@ -6,9 +6,9 @@ import { COMPANY as CO } from "@/lib/company";
 import { LEGAL_VERSIONS } from "@/lib/legal-versions";
 
 export const metadata: Metadata = {
-    title: "Terms of Service — AVAJORA GAMES LTD",
+    title: "Terms of Service — AVAJORA",
     description:
-        "Terms of Service for AVAJORA GAMES LTD mobile games, website, and related services.",
+        "Terms of Service for AVAJORA mobile games, website, and related services.",
 };
 
 const { version: V, updated: UPDATED, effective: EFFECTIVE } = LEGAL_VERSIONS.termsOfService;
@@ -17,12 +17,12 @@ const jsonLd = {
     "@context": "https://schema.org",
     "@type": ["WebPage", "Article"],
     name: "Terms of Service",
-    headline: "Terms of Service — AVAJORA GAMES LTD",
+    headline: "Terms of Service — AVAJORA",
     description:
-        "Terms of Service for AVAJORA GAMES LTD mobile games, website, and related services.",
+        "Terms of Service for AVAJORA mobile games, website, and related services.",
     publisher: {
         "@type": "Organization",
-        name: "AVAJORA GAMES LTD",
+        name: "AVAJORA",
         url: "https://avajora.com",
     },
     datePublished: "2026-02-17",
@@ -32,19 +32,18 @@ const jsonLd = {
     mainEntity: {
         "@type": "WebPage",
         name: "Terms of Service",
-        description: "Terms governing use of AVAJORA GAMES LTD mobile games, website, and related services.",
+        description: "Terms governing use of AVAJORA mobile games, website, and related services.",
     },
     isPartOf: {
         "@type": "WebSite",
         url: "https://avajora.com",
-        name: "AVAJORA GAMES LTD",
+        name: "AVAJORA",
     },
 };
 
 const TOC = [
     { id: "introduction", label: "Introduction" },
     { id: "definitions", label: "Definitions" },
-    { id: "company-info", label: "Company Information" },
     { id: "eligibility", label: "Eligibility & Age Requirements" },
     { id: "accounts", label: "Account Registration & Security" },
     { id: "licence", label: "Licence to Use Our Services" },
@@ -116,7 +115,7 @@ export default function TermsOfServicePage() {
                             </Link>{" "}
                             page for controls.
                             You may cancel or request refunds per your app store&apos;s policies and applicable law
-                            (including UK cooling-off rights). We are a UK company and English law applies.
+                            (including cooling-off rights where applicable).
                             Read the full terms below for the legally binding details.
                         </p>
                     </section>
@@ -147,8 +146,8 @@ export default function TermsOfServicePage() {
                             1. Introduction
                         </h2>
                         <p>
-                            Welcome to {CO.name}, trading as {CO.trade} (&ldquo;we,&rdquo; &ldquo;us,&rdquo;
-                            or &ldquo;our&rdquo;). These Terms of Service (&ldquo;Terms&rdquo;) form a legally
+                            Welcome to {CO.name} (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;).
+                            These Terms of Service (&ldquo;Terms&rdquo;) form a legally
                             binding agreement between you (&ldquo;you&rdquo; or &ldquo;user&rdquo;) and {CO.name}{" "}
                             governing your access to and use of our mobile games, applications, websites
                             (including{" "}
@@ -212,72 +211,6 @@ export default function TermsOfServicePage() {
                                 digital goods available within the Services.
                             </li>
                         </ul>
-                    </section>
-
-                    {/* 3. Company Information */}
-                    <section id="company-info" className="mb-8">
-                        <h2 className="text-lg font-semibold text-neutral-900 mb-3">
-                            3. Company Information
-                        </h2>
-                        <table className="w-full text-sm border-collapse">
-                            <tbody>
-                                <tr className="border-b border-neutral-200">
-                                    <td className="py-2 pr-4 font-medium text-neutral-900 whitespace-nowrap">
-                                        Legal name
-                                    </td>
-                                    <td className="py-2">{CO.name}</td>
-                                </tr>
-                                <tr className="border-b border-neutral-200">
-                                    <td className="py-2 pr-4 font-medium text-neutral-900 whitespace-nowrap">
-                                        Trading name
-                                    </td>
-                                    <td className="py-2">{CO.trade}</td>
-                                </tr>
-                                <tr className="border-b border-neutral-200">
-                                    <td className="py-2 pr-4 font-medium text-neutral-900 whitespace-nowrap">
-                                        Company type
-                                    </td>
-                                    <td className="py-2">{CO.type}</td>
-                                </tr>
-                                <tr className="border-b border-neutral-200">
-                                    <td className="py-2 pr-4 font-medium text-neutral-900 whitespace-nowrap">
-                                        Registration no.
-                                    </td>
-                                    <td className="py-2">{CO.reg}</td>
-                                </tr>
-                                <tr className="border-b border-neutral-200">
-                                    <td className="py-2 pr-4 font-medium text-neutral-900 whitespace-nowrap">
-                                        D-U-N-S
-                                    </td>
-                                    <td className="py-2">{CO.duns}</td>
-                                </tr>
-                                <tr className="border-b border-neutral-200">
-                                    <td className="py-2 pr-4 font-medium text-neutral-900 whitespace-nowrap">
-                                        Registered address
-                                    </td>
-                                    <td className="py-2">{CO.addr}</td>
-                                </tr>
-                                <tr className="border-b border-neutral-200">
-                                    <td className="py-2 pr-4 font-medium text-neutral-900 whitespace-nowrap">
-                                        Jurisdiction
-                                    </td>
-                                    <td className="py-2">{CO.country}</td>
-                                </tr>
-                                <tr>
-                                    <td className="py-2 pr-4 font-medium text-neutral-900 whitespace-nowrap">
-                                        Website
-                                    </td>
-                                    <td className="py-2">
-                                        <a
-                                            href={`https://${CO.web}`}
-                                            className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
-                                        >
-                                            {CO.web}
-                                        </a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </section>
 
                     {/* 4. Eligibility & Age Requirements */}
@@ -692,9 +625,9 @@ export default function TermsOfServicePage() {
                             refund policies.
                         </p>
 
-                        <H3>11.2 UK Consumer Rights Act 2015</H3>
+                        <H3>11.2 Consumer Rights</H3>
                         <p>
-                            If you are a consumer in the United Kingdom, you have a statutory right to cancel
+                            If you are a consumer in the applicable region, you have a statutory right to cancel
                             a digital content purchase within <strong>14 days</strong> of the purchase date
                             (the &ldquo;cooling-off period&rdquo;) under the Consumer Contracts (Information,
                             Cancellation and Additional Charges) Regulations 2013 and the Consumer Rights Act
@@ -742,7 +675,7 @@ export default function TermsOfServicePage() {
 
                         <H3>12.2 Advertising partners</H3>
                         <p>
-                            We use <strong>CAS.ai</strong> (Clever Ads Solutions / CLEAR INVEST LTD) as our ad
+                            We use <strong>CAS.ai</strong> (Clever Ads Solutions) as our ad
                             mediation platform. CAS.ai runs real-time auctions among multiple advertising networks
                             to determine the most relevant ad for each placement. Our principal advertising
                             SDK partners are listed on our{" "}
@@ -946,7 +879,7 @@ export default function TermsOfServicePage() {
                         </p>
                         <p className="mt-3">
                             We comply with applicable data protection legislation, including the UK General
-                            Data Protection Regulation (UK GDPR), the EU General Data Protection Regulation
+                            Data Protection Regulation (GDPR), the EU General Data Protection Regulation
                             (EU GDPR), the Data Protection Act 2018, the California Consumer Privacy Act
                             (CCPA) as amended by the CPRA, the Children&apos;s Online Privacy Protection Act
                             (COPPA), and other applicable privacy laws.
@@ -962,7 +895,7 @@ export default function TermsOfServicePage() {
                             <a href="https://cloud.google.com/terms/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline underline-offset-2 hover:text-neutral-600">Google Cloud Terms of Service</a>.
                             Firebase Analytics is disabled for child-identified sessions.
                             We use <strong>CAS.ai</strong> (CLEAR INVEST
-                            LTD) as our ad mediation platform, which may route data to multiple advertising networks
+                            ) as our ad mediation platform, which may route data to multiple advertising networks
                             including AppLovin, Google AdMob, ironSource, Meta, Vungle/Liftoff, InMobi, and others.
                             We never sell your personal data for monetary consideration. The sharing of
                             advertising identifiers with ad networks for interest-based advertising may
@@ -1015,13 +948,13 @@ export default function TermsOfServicePage() {
                             features, functionality, software, code, graphics, designs, trademarks, trade
                             names, logos, and other materials — are owned by {CO.name} or our licensors and
                             are protected by copyright, trademark, patent, trade secret, and other
-                            intellectual property laws of the United Kingdom, the European Union, and
+                            intellectual property laws of the applicable region, the European Union, and
                             international treaties.
                         </p>
 
                         <H3>15.2 Trademarks</H3>
                         <p>
-                            &ldquo;{CO.trade},&rdquo; the {CO.trade} logo, and all related names, logos,
+                            &ldquo;{CO.name},&rdquo; the {CO.name} logo, and all related names, logos,
                             product and service names, designs, and slogans are trademarks of {CO.name} or
                             its affiliates. You must not use such marks without our prior written permission.
                         </p>
@@ -1230,7 +1163,7 @@ export default function TermsOfServicePage() {
                             data will be permanently deleted and cannot be recovered. We are not obligated
                             to provide refunds for previously purchased Virtual Items or unused
                             Subscriptions, except where required by applicable consumer protection law
-                            (including the UK Consumer Rights Act 2015 and EU consumer rights legislation).
+                            (including the Consumer Rights and EU consumer rights legislation).
                         </p>
                         <p className="mt-3">
                             <strong>Platform-specific refunds.</strong> If a game is discontinued within
@@ -1364,7 +1297,7 @@ export default function TermsOfServicePage() {
                         <p className="mt-3">
                             <strong>Consumer law carve-out.</strong> Nothing in this Section 21 requires you
                             to indemnify us for any matter to the extent that doing so would contravene
-                            your statutory rights as a consumer under the UK Consumer Rights Act 2015,
+                            your statutory rights as a consumer under the Consumer Rights,
                             the EU Consumer Rights Directive (2011/83/EU), or any other mandatory consumer
                             protection law applicable in your jurisdiction. This indemnification clause
                             applies only to losses caused by your breach, misuse, or unlawful conduct —
@@ -1427,15 +1360,15 @@ export default function TermsOfServicePage() {
                         <H3>23.1 Governing law</H3>
                         <p>
                             These Terms and your use of the Services shall be governed by and construed in
-                            accordance with the laws of England and Wales, without regard to conflict of law
+                            accordance with the laws of the applicable jurisdiction, without regard to conflict of law
                             provisions.
                         </p>
                         <p className="mt-3">
                             <strong>United States residents.</strong> If you are a resident of the United
-                            States, the choice of English law does not deprive you of the protection of
+                            States, the choice of applicable law does not deprive you of the protection of
                             mandatory consumer protection laws that cannot be waived by contract under
                             the laws of your state of residence or the federal laws of the United States.
-                            In the event of a conflict between English law and the mandatory consumer
+                            In the event of a conflict between applicable law and the mandatory consumer
                             protection laws of your jurisdiction, the mandatory consumer protection laws
                             shall prevail to the extent of the conflict. This includes, but is not limited
                             to, state consumer protection statutes, unfair and deceptive trade practices
@@ -1459,7 +1392,7 @@ export default function TermsOfServicePage() {
                         <H3>23.3 Jurisdiction</H3>
                         <p>
                             If the dispute cannot be resolved informally, you agree that any legal action
-                            must be brought in the courts of England and Wales, and you consent to the
+                            must be brought in the courts of the applicable jurisdiction, and you consent to the
                             exclusive jurisdiction of such courts.
                         </p>
 
@@ -1498,11 +1431,10 @@ export default function TermsOfServicePage() {
                             arose, or it will be permanently barred.
                         </p>
                         <p className="mt-3">
-                            <strong>United Kingdom &amp; EU residents:</strong> The limitation period
+                            <strong>Residents outside the United States:</strong> The limitation period
                             applicable to you is determined by mandatory law in your jurisdiction
-                            (e.g., six years under the Limitation Act 1980 in England and Wales, or the
-                            equivalent period under EU consumer protection legislation). Nothing in
-                            these Terms reduces the statutory limitation period available to you.
+                            and type of claim. Nothing in these Terms reduces the statutory limitation
+                            period available to you.
                         </p>
                     </section>
 
@@ -1578,8 +1510,7 @@ export default function TermsOfServicePage() {
                         </p>
                         <p className="mt-3">
                             The arbitration shall be conducted by a single arbitrator, in the English language,
-                            and the seat of arbitration shall be London, United Kingdom — provided that the
-                            arbitration hearing may be conducted remotely (by videoconference) at your
+                            and the arbitration hearing may be conducted remotely (by videoconference) at your
                             election. The arbitrator&rsquo;s decision shall be final and binding and may be
                             entered as a judgement in any court of competent jurisdiction.
                         </p>
@@ -1616,13 +1547,11 @@ export default function TermsOfServicePage() {
                             particular claim or request for relief, that claim or request for relief shall
                             be severed and may proceed in court, while all other claims shall be
                             arbitrated. If a court finds the arbitration agreement entirely unenforceable,
-                            disputes shall be resolved exclusively in the courts of England and Wales in
-                            accordance with Section 23.3.
+                            disputes shall be resolved in accordance with Section 23.3.
                         </p>
                         <p className="mt-3">
-                            This arbitration provision does not apply to residents of the United Kingdom,
-                            the European Economic Area, or any jurisdiction where mandatory arbitration of
-                            consumer disputes is prohibited by law.
+                            This arbitration provision does not apply where mandatory arbitration of consumer
+                            disputes is prohibited by law.
                         </p>
                     </section>
 
@@ -1757,7 +1686,7 @@ export default function TermsOfServicePage() {
                             >
                                 {CO.legal}
                             </a>{" "}
-                            or by post to our registered address. We may provide notices to you through the
+                            or through the Services. We may provide notices to you through the
                             Services, via your app store, or by email if you have provided one.
                         </p>
                     </section>
@@ -1773,30 +1702,6 @@ export default function TermsOfServicePage() {
                         </p>
                         <table className="mt-4 w-full text-sm border-collapse">
                             <tbody>
-                                <tr className="border-b border-neutral-200">
-                                    <td className="py-2 pr-4 font-medium text-neutral-900 whitespace-nowrap">
-                                        Legal name
-                                    </td>
-                                    <td className="py-2">{CO.name}</td>
-                                </tr>
-                                <tr className="border-b border-neutral-200">
-                                    <td className="py-2 pr-4 font-medium text-neutral-900 whitespace-nowrap">
-                                        Registered address
-                                    </td>
-                                    <td className="py-2">{CO.addr}</td>
-                                </tr>
-                                <tr className="border-b border-neutral-200">
-                                    <td className="py-2 pr-4 font-medium text-neutral-900 whitespace-nowrap">
-                                        Registration no.
-                                    </td>
-                                    <td className="py-2">{CO.reg}</td>
-                                </tr>
-                                <tr className="border-b border-neutral-200">
-                                    <td className="py-2 pr-4 font-medium text-neutral-900 whitespace-nowrap">
-                                        D-U-N-S
-                                    </td>
-                                    <td className="py-2">{CO.duns}</td>
-                                </tr>
                                 <tr className="border-b border-neutral-200">
                                     <td className="py-2 pr-4 font-medium text-neutral-900 whitespace-nowrap">
                                         General support
@@ -1872,8 +1777,7 @@ export default function TermsOfServicePage() {
                     {/* Footer */}
                     <footer className="mt-12 pt-6 border-t border-neutral-200 text-sm text-neutral-500">
                         <p>
-                            © {new Date().getFullYear()} {CO.name}. All rights reserved. Company
-                            registration number {CO.reg}, registered in {CO.country}.
+                            © {new Date().getFullYear()} {CO.name}. All rights reserved.
                         </p>
                         <p className="mt-2">
                             By using our Services, you acknowledge that you have read, understood, and agree

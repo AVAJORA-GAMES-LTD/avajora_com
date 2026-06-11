@@ -23,9 +23,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Privacy at a Glance — AVAJORA GAMES LTD",
+    title: "Privacy at a Glance — AVAJORA",
     description:
-        "A plain-language summary of how AVAJORA GAMES LTD handles your data. Not a legal document — see the full Privacy Policy for binding terms.",
+        "A plain-language summary of how AVAJORA handles your data. Not a legal document — see the full Privacy Policy for binding terms.",
 };
 
 const { updated: UPDATED } = LEGAL_VERSIONS.privacySummary;
@@ -34,9 +34,9 @@ const jsonLd = {
     "@context": "https://schema.org",
     "@type": ["WebPage", "Article"],
     name: "Privacy at a Glance",
-    headline: "Privacy at a Glance — AVAJORA GAMES LTD",
+    headline: "Privacy at a Glance — AVAJORA",
     description:
-        "A plain-language summary of how AVAJORA GAMES LTD handles your data.",
+        "A plain-language summary of how AVAJORA handles your data.",
     publisher: {
         "@type": "Organization",
         name: CO.name,
@@ -49,7 +49,7 @@ const jsonLd = {
     mainEntity: {
         "@type": "WebPage",
         name: "Privacy at a Glance",
-        description: "Simplified summary of AVAJORA GAMES LTD data practices.",
+        description: "Simplified summary of AVAJORA data practices.",
     },
     isPartOf: {
         "@type": "WebSite",
@@ -112,8 +112,7 @@ export default function PrivacySummaryPage() {
                     <section>
                         <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4">Who We Are</h2>
                         <p>
-                            <strong>{CO.name}</strong> (trading as {CO.trade}) is a UK-registered company
-                            that develops and publishes free-to-play mobile games. We are the{" "}
+                            <strong>{CO.name}</strong> develops and publishes free-to-play mobile games. We are the{" "}
                             <strong>data controller</strong> — meaning we decide what data is collected and
                             why.
                         </p>

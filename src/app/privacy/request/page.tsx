@@ -6,9 +6,9 @@ import { LEGAL_VERSIONS } from "@/lib/legal-versions";
 import { PrivacyRequestForm } from "./PrivacyRequestForm";
 
 export const metadata: Metadata = {
-    title: "Privacy Request — AVAJORA GAMES LTD",
+    title: "Privacy Request — AVAJORA",
     description:
-        "Submit a data subject access request (DSAR). Exercise your GDPR, UK GDPR, CCPA/CPRA, and other privacy rights.",
+        "Submit a data subject access request (DSAR). Exercise your GDPR, GDPR, CCPA/CPRA, and other privacy rights.",
 };
 
 const { version: V, updated: UPDATED } = LEGAL_VERSIONS.privacyRequest;
@@ -17,9 +17,9 @@ const jsonLd = {
     "@context": "https://schema.org",
     "@type": ["WebPage", "Article"],
     name: "Privacy Request",
-    headline: "Privacy Request — AVAJORA GAMES LTD",
+    headline: "Privacy Request — AVAJORA",
     description:
-        "Submit a data subject access request (DSAR) to AVAJORA GAMES LTD.",
+        "Submit a data subject access request (DSAR) to AVAJORA.",
     publisher: {
         "@type": "Organization",
         name: CO.name,
@@ -56,7 +56,7 @@ export default function PrivacyRequestPage() {
                     {/* Intro */}
                     <section>
                         <p>
-                            You have privacy rights under the <strong>UK GDPR</strong>,{" "}
+                            You have privacy rights under the <strong>GDPR</strong>,{" "}
                             <strong>EU GDPR</strong>, the <strong>CCPA/CPRA</strong>, and other applicable
                             data protection laws. This page explains how to submit a formal privacy request
                             to {CO.name}.
@@ -196,10 +196,6 @@ export default function PrivacyRequestPage() {
                             Settings &gt; Privacy &gt; Contact Us
                         </p>
 
-                        <h3 className="mt-8 mb-3 text-lg font-bold text-neutral-900">Option 4 — Postal Mail</h3>
-                        <p>
-                            Write to us at: <strong>{CO.addr}</strong>
-                        </p>
                     </section>
 
                     {/* Verification */}
@@ -251,7 +247,7 @@ export default function PrivacyRequestPage() {
                                 </thead>
                                 <tbody className="align-top">
                                     <tr className="border-b border-neutral-100">
-                                        <td className="py-3 pr-4 font-medium text-neutral-900">GDPR / UK GDPR</td>
+                                        <td className="py-3 pr-4 font-medium text-neutral-900">GDPR / GDPR</td>
                                         <td className="py-3 pr-4">30 calendar days</td>
                                         <td className="py-3">+2 months (with notice)</td>
                                     </tr>

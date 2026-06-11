@@ -5,9 +5,9 @@ import { COMPANY as CO } from "@/lib/company";
 import { LEGAL_VERSIONS } from "@/lib/legal-versions";
 
 export const metadata: Metadata = {
-    title: "Cookie Policy — AVAJORA GAMES LTD",
+    title: "Cookie Policy — AVAJORA",
     description:
-        "Cookie Policy for the AVAJORA GAMES LTD website. Details on cookies we use, their purposes, and how to manage them.",
+        "Cookie Policy for the AVAJORA website. Details on cookies we use, their purposes, and how to manage them.",
 };
 
 const { version: V, updated: UPDATED, effective: EFFECTIVE } = LEGAL_VERSIONS.cookiePolicy;
@@ -16,9 +16,9 @@ const jsonLd = {
     "@context": "https://schema.org",
     "@type": ["WebPage", "Article"],
     name: "Cookie Policy",
-    headline: "Cookie Policy — AVAJORA GAMES LTD",
+    headline: "Cookie Policy — AVAJORA",
     description:
-        "Cookie Policy for the AVAJORA GAMES LTD website. Details on cookies we use, their purposes, and how to manage them.",
+        "Cookie Policy for the AVAJORA website. Details on cookies we use, their purposes, and how to manage them.",
     publisher: {
         "@type": "Organization",
         name: CO.name,
@@ -31,12 +31,12 @@ const jsonLd = {
     mainEntity: {
         "@type": "WebPage",
         name: "Cookie Policy",
-        description: "Details on cookies used by the AVAJORA GAMES LTD website.",
+        description: "Details on cookies used by the AVAJORA website.",
     },
     isPartOf: {
         "@type": "WebSite",
         url: "https://avajora.com",
-        name: "AVAJORA GAMES LTD",
+        name: "AVAJORA",
     },
 };
 
@@ -181,7 +181,7 @@ export default function CookiePolicyPage() {
                             <strong>International data transfers:</strong> Google Analytics data may be
                             processed in the United States. Google LLC is certified under the EU–U.S.
                             Data Privacy Framework (DPF) and the UK Extension to the EU–U.S. DPF,
-                            providing an adequate safeguard for these transfers under UK GDPR and
+                            providing an adequate safeguard for these transfers under GDPR and
                             EU GDPR.
                         </p>
 
@@ -226,9 +226,9 @@ export default function CookiePolicyPage() {
                         </p>
                         <p className="mt-4">
                             This consent mechanism complies with the <strong>Privacy and Electronic Communications
-                                Regulations 2003</strong> (PECR) in the United Kingdom, the <strong>ePrivacy
+                                Regulations 2003</strong> (PECR) in the applicable region, the <strong>ePrivacy
                                     Directive</strong> (2002/58/EC) in the EU, and supplementary guidance from the ICO.
-                            PECR &mdash; not GDPR &mdash; is the primary UK legal framework requiring consent
+                            PECR &mdash; not GDPR &mdash; is the primary applicable legal framework requiring consent
                             before setting non-essential cookies.
                         </p>
                     </section>

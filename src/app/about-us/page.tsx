@@ -38,7 +38,7 @@ export default function AboutUsPage() {
             <main className="about-page-bg min-h-screen pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-20 px-4">
                 <div className="mx-auto max-w-6xl space-y-10 sm:space-y-12 md:space-y-14">
                     <section className="bg-black/85 text-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 backdrop-blur-sm shadow-2xl">
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center mb-6 sm:mb-8">About Avajora Games</h1>
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center mb-6 sm:mb-8">About AVAJORA</h1>
                         <div className="space-y-4 sm:space-y-5 text-sm sm:text-base md:text-lg leading-relaxed text-white/90">
                             <p>
                                 We’re Khader and Amro — two entrepreneurs building casual mobile games with a simple obsession: make every tap feel good.
